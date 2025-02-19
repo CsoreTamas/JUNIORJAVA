@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class BusinessCard {
@@ -33,7 +32,7 @@ public class BusinessCard {
 
         System.out.println("Az ön által megadot adatok szerinti kártyája: \n");
 
-
+/*
         int emailLength = "E-mail: ".length() + eMail.length();
 
         int cols = emailLength + 4;
@@ -55,8 +54,7 @@ public class BusinessCard {
 
 
                 } else if (i == 1 && j < name.length() + 7) {
-                    if (j == 6)
-                        System.out.print(" Név: ");
+                    if (j == 6) System.out.print(" Név: ");
                     else if (j > 6 && j < name.length() + 7) {
                         System.out.print(name.charAt(j - 7));
                     }
@@ -100,5 +98,23 @@ public class BusinessCard {
             System.out.println();
 
         }
+        scanner.close();
+*/
+        int rows = 9;
+        int cols = eMail.length() + 3;
+
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j <= rows; j++) {
+                if (0 < i || i == cols) {
+                    System.out.print("M");
+                } else if (i < cols || i == 9) {
+                    System.out.println("x");
+                } else {
+                    System.out.println();
+
+                }
+            }
+        }
     }
 }
+

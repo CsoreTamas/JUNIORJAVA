@@ -13,9 +13,9 @@ public class FirstLoopHomework {
         if (number < 0) {
             System.err.println("Wrong number.");
         }
-        for (int i = 0; i < number; i++)
+        for (int i = 0; i < number; i++) {
             System.out.println(text);
-
+        }
         scanner.close();
     }
 }
