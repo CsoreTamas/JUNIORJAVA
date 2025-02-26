@@ -102,7 +102,10 @@ public class BasicAlgorithms {
 
         int followingSum = 0;
         for (int i = 0; i < numbers.length; i++) {
-            if (i % 4 == 0 && i != 0) {
+                //Index +0 +1 +2  -3 +4 +5 +6   -7  +8 +9 +10 -11 +12 +13 +14 -15 +16 +17 +18 -19
+            //Maradékok: 0  1  2  (3) 0  1  2   (3)  0  1  2  (3)  0   1  2   (3)  0   1   2   (3)
+            // 0%4 = 0 , 1%4 = 1 , 2%4 = 2 , 3%4 = 3!!! Itt lesz kivonás!!!!
+            if (i % 4 == 3) {
                 followingSum -= numbers[i];
             } else {
                 followingSum += numbers[i];
