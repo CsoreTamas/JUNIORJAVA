@@ -109,7 +109,7 @@ public class LoopBasicTasksTwo {
             //Azt vizsgáljuk, hogy a double bekért érték egyenlő-e az int értékkel!!
             //pl: 16-nak a négyzetgyöke double értékben: 4.0 == int 4-el!!!
             //pl: 10 nek ~ double 3.16 != int 3.16 mert nincs ilyen!!
-            System.out.println(number + " is a Perfectly square");
+            System.out.println(number + " is a Perfect square");
         } else {
             System.out.println(number + " isn't a square");
         }
