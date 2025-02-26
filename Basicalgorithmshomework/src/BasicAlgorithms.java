@@ -2,7 +2,7 @@
 public class BasicAlgorithms {
     public static void main(String[] args) {
 
-        int[] numbers = {1, 1, 1, 1, 1, 1, 1, 1,};
+        int[] numbers = {1, 1, 1, 1, 1, 1, 1, 1, 1};
         int largestElement = numbers[0];
         for (int number : numbers) {     // Java offered the for each loop
             if (largestElement < number) {
@@ -102,11 +102,7 @@ public class BasicAlgorithms {
 
         int followingSum = 0;
         for (int i = 0; i < numbers.length; i++) {
-            //  0  1  2  3
-            //  +  +  +  -
-            // +1 +2 +3 -4  ------> 3
-            // Can you explain why "if (i % 3 == 0 && i != 0)" was it not good? The pattern was the same and the final result as well. (I think)
-            if (i % 4 == 0) {
+            if (i % 4 == 0 && i != 0) {
                 followingSum -= numbers[i];
             } else {
                 followingSum += numbers[i];
