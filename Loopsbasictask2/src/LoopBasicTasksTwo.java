@@ -19,7 +19,7 @@ public class LoopBasicTasksTwo {
             System.out.printf("%.3f%n", multipleOf038); // printf("%.3f%n") azt jelenti hogy 0.123 ig írja ki a számokat!!
         }                                               // ha pl printf("%.2f%n") lenne akkor viszont 0.12 ig írja ki!!
 
-        for (int i = 100; 1 <= i; i--) {
+        for (int i = 100; i >= 1; i--) {
             System.out.println(i);
         }
 
@@ -73,7 +73,7 @@ public class LoopBasicTasksTwo {
         }
         System.out.println(prod);
 
-        for (int i = 1000; 500 <= i; i -= 10) {
+        for (int i = 1000; i >= 500; i -= 10) {
             System.out.println(i);
         }
 
@@ -94,9 +94,9 @@ public class LoopBasicTasksTwo {
         }
 
 
-        // Math.pow(4, i) 4 nek az i-edik hatványa
-        for (int i = 1; Math.pow(4, i) <= 10000; i++) {
-            System.out.println((int) Math.pow(4, i));
+        // Math.pow(i, 4) i nek az 4. hatványa
+        for (int i = 1; Math.pow(i, 4) <= 10000; i++) {
+            System.out.println((int) Math.pow(i, 4));
             //sout(int) ".0" törlés a számok végéről, mert alapból legegő pontos számot ad.
         }
 
@@ -109,9 +109,9 @@ public class LoopBasicTasksTwo {
             //Azt vizsgáljuk, hogy a double bekért érték egyenlő-e az int értékkel!!
             //pl: 16-nak a négyzetgyöke double értékben: 4.0 == int 4-el!!!
             //pl: 10 nek ~ double 3.16 != int 3.16 mert nincs ilyen!!
-            System.out.println(number + " This number is Perfectly square");
+            System.out.println(number + " is a Perfectly square");
         } else {
-            System.out.println(number + " This number isn't square");
+            System.out.println(number + " isn't a square");
         }
         scanner.close();
 
