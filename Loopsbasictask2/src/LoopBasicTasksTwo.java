@@ -131,12 +131,13 @@ public class LoopBasicTasksTwo {
         }
         System.out.println(largestPrimeNumber);
 
-
+        int sumOfSqrt = 0;
         for (int i = 1; i <= 100; i++) {
-            if (Math.sqrt(i) == (int) Math.sqrt(i)){
+            if (Math.sqrt(i) == (int) Math.sqrt(i)) {
                 //ugyan úgy megvizsgálom hogy a double érték == az int értékkel!!
-                System.out.println(i);
+                sumOfSqrt += i;
             }
         }
+        System.out.println(sumOfSqrt);
     }
 }
