@@ -5,7 +5,7 @@ public class Task5 {
         if (numbers.length % 2 == 1) {
             System.err.println("Error, the array have to be even!");
         }
-        double numbersSum = 1.0f;
+        double numbersSum = 1.0;
         //n1^n2÷n3^n4×n5^n6÷n7^n8×n9^n10
         //  0 1   2 3   4 5   6 7   8 9
         // (+^+)/(+^+)*(+^+)/(+^+)*(+^+)

@@ -6,21 +6,22 @@ public class Task8 {
 
         for (int i = 0; i < numbers.length; i++) {
             // azért indulunk i = 0-ról, mert  a 0 a tömb indexét jelzi!!!
+            int currentlyNumber = numbers[i];
+            // numbers[] tömb i-edig elemét elmentünk egy változóba.
             boolean isPrime = true;
-            for (int j = 2; j <= Math.sqrt(numbers[i]); j++) {
+            for (int j = 2; j <= Math.sqrt(currentlyNumber); j++) {
                 //azért j = 2, mert 0-val és 1-el nem érdemes ellenőrizni
-                if (numbers[i] % j == 0) {
+                if (currentlyNumber % j == 0) {
                     isPrime = false;
                     break;
                 }
             }
             if (isPrime) {
-                numbersSum += numbers[i] * numbers[i];
+                numbersSum += currentlyNumber * currentlyNumber;
             } else {
-                numbersSum += numbers[i];
+                numbersSum += currentlyNumber;
             }
         }
         System.out.println(numbersSum);
-
     }
 }

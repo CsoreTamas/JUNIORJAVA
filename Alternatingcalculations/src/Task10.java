@@ -5,9 +5,7 @@ public class Task10 {
         int numbersSum = 0;
 
         for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] < 0) {
-                // ide is lehet kéne valami
-            } else {
+            if (numbers[i] > 0) {
                 numbersSum += numbers[i];
             }
         }

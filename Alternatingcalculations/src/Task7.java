@@ -4,9 +4,7 @@ public class Task7 {
 
         int numbersSum = 0;
         for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] % 3 == 0) {
-                //ide is kéne valamit írnom szerintem.
-            } else {
+            if (numbers[i] % 3 != 0) {
                 numbersSum += numbers[i];
             }
         }

@@ -8,9 +8,7 @@ public class Task4 {
         // 0  1  2  3  0  1  2  3  0
         int numbersSum = 0;
         for (int i = 0; i < numbers.length; i++) {
-            if (i % 4 == 3) {
-                // ide lehet kéne valamit írni, de nemtudom hogy mit.
-            } else {
+            if (i % 4 != 3) {
                 numbersSum += numbers[i];
             }
         }
