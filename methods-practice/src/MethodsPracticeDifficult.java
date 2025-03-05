@@ -32,7 +32,7 @@ int[][] array4 = {
                 {4, 3, 2, 1},
                 {1, 2, 3, 4},
                 {4, 3, 2, 1}};
-        System.out.println(diagonalDifference(array4));
+        System.out.println(countDiagonalDifference(array4));
 
         //17)
 
@@ -88,21 +88,19 @@ int[][] array4 = {
     }
 
     //17)
-    public static int diagonalDifference(int[][] array) {
-        int mainDiagonalSum = 0;
+    public static int countDiagonalDifference(int[][] array) {
+        int mainDiagonalResult = 0;
 
         for (int i = 0; i < array.length; i++) {
-            mainDiagonalSum += array[i][i];
+            mainDiagonalResult += array[i][i];
         }
         for (int i = 0; i < array.length; i++) {
-            mainDiagonalSum -= array[i][array.length - 1 - i];
+            mainDiagonalResult -= array[i][array.length - 1 - i];
             //a változóból kivonom a tömb i-edik sorában lévő tömbhossz-1-i edik elemet
             //ami: array.length - 1 = tömb utolsó oszopának indexe és azért -1, mivel a tömb indexelése
             //0-ról indul. "- i" = azért vonom ki az i-t mert így egyeneletesen fogok visszafele haladni
             //annyival amennyivel a sorok száma nő!!!
         }
-        return mainDiagonalSum;
+        return mainDiagonalResult;
     }
-
-
 }

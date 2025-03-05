@@ -3,20 +3,20 @@ public class MethodPractice {
     public static void main(String[] args) {
 
         // 1)
-        System.out.println(checkIfGraterThan50(49));
+        System.out.println(isGraterThan50(49));
 
         //2)
-        System.out.println(whichIsTheGreater(20, 19));
+        System.out.println(getMax(20, 19));
 
         //3)
         System.out.println(compareTwoNumbers(2, 1));
 
         //4)
-        writeNumbers1To100();
+        printNumbers1To100();
         // nincs szükség sout-ra, mivel nem várunk vissza semmit / nem ad vissza értéket. (void)
 
         //5)
-        getNumbersDivisibleBy5(20);
+        printNumbersDivisibleBy5(20);
 
         //6)
         System.out.println(isPrime(5));
@@ -25,7 +25,7 @@ public class MethodPractice {
         System.out.println(isDivisible(20, 3));
 
         //8)
-        System.out.println(isEqualToThird(1, 3, 3));
+        System.out.println(isProdEqualTo(1, 3, 3));
 
         //9)
         printCubicNumbers(4);
@@ -46,12 +46,12 @@ public class MethodPractice {
     }
 
     //1)
-    public static boolean checkIfGraterThan50(int number) {
+    public static boolean isGraterThan50(int number) {
         return number > 50;
     }
 
     //2)
-    public static int whichIsTheGreater(int number1, int number2) {
+    public static int getMax(int number1, int number2) {
         return Math.max(number1, number2);
 
     }
@@ -68,14 +68,14 @@ public class MethodPractice {
     }
 
     //4)
-    public static void writeNumbers1To100() {
+    public static void printNumbers1To100() {
         for (int i = 1; i <= 100; i++) {
             System.out.println(i);
         }
     }
 
     //5)
-    public static void getNumbersDivisibleBy5(int number) {
+    public static void printNumbersDivisibleBy5(int number) {
         for (int i = 1; i <= number; i++) {
             if (i % 5 == 0) {
                 System.out.println(i);
@@ -97,12 +97,12 @@ public class MethodPractice {
     }
 
     //7)
-    public static boolean isDivisible(int number1, int number2) {
-        return number1 % number2 == 0;
+    public static boolean isDivisible(int number, int divisor) {
+        return number % divisor == 0;
     }
 
     //8)
-    public static boolean isEqualToThird(int number1, int number2, int number3) {
+    public static boolean isProdEqualTo(int number1, int number2, int number3) {
         return number1 * number2 == number3;
     }
 
@@ -160,12 +160,12 @@ public class MethodPractice {
     }
 
     //13)
-    public static String concatenateStrings(String... stringSum) {
+    public static String concatenateStrings(String... strings) {
         StringBuilder sum = new StringBuilder();
         //létherehozok egy StringBuildert + elnevezem
-        for (String s : stringSum) {
+        for (String s : strings) {
             sum.append(s);
-            //StringBuilder (név).append(maygarul mellékel) (tömb[i]-edik eleme) / foreachnél pedig
+            //StringBuilder (név).append(magyarul mellékel) (tömb[i]-edik eleme) / foreachnél pedig
             //az aktuális elem (s)
         }
         return sum.toString();
