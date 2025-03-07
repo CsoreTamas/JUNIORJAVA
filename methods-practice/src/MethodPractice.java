@@ -40,7 +40,7 @@ public class MethodPractice {
         System.out.println(repeatString("hello ", 4));
 
         //13)
-        System.out.println(concatenateStrings("hello ", "tamas ", "vagyok"));
+        System.out.println(concatenateStrings(" hello , tamás , vagyok"));
 
 
     }

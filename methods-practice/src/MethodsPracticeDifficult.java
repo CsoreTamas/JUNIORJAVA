@@ -89,11 +89,8 @@ int[][] array4 = {
 
     //17)
     public static int countDiagonalDifference(int[][] array) {
-        int mainDiagonalResult = 0;
+        int mainDiagonalResult = sumOfMainDiagonal(array);
 
-        for (int i = 0; i < array.length; i++) {
-            mainDiagonalResult += array[i][i];
-        }
         for (int i = 0; i < array.length; i++) {
             mainDiagonalResult -= array[i][array.length - 1 - i];
             //a változóból kivonom a tömb i-edik sorában lévő tömbhossz-1-i edik elemet
