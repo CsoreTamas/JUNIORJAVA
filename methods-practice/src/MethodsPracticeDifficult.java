@@ -32,7 +32,7 @@ int[][] array4 = {
                 {4, 3, 2, 1},
                 {1, 2, 3, 4},
                 {4, 3, 2, 1}};
-        System.out.println(countDiagonalDifference(array4));
+        System.out.println(calculateDiagonalDifference(array4));
 
         //17)
 
@@ -88,7 +88,7 @@ int[][] array4 = {
     }
 
     //17)
-    public static int countDiagonalDifference(int[][] array) {
+    public static int calculateDiagonalDifference(int[][] array) {
         int mainDiagonalResult = sumOfMainDiagonal(array);
 
         for (int i = 0; i < array.length; i++) {
