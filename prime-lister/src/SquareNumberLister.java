@@ -15,12 +15,7 @@ public class SquareNumberLister {
         if (number <= 0) {
             return false;
         }
-        for (int i = 1; i <= number; i++) {
-            if (i * i == number) {
-                return true;
-            }
-        }
-        return false;
+        int squareNumber = (int) Math.sqrt(number);
+        return squareNumber * squareNumber == number;
     }
-
 }
