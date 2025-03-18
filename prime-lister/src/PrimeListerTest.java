@@ -7,27 +7,28 @@ public class PrimeListerTest {
     void numberShouldBetween2and2_000_000_000() {
         //given
         int zero = 0;
-        int twoTrillionAndOne = 2_000_000_001;
+        int twoBillionAndOne = 2_000_000_001;
         int one = 1;
         int two = 2;
         int number = 1_999_999_999;
         int twoTrillion = 2_000_000_000;
         //when
-        boolean zeroResult = PrimeLister.isValidNumberFromTheUser(zero);
-        boolean twoTrillionAndOneResult = PrimeLister.isValidNumberFromTheUser(twoTrillionAndOne);
-        boolean oneResult = PrimeLister.isValidNumberFromTheUser(one);
-        boolean twoResult = PrimeLister.isValidNumberFromTheUser(two);
-        boolean numberResult = PrimeLister.isValidNumberFromTheUser(number);
-        boolean twoTrillionResult = PrimeLister.isValidNumberFromTheUser(twoTrillion);
+        boolean zeroResult = PrimeLister.isValidNumber(zero);
+        boolean twoBillionAndOneResult = PrimeLister.isValidNumber(twoBillionAndOne);
+        boolean oneResult = PrimeLister.isValidNumber(one);
+        boolean twoResult = PrimeLister.isValidNumber(two);
+        boolean numberResult = PrimeLister.isValidNumber(number);
+        boolean twoTrillionResult = PrimeLister.isValidNumber(twoTrillion);
         //than
         Assertions.assertFalse(zeroResult);
-        Assertions.assertFalse(twoTrillionAndOneResult);
+        Assertions.assertFalse(twoBillionAndOneResult);
         Assertions.assertFalse(oneResult);
         Assertions.assertTrue(twoResult);
         Assertions.assertTrue(numberResult);
         Assertions.assertTrue(twoTrillionResult);
     }
-@Test
+
+    @Test
     void numbersShouldBePrime() {
         //given
         int minusOne = -1;
@@ -36,6 +37,8 @@ public class PrimeListerTest {
         int two = 2;
         int seventeen = 17;
         int twentyNine = 29;
+        int twentyFive = 25;
+        int fortyNine = 49;
         //when
         boolean minusOneResult = PrimeLister.isPrime(minusOne);
         boolean oneResult = PrimeLister.isPrime(one);
@@ -43,6 +46,9 @@ public class PrimeListerTest {
         boolean twoResult = PrimeLister.isPrime(two);
         boolean seventeenResult = PrimeLister.isPrime(seventeen);
         boolean twentyNineResult = PrimeLister.isPrime(twentyNine);
+        boolean twentyFiveResult = PrimeLister.isPrime(twentyFive);
+        boolean fortyNineResult = PrimeLister.isPrime(fortyNine);
+
         //than
         Assertions.assertFalse(minusOneResult);
         Assertions.assertFalse(oneResult);
@@ -50,6 +56,8 @@ public class PrimeListerTest {
         Assertions.assertTrue(twoResult);
         Assertions.assertTrue(seventeenResult);
         Assertions.assertTrue(twentyNineResult);
+        Assertions.assertFalse(twentyFiveResult);
+        Assertions.assertFalse(fortyNineResult);
     }
 
 
