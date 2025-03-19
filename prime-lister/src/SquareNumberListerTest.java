@@ -17,10 +17,10 @@ public class SquareNumberListerTest {
         //when
         boolean oneResult = SquareNumberLister.isSquareNumber(one);
         boolean fourResult = SquareNumberLister.isSquareNumber(four);
-        boolean twentyFiveResult =SquareNumberLister.isSquareNumber(twentyFive);
-        boolean twoResult =SquareNumberLister.isSquareNumber(two);
-        boolean fiveResult =SquareNumberLister.isSquareNumber(five);
-        boolean eightResult =SquareNumberLister.isSquareNumber(eight);
+        boolean twentyFiveResult = SquareNumberLister.isSquareNumber(twentyFive);
+        boolean twoResult = SquareNumberLister.isSquareNumber(two);
+        boolean fiveResult = SquareNumberLister.isSquareNumber(five);
+        boolean eightResult = SquareNumberLister.isSquareNumber(eight);
         //than
         Assertions.assertTrue(oneResult);
         Assertions.assertTrue(fourResult);
