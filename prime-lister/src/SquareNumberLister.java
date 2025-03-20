@@ -5,17 +5,17 @@ public class SquareNumberLister {
         Scanner scanner = new Scanner(System.in);
         int number = PrimeLister.getValidNumber(scanner);
         for (int i = 1; i < number; i++) {
-            if (isSquareNumber(i)) {
+            if (isSquareRoot(i)) {
                 System.out.println(i);
             }
         }
     }
 
-    public static boolean isSquareNumber(int number) {
+    public static boolean isSquareRoot(int number) {
         if (number <= 0) {
             return false;
         }
-        int squareNumber = (int) Math.sqrt(number);
-        return squareNumber * squareNumber == number;
+        int squareRoot = (int) Math.sqrt(number);
+        return squareRoot * squareRoot == number;
     }
 }
