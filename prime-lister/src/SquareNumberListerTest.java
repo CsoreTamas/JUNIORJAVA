@@ -13,12 +13,12 @@ public class SquareNumberListerTest {
         int five = 5;
         int eight = 8;
         //when
-        boolean oneResult = SquareNumberLister.isSquareRoot(one);
-        boolean fourResult = SquareNumberLister.isSquareRoot(four);
-        boolean twentyFiveResult = SquareNumberLister.isSquareRoot(twentyFive);
-        boolean twoResult = SquareNumberLister.isSquareRoot(two);
-        boolean fiveResult = SquareNumberLister.isSquareRoot(five);
-        boolean eightResult = SquareNumberLister.isSquareRoot(eight);
+        boolean oneResult = SquareNumberLister.isSquareNumber(one);
+        boolean fourResult = SquareNumberLister.isSquareNumber(four);
+        boolean twentyFiveResult = SquareNumberLister.isSquareNumber(twentyFive);
+        boolean twoResult = SquareNumberLister.isSquareNumber(two);
+        boolean fiveResult = SquareNumberLister.isSquareNumber(five);
+        boolean eightResult = SquareNumberLister.isSquareNumber(eight);
         //than
         Assertions.assertTrue(oneResult);
         Assertions.assertTrue(fourResult);

@@ -5,13 +5,13 @@ public class SquareNumberLister {
         Scanner scanner = new Scanner(System.in);
         int number = PrimeLister.getValidNumber(scanner);
         for (int i = 1; i < number; i++) {
-            if (isSquareRoot(i)) {
+            if (isSquareNumber(i)) {
                 System.out.println(i);
             }
         }
     }
 
-    public static boolean isSquareRoot(int number) {
+    public static boolean isSquareNumber(int number) {
         if (number <= 0) {
             return false;
         }
