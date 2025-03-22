@@ -13,18 +13,29 @@ public class StrangePolynomialSumMedium {
         }
         int result = 0;
         for (int i = 1; i <= number; i++) {
-            if (i % 4 == 2) {
-                result += (int) Math.pow(i, 2);
-            } else if (i % 4 == 3) {
-                result += (int) Math.pow(i, 3);
-            } else if (i % 4 == 0) {
-                result += (int) Math.pow(i, 4);
-            } else {
-                result += i;
-            }
+            result += calculateTerm(i);
         }
         System.out.println(result);
 
         scanner.close();
+    }
+
+    public static int calculateTerm(int number) {
+        int result = 0;
+        switch (number % 4) {
+            case 1:
+                result += number;
+                break;
+            case 2:
+                result += (int) Math.pow(number, 2);
+                break;
+            case 3:
+                result += (int) Math.pow(number, 3);
+                break;
+            case 0:
+                result += (int) Math.pow(number, 4);
+                break;
+        }
+        return result;
     }
 }
