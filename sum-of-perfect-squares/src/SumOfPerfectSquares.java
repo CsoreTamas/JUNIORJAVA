@@ -5,6 +5,7 @@ public class SumOfPerfectSquares {
         Scanner scanner = new Scanner(System.in);
         int number = getANumberFromTheUser(scanner);
         if (isSmallerThanOne(number)) {
+            System.err.println("The number should be greater than 1!");
             return;
         }
         System.out.println(getNumbersSquaresSum(number));
@@ -16,11 +17,7 @@ public class SumOfPerfectSquares {
     }
 
     public static boolean isSmallerThanOne(int number) {
-        if (number < 1) {
-            System.err.println("The number should be greater than 1!");
-            return true;
-        }
-        return false;
+        return number < 1;
     }
 
     public static int getNumbersSquaresSum(int number) {

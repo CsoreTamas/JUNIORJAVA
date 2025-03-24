@@ -11,7 +11,6 @@ public class SumOfPerfectSquaresTest {
         boolean result = SumOfPerfectSquares.isSmallerThanOne(number);
         //then
         Assertions.assertTrue(result);
-
     }
 
     @ParameterizedTest
