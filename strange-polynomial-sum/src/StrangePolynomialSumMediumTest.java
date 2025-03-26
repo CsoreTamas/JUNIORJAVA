@@ -21,7 +21,7 @@ public class StrangePolynomialSumMediumTest {
         int threeResult = StrangePolynomialSumMedium.calculateTerm(three);
         int fourResult = StrangePolynomialSumMedium.calculateTerm(four);
 
-        //Then
+        //then
         Assertions.assertEquals(0, zeroResult);
         Assertions.assertEquals(1, oneResult);
         Assertions.assertEquals(4, twoResult);

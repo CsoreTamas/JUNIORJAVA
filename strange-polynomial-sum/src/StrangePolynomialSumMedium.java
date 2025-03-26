@@ -8,34 +8,19 @@ public class StrangePolynomialSumMedium {
         System.out.print("Please enter a number: ");
         int number = scanner.nextInt();
 
-        if (number < 1) {
+        if (StrangePolynomialSumDifficult.isSmallerThanOne(number)) {
+            System.err.println("You should enter a number which greater than 1!");
             System.exit(0);
         }
         int result = 0;
-        for (int i = 1; i <= number; i++) {
-            result += calculateTerm(i);
-        }
-        System.out.println(result);
+        System.out.println(result += calculateTerm((number)));
 
         scanner.close();
     }
 
     public static int calculateTerm(int number) {
-        int result = 0;
-        switch (number % 4) {
-            case 1:
-                result += number;
-                break;
-            case 2:
-                result += (int) Math.pow(number, 2);
-                break;
-            case 3:
-                result += (int) Math.pow(number, 3);
-                break;
-            case 0:
-                result += (int) Math.pow(number, 4);
-                break;
-        }
-        return result;
+        int remainder = number % 4;
+        return (int) Math.pow(number, remainder == 0 ? 4 : remainder);
+
     }
 }
