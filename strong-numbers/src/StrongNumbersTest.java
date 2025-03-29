@@ -8,7 +8,7 @@ public class StrongNumbersTest {
     @CsvSource({"1,1", "3,6", "4,24", "5,120"})
     void shouldPerfectlyCalculateFactorials(int number, int expected) {
         //given, when
-        int result = StrongNumbers.calculateFactorials(number);
+        int result = StrongNumbers.factorial(number);
         //then
         Assertions.assertEquals(expected, result);
     }

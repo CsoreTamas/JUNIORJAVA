@@ -10,6 +10,7 @@ public class StrongNumbers {
 
         int result = 0;
         int partNumber;
+        //O(n)
         for (int i = 0; i < stringNumber.length(); i++) {
             //Get the i-th element
             char index = stringNumber.charAt(i);
@@ -18,17 +19,19 @@ public class StrongNumbers {
             partNumber = Character.getNumericValue(index);
 
             //With the implemented method, we calculate the numeric value of the i-th character!
-            result = calculateFinalAddition(result, calculateFactorials(partNumber));
+            result = calculateFinalAddition(result, factorial(partNumber));
         }
-        System.out.println(result);
-    }
+        decideTrueOrNot(result, number);
 
+    }
+    //O(1)
     public static int getANumberFromTheUser(Scanner scanner) {
         System.out.print("Please enter a number! : ");
         return scanner.nextInt();
     }
 
-    public static int calculateFactorials(int number) {
+    //O(n)
+    public static int factorial(int number) {
         int partNumber = 1;
         for (int i = 1; i <= number; i++) {
             partNumber *= i;
@@ -36,8 +39,19 @@ public class StrongNumbers {
         return partNumber;
     }
 
+    //O(1)
     public static int calculateFinalAddition(int partNumber, int result) {
         return result + partNumber;
     }
+
+    //O(1)
+    public static void decideTrueOrNot(int result, int number) {
+        if (result == number) {
+            System.out.println(result + " Is a strong number!");
+        } else {
+            System.out.println(number + " Is not a strong number");
+        }
+    }
 }
-//One question. Do I calculate the time complexity by determining the time requirement of each part and then combining them?
+
+// Could be O(n^2) ? 
