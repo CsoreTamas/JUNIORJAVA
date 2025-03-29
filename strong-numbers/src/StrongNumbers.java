@@ -21,9 +21,10 @@ public class StrongNumbers {
             //With the implemented method, we calculate the numeric value of the i-th character!
             result = calculateFinalAddition(result, factorial(partNumber));
         }
-        decideTrueOrNot(result, number);
+        System.out.println(decideTrueOrNot(number, result));
 
     }
+
     //O(1)
     public static int getANumberFromTheUser(Scanner scanner) {
         System.out.print("Please enter a number! : ");
@@ -45,12 +46,8 @@ public class StrongNumbers {
     }
 
     //O(1)
-    public static void decideTrueOrNot(int result, int number) {
-        if (result == number) {
-            System.out.println(result + " Is a strong number!");
-        } else {
-            System.out.println(number + " Is not a strong number");
-        }
+    public static boolean decideTrueOrNot(int result, int number) {
+        return result == number;
     }
 }
 

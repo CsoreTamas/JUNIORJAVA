@@ -21,5 +21,22 @@ public class StrongNumbersTest {
         //then
         Assertions.assertEquals(expected, finalResult);
     }
-}
 
+    @ParameterizedTest
+    @CsvSource({"145,145", "1,1"})
+    void shouldBeTrue(int number, int result) {
+        //given, when
+        boolean finalResult = StrongNumbers.decideTrueOrNot(number, result);
+        //then
+        Assertions.assertTrue(finalResult);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"146,745", "57,5160"})
+    void shouldBeFalse(int number, int result) {
+        //given, when
+        boolean finalResult = StrongNumbers.decideTrueOrNot(number, result);
+        //then
+        Assertions.assertFalse(finalResult);
+    }
+}
