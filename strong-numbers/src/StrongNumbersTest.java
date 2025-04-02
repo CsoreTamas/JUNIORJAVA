@@ -23,19 +23,19 @@ public class StrongNumbersTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"145,145", "1,1"})
-    void shouldBeTrue(int number, int result) {
+    @CsvSource({"145", "1"})
+    void shouldBeTrue(int result) {
         //given, when
-        boolean finalResult = StrongNumbers.decideTrueOrNot(number, result);
+        boolean finalResult = StrongNumbers.decideTrueOrNot(result);
         //then
         Assertions.assertTrue(finalResult);
     }
 
     @ParameterizedTest
-    @CsvSource({"146,745", "57,5160"})
-    void shouldBeFalse(int number, int result) {
+    @CsvSource({"146", "57"})
+    void shouldBeFalse(int result) {
         //given, when
-        boolean finalResult = StrongNumbers.decideTrueOrNot(number, result);
+        boolean finalResult = StrongNumbers.decideTrueOrNot(result);
         //then
         Assertions.assertFalse(finalResult);
     }
