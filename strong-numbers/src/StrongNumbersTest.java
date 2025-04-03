@@ -17,25 +17,25 @@ public class StrongNumbersTest {
     @CsvSource({"1,1,2", "2,2,4", "10, 10, 20", "32,8,40"})
     void shouldPerfectlyCalculateAdditions(int number, int result, int expected) {
         //given, when
-        int finalResult = StrongNumbers.calculateFinalAddition(number, result);
+        int finalResult = StrongNumbers.add(number, result);
         //then
         Assertions.assertEquals(expected, finalResult);
     }
 
     @ParameterizedTest
     @CsvSource({"145", "1"})
-    void shouldBeTrue(int result) {
+    void shouldBeStrong(int result) {
         //given, when
-        boolean finalResult = StrongNumbers.decideTrueOrNot(result);
+        boolean finalResult = StrongNumbers.decideStrongOrNot(result);
         //then
         Assertions.assertTrue(finalResult);
     }
 
     @ParameterizedTest
     @CsvSource({"146", "57"})
-    void shouldBeFalse(int result) {
+    void shouldNotBeStrong(int result) {
         //given, when
-        boolean finalResult = StrongNumbers.decideTrueOrNot(result);
+        boolean finalResult = StrongNumbers.decideStrongOrNot(result);
         //then
         Assertions.assertFalse(finalResult);
     }
