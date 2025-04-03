@@ -12,9 +12,9 @@ import java.util.stream.Stream;
 public class MethodPracticeTest {
     @ParameterizedTest
     @CsvSource({"-100, -30", "100 , 30", "200,60 "})
-    void shouldReturnNumber30Percent(int number, int expected) {
+    void shouldReturnNumber30Percent(int number, double expected) {
         //given when
-        int result = MethodPractice.getNumber30Percent(number);
+        double result = MethodPractice.getNumber30Percent(number);
         //then
         Assertions.assertEquals(expected, result);
     }
@@ -25,7 +25,7 @@ public class MethodPracticeTest {
         //given
         String[] strings = {"Hello, Welcome, Good by"};
         //when
-        String result = MethodPractice.getAnEmtyString(strings);
+        String result = MethodPractice.getAnEmptyString(strings);
         //then
         Assertions.assertEquals("", result);
     }
@@ -87,7 +87,7 @@ public class MethodPracticeTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {1, 2, 3, 4, 5, 6})
+    @ValueSource(ints = {4, 6})
     void shouldDecideIsPrimeOrNot(int number) {
         boolean result = MethodPractice.isPrime(number);
         Assertions.assertFalse(result);
@@ -127,38 +127,36 @@ public class MethodPracticeTest {
 
     // 14.
     @ParameterizedTest
-    @MethodSource("getTrue")
+    @MethodSource("provideValues")
     void shouldTurnTrue(boolean[] array) {
         boolean result = MethodPractice.decideTrueOrFalse(array);
         Assertions.assertTrue(result);
     }
 
-    public static Stream<Arguments> getTrue() {
+    public static Stream<Arguments> provideValues() {
         return Stream.of(
                 Arguments.of(new boolean[]{true, true, false, true, false}, true),
                 Arguments.of(new boolean[]{false, false, true, false, true, true}, true)
         );
     }
-    // If I change the }, true) to false nothing changes, but it works, I think. This point is yours. :D
 
     // 15.
     @ParameterizedTest
-    @MethodSource("fillTheArray")
+    @MethodSource("provideNumbers")
     void shouldFillTheArrayWithNumbersUnder0(int[] array, int[] expected) {
         int[] result = MethodPractice.filWithNumbersUnder0(array);
         Assertions.assertArrayEquals(expected, result);
     }
 
-    public static Stream<Arguments> fillTheArray() {
+    public static Stream<Arguments> provideNumbers() {
         return Stream.of(
                 Arguments.of(new int[]{-1, -3, -100, 5, 6, 4, -9}, new int[]{-1, -3, -100, -9}),
                 Arguments.of(new int[]{-1, 3, 100, 5, 6, -4, 9}, new int[]{-1, -4})
         );
-        // I fill like I'm too small to use this MethSource, but thank you soo much for explanation. :)
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {-3, -2, -1, 0, 1, 2, 3})
+    @ValueSource(ints = {0, 1, 2, 3})
     void shouldDecideIsSmallerThan0(int number) {
         boolean result = MethodPractice.isSmallerThan0(number);
         Assertions.assertFalse(result);

@@ -1,6 +1,5 @@
 public class MethodPractice {
     public static void main(String[] args) {
-
     }
 
     // 1. Writes your own name to the console
@@ -14,12 +13,12 @@ public class MethodPractice {
     }
 
     // 3. Gets in a number and returns its 30%
-    public static int getNumber30Percent(int number) {
-        return number * 30 / 100;
+    public static double getNumber30Percent(int number) {
+        return (double) (number * 30) / 100;
     }
 
     // 4. Gets in an array of Strings and returns an empty String
-    public static String getAnEmtyString(String[] stings) {
+    public static String getAnEmptyString(String[] stings) {
         return "";
     }
 
@@ -49,7 +48,7 @@ public class MethodPractice {
         for (int i = 1; i <= string.length(); i++) {
             result *= i;
         }
-        return result;
+        return result; // 12
     }
 
     // 10. Gets in a number and returns 100 divided by that number
@@ -112,11 +111,11 @@ public class MethodPractice {
 
     // 14. Gets in an array of booleans and returns a1 XOR a2 XOR a3 … XOR an
     public static boolean decideTrueOrFalse(boolean[] array) {
-        boolean result = false;
-        for (boolean trueFalse : array) {
-            result |= trueFalse;
+        boolean values = false;
+        for (boolean result : array) {
+            values ^= result;
         }
-        return result;
+        return values;
     }
 
     // 15.Gets in an array of numbers and returns a new array with all the negative numbers in from the original array
