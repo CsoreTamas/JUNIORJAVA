@@ -88,9 +88,16 @@ public class MethodPracticeTest {
 
     @ParameterizedTest
     @ValueSource(ints = {4, 6})
-    void shouldDecideIsPrimeOrNot(int number) {
+    void shouldNotBePrime(int number) {
         boolean result = MethodPractice.isPrime(number);
         Assertions.assertFalse(result);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {2, 3, 5, 7, 11})
+    void shouldBePrime(int number) {
+        boolean result = MethodPractice.isPrime(number);
+        Assertions.assertTrue(result);
     }
 
     // 12.
@@ -157,9 +164,16 @@ public class MethodPracticeTest {
 
     @ParameterizedTest
     @ValueSource(ints = {0, 1, 2, 3})
-    void shouldDecideIsSmallerThan0(int number) {
+    void shouldBeFalseCauseGreaterThan0(int number) {
         boolean result = MethodPractice.isSmallerThan0(number);
         Assertions.assertFalse(result);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {-10, -356, -23, -2, -1})
+    void shouldBeTrueCauseSmallerThan0(int number) {
+        boolean result = MethodPractice.isSmallerThan0(number);
+        Assertions.assertTrue(result);
     }
 
     @Test
