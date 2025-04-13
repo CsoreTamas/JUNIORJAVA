@@ -19,7 +19,7 @@ public class ArrayFunTest {
     @Test
     void shouldGetTheNumbersOfStrings() {
         String[] testArray = {"Hello", "Apple", "Anaconda", "append", "dog", "people"};
-        Assertions.assertEquals(3, ArrayFun.getTheNumberOfStringsWhichStartsWithAOra(testArray));
+        Assertions.assertEquals(3, ArrayFun.getTheNumberOfStringsStartingWithA(testArray));
     }
 
     @Test
