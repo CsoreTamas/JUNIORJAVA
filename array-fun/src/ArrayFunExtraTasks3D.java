@@ -4,10 +4,10 @@ public class ArrayFunExtraTasks3D {
 
     public static int getTheNumberOfPalindromesStrings(String[][][] array) {
         int numberOfPalindromes = 0;
-        for (String[][] subText : array) {
-            for (String[] subText1 : subText) {
-                for (String subText2 : subText1) {
-                    if (subText2.contentEquals(new StringBuilder(subText2).reverse())) {
+        for (String[][] subArray : array) {
+            for (String[] subSubArray : subArray) {
+                for (String strings : subSubArray) {
+                    if (strings.contentEquals(new StringBuilder(strings).reverse())) {
                         numberOfPalindromes++;
                     }
                 }
@@ -19,9 +19,9 @@ public class ArrayFunExtraTasks3D {
     public static int[] countStringsInSubSubArray(String[][][] array) {
         int[] resultArray = countElements(array);
         int index = 0;
-        for (String[][] strings : array) {
-            for (String[] string : strings) {
-                resultArray[index] = string.length;
+        for (String[][] subArray : array) {
+            for (String[] strings : subArray) {
+                resultArray[index] = strings.length;
                 index++;
             }
         }
@@ -40,11 +40,11 @@ public class ArrayFunExtraTasks3D {
 
     public static String concatenateAllStringWitchLongerThan2(String[][][] array) {
         StringBuilder string = new StringBuilder();
-        for (String[][] subText : array) {
-            for (String[] subText1 : subText) {
-                for (String subText2 : subText1) {
-                    if (subText2.length() > 2) {
-                        string.append(subText2);
+        for (String[][] subArray : array) {
+            for (String[] subSubArray : subArray) {
+                for (String strings : subSubArray) {
+                    if (strings.length() > 2) {
+                        string.append(strings);
                     }
                 }
             }
@@ -54,11 +54,11 @@ public class ArrayFunExtraTasks3D {
 
     public static int getTheLongestStringLength(String[][][] array) {
         int longestString = 0;
-        for (String[][] subText : array) {
-            for (String[] subText1 : subText) {
-                for (String subText2 : subText1) {
-                    if (subText2.length() > longestString) {
-                        longestString = subText2.length();
+        for (String[][] subArray : array) {
+            for (String[] subSubArray : subArray) {
+                for (String strings : subSubArray) {
+                    if (strings.length() > longestString) {
+                        longestString = strings.length();
                     }
                 }
             }
@@ -67,11 +67,11 @@ public class ArrayFunExtraTasks3D {
     }
 
     public static boolean searchAnySAtThe3rdArray(String[][][] array) {
-        for (String[][] strings : array) {
-            for (String[] string : strings) {
+        for (String[][] subArray : array) {
+            for (String[] subSubArray : subArray) {
                 boolean haveSAtTheEnd = false;
-                for (String str : string)
-                    if (str.endsWith("s")) {
+                for (String strings : subSubArray)
+                    if (strings.endsWith("s")) {
                         haveSAtTheEnd = true;
                         break;
                     }

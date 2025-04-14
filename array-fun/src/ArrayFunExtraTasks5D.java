@@ -46,7 +46,7 @@ public class ArrayFunExtraTasks5D {
                     for (int l = 0; l < array[i][j][k].length; l++) {
                         resultArray[i][j][k][l] = new int[array[i][j][k][l].length];
 
-                        for (int m = 0; m < array[i][j][k][l].length ; m++) {
+                        for (int m = 0; m < array[i][j][k][l].length; m++) {
                             resultArray[i][j][k][l][m] = array[i][j][k][l][m].length();
                         }
                     }
@@ -56,43 +56,76 @@ public class ArrayFunExtraTasks5D {
         return resultArray;
     }
 
-    public static String
-
-    public static void main(String[] args) {
-        String[][][][][] testArray = {
-                {
-                        {
-                                {
-                                        {"one", "two"},
-                                        {"char", "car"}
-                                }
+    public static int calculateTotalLengthOfStringsWithSameStartAndEndLetter(String[][][][][] array) {
+        int result = 0;
+        for (String[][][][] subArray : array) {
+            for (String[][][] subSubArray : subArray) {
+                for (String[][] subSubSubArray : subSubArray) {
+                    for (String[] subSubSubSubArray : subSubSubArray) {
+                        for (String strings : subSubSubSubArray) {
+                            if (!strings.isEmpty() && strings.charAt(0) == strings.charAt(strings.length() - 1)) {
+                                result += strings.length();
+                            }
                         }
-                },
-                {
-                        {
-                                {
-                                        {"error", "factor"},
-                                        {"get", "hello"}
-                                }
-                        }
-                },
-                {
-                        {
-                                {
-                                        {"is", "window"},
-                                        {"BED", "TV"}
-                                }
-                        }
-                },
-                {
-                        {
-                                {
-                                        {"bad", "Pillow"},
-                                        {"telephone", "stock"}
-                                }
-                        }
+                    }
                 }
-        };
-        System.out.println(Arrays.deepToString(fillTheArrayWithStringsLength(testArray)));
+            }
+        }
+        return result;
     }
+
+    public static String concatenateAllStringsTogether(String[][][][][] array) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String[][][][] subArray : array) {
+            for (String[][][] subSubArray : subArray) {
+                for (String[][] subSubSubArray : subSubArray) {
+                    for (String[] subSubSubSubArray : subSubSubArray) {
+                        for (String strings : subSubSubSubArray) {
+                            stringBuilder.append(strings);
+                        }
+                    }
+                }
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+
+public static void main(String[] args) {
+    String[][][][][] testArray = {
+            {
+                    {
+                            {
+                                    {"one", "two"},
+                                    {"char", "car"}
+                            }
+                    }
+            },
+            {
+                    {
+                            {
+                                    {"error", "factor"},
+                                    {"get", "hello"}
+                            }
+                    }
+            },
+            {
+                    {
+                            {
+                                    {"is", "window"},
+                                    {"BED", "TV"}
+                            }
+                    }
+            },
+            {
+                    {
+                            {
+                                    {"bad", "Pillow"},
+                                    {"telephone", "stock"}
+                            }
+                    }
+            }
+    };
+    System.out.println(concatenateAllStringsTogether(testArray));
+}
 }

@@ -113,4 +113,82 @@ public class ArrayFunExtraTasks5DTest {
         };
         Assertions.assertArrayEquals(expected,ArrayFunExtraTasks5D.fillTheArrayWithStringsLength(testArray));
     }
+
+    @Test
+    void shouldCalculateTotalLengthWierdStrings (){
+        String[][][][][] testArray = {
+                {
+                        {
+                                {
+                                        {"one", "two"},
+                                        {"char", "car"}
+                                }
+                        }
+                },
+                {
+                        {
+                                {
+                                        {"error", "factor"},
+                                        {"get", "hello"}
+                                }
+                        }
+                },
+                {
+                        {
+                                {
+                                        {"is", "window"},
+                                        {"BED", "TV"}
+                                }
+                        }
+                },
+                {
+                        {
+                                {
+                                        {"bad", "Pillow"},
+                                        {"telephone", "RaceCaR"}
+                                }
+                        }
+                }
+        };
+        Assertions.assertEquals(13, ArrayFunExtraTasks5D.calculateTotalLengthOfStringsWithSameStartAndEndLetter(testArray));
+    }
+
+    @Test
+    void shouldConcatenateStrings(){
+        String[][][][][] testArray = {
+                {
+                        {
+                                {
+                                        {"one", "two"},
+                                        {"char", "car"}
+                                }
+                        }
+                },
+                {
+                        {
+                                {
+                                        {"error", "factor"},
+                                        {"get", "hello"}
+                                }
+                        }
+                },
+                {
+                        {
+                                {
+                                        {"is", "window"},
+                                        {"BED", "TV"}
+                                }
+                        }
+                },
+                {
+                        {
+                                {
+                                        {"bad", "Pillow"},
+                                        {"telephone", "stock"}
+                                }
+                        }
+                }
+        };
+        Assertions.assertEquals("onetwocharcarerrorfactorgethelloiswindowBEDTVbadPillowtelephonestock",ArrayFunExtraTasks5D.concatenateAllStringsTogether(testArray));
+    }
 }

@@ -5,13 +5,13 @@ public class ArrayFunExtraTasks4D {
 
     public static int countLowercaseStrings(String[][][][] array) {
         int counter = 0;
-        for (String[][][] strings : array) {
-            for (String[][] string : strings) {
-                for (String[] strin : string) {
-                    for (String str : strin) {
+        for (String[][][] subArray : array) {
+            for (String[][] subSubArray : subArray) {
+                for (String[] subSubSubArray : subSubArray) {
+                    for (String strings : subSubSubArray) {
                         boolean low = true;
-                        for (int i = 0; i < str.length(); i++) {
-                            if (!Character.isLowerCase(str.charAt(i))) {
+                        for (int i = 0; i < strings.length(); i++) {
+                            if (!Character.isLowerCase(strings.charAt(i))) {
                                 low = false;
                                 break;
                             }
