@@ -49,7 +49,7 @@ public class PrimeFactorization {
         return getPrimes;
     }
 
-    public static void clearPrimes() {
+    public static void clearPrimeList() {
         getPrimes.clear();
     }
 }

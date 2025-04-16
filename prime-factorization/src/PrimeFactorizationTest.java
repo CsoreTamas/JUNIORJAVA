@@ -23,14 +23,14 @@ public class PrimeFactorizationTest {
 
     @Test
     void shouldDivisibleByOddNumbers(){
-        PrimeFactorization.clearPrimes();
+        PrimeFactorization.clearPrimeList();
         PrimeFactorization.isDivisibleByOddNumbers(15);
         Assertions.assertEquals( 2,PrimeFactorization.getPrimes.size());
     }
 
     @Test
     void shouldBeGreaterThenTwoAndPrime(){
-        PrimeFactorization.clearPrimes();
+        PrimeFactorization.clearPrimeList();
         PrimeFactorization.isGreaterThanTwoPrime(11);
         PrimeFactorization.isGreaterThanTwoPrime(3);
         PrimeFactorization.isGreaterThanTwoPrime(113);
