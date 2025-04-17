@@ -1,39 +1,42 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PrimeFactorizationTest {
-    @ParameterizedTest
-    @ValueSource(ints = {2, 3, 5, 7, 11})
-    void shouldBeTrueCauseItsPrime(int number) {
-        Assertions.assertTrue(PrimeFactorization.isPrime(number));
-    }
-    @ParameterizedTest
-    @ValueSource(ints = {4, 0, 6,1})
-    void shouldBeFalseCauseItsNotPrime(int number) {
-        Assertions.assertFalse(PrimeFactorization.isPrime(number));
-    }
 
     @Test
-    void shouldDivisibleByTwo(){
+    void shouldDivisibleByTwo() {
         PrimeFactorization.isDivisibleByTwo(8);
-        Assertions.assertEquals(3,PrimeFactorization.getPrimes.size());
+        Assertions.assertEquals(3, PrimeFactorization.primes.size());
     }
 
     @Test
-    void shouldDivisibleByOddNumbers(){
+    void shouldDivisibleByOddNumbers() {
         PrimeFactorization.clearPrimeList();
-        PrimeFactorization.isDivisibleByOddNumbers(15);
-        Assertions.assertEquals( 2,PrimeFactorization.getPrimes.size());
+        PrimeFactorization.addPrimesToList(15);
+        Assertions.assertEquals(2, PrimeFactorization.primes.size());
     }
 
     @Test
-    void shouldBeGreaterThenTwoAndPrime(){
+    void shouldBeGreaterThenTwoAndPrime() {
         PrimeFactorization.clearPrimeList();
-        PrimeFactorization.isGreaterThanTwoPrime(11);
-        PrimeFactorization.isGreaterThanTwoPrime(3);
-        PrimeFactorization.isGreaterThanTwoPrime(113);
-        Assertions.assertEquals(3,PrimeFactorization.getPrimes.size());
+        PrimeFactorization.addRemainingPrimeToList(11);
+        PrimeFactorization.addRemainingPrimeToList(3);
+        PrimeFactorization.addRemainingPrimeToList(113);
+        Assertions.assertEquals(3, PrimeFactorization.primes.size());
+    }
+
+    @Test
+    void shouldGetAllDivisorPrimes() {
+        List<Integer> expectedPrimes = new ArrayList<>();
+        expectedPrimes.add(2);
+        expectedPrimes.add(2);
+        expectedPrimes.add(5);
+        expectedPrimes.add(5);
+        PrimeFactorization.clearPrimeList();
+        PrimeFactorization.printPrimes(100);
+        Assertions.assertEquals(expectedPrimes, PrimeFactorization.primes);
     }
 }

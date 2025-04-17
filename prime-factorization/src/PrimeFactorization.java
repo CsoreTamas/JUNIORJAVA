@@ -3,54 +3,43 @@ import java.util.List;
 
 public class PrimeFactorization {
     public static void main(String[] args) {
-        System.out.println(primes(100));
+        System.out.println(printPrimes(100));
     }
 
-    public static List<Integer> getPrimes = new ArrayList<>();
-
-    public static boolean isPrime(int number) {
-        if (number <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0){
-                return false;
-            }
-        }
-        return true;
-    }
+    public static List<Integer> primes = new ArrayList<>();
 
     public static void isDivisibleByTwo(int number) {
         while (number % 2 == 0) {
-            getPrimes.add(2);
+            primes.add(2);
             number /= 2;
         }
     }
 
-    public static void isDivisibleByOddNumbers(int number) {
+    public static void addPrimesToList(int number) {
         for (int i = 3; i <= number; i += 2) {
             while (number % i == 0) {
-                getPrimes.add(i);
+                primes.add(i);
                 number /= i;
             }
         }
     }
 
-    public static void isGreaterThanTwoPrime(int number) {
-        if (number > 2 && isPrime(number)) {
-            getPrimes.add(number);
+    public static void addRemainingPrimeToList(int number) {
+        int originalNumber = number;
+        if (number > 2 && number != originalNumber) {
+            primes.add(number);
         }
     }
 
-    public static List<Integer> primes (int number){
+    public static List<Integer> printPrimes(int number) {
         isDivisibleByTwo(number);
-        isDivisibleByOddNumbers(number);
-        isGreaterThanTwoPrime(number);
-        return getPrimes;
+        addPrimesToList(number);
+        addRemainingPrimeToList(number);
+        return primes;
     }
 
     public static void clearPrimeList() {
-        getPrimes.clear();
+        primes.clear();
     }
 }
 
