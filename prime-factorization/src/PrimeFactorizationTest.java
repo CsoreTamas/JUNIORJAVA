@@ -7,12 +7,6 @@ import java.util.List;
 public class PrimeFactorizationTest {
 
     @Test
-    void shouldDivisibleByTwo() {
-        PrimeFactorization.isDivisibleByTwo(8);
-        Assertions.assertEquals(3, PrimeFactorization.primes.size());
-    }
-
-    @Test
     void shouldDivisibleByOddNumbers() {
         PrimeFactorization.clearPrimeList();
         PrimeFactorization.addPrimesToList(15);

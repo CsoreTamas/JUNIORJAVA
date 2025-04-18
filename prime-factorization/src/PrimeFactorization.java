@@ -8,15 +8,8 @@ public class PrimeFactorization {
 
     public static List<Integer> primes = new ArrayList<>();
 
-    public static void isDivisibleByTwo(int number) {
-        while (number % 2 == 0) {
-            primes.add(2);
-            number /= 2;
-        }
-    }
-
     public static void addPrimesToList(int number) {
-        for (int i = 3; i <= number; i += 2) {
+        for (int i = 2; i <= number; i++) {
             while (number % i == 0) {
                 primes.add(i);
                 number /= i;
@@ -32,7 +25,6 @@ public class PrimeFactorization {
     }
 
     public static List<Integer> printPrimes(int number) {
-        isDivisibleByTwo(number);
         addPrimesToList(number);
         addRemainingPrimeToList(number);
         return primes;
