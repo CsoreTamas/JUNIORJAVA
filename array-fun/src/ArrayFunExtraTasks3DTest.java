@@ -20,6 +20,14 @@ public class ArrayFunExtraTasks3DTest {
     }
 
     @Test
+    void shouldCountIfItsPalindromes(){
+        String string = "racecar";
+        Assertions.assertEquals(1, ArrayFunExtraTasks3D.counter(string));
+        String str = "temple";
+        Assertions.assertEquals(0,ArrayFunExtraTasks3D.counter(str));
+    }
+
+    @Test
     void shouldCountTheSubSubArrayStrings() {
         String[][][] testArray = {
                 {

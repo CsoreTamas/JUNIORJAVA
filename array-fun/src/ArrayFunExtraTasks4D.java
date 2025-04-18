@@ -90,19 +90,12 @@ public class ArrayFunExtraTasks4D {
     }
 
     public static String getTheShortestString(String[][][][] array) {
-        //I tried to find the longest String and then search for shortest, but I couldn't cause if I did like:
-        //String shortestString = longestString; the shortest become an empty String
-        //If I tried to define before the last If statement I couldn't return it.
-        String longestSting = "";
-        String shortestString = "z".repeat(1000);
+        String shortestString = array[0][0][0][0];
         for (String[][][] subArray : array) {
             for (String[][] subSubArray : subArray) {
                 for (String[] subSubSubArray : subSubArray) {
                     for (String strings : subSubSubArray) {
-                        if (strings.length() > longestSting.length()) {
-                            longestSting = strings;
-                        }
-                        if (strings.length() < shortestString.length()){
+                        if (strings.length() < shortestString.length()) {
                             shortestString = strings;
                         }
                     }

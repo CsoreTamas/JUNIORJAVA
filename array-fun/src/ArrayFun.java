@@ -1,4 +1,6 @@
+import javax.xml.stream.events.Characters;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayFun {
     public static double getTheAverageOfEvenNumbers(int[] array) {
@@ -83,20 +85,22 @@ public class ArrayFun {
     }
 
     public static boolean isVowel(char ch) {
-        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U';
+        List<Character> chars = List.of('a', 'e', 'i', 'o', 'u');
+        return chars.contains(Character.toLowerCase(ch));
     }
 
     public static int calculateTheSumOfTheLengthsOfTheLongestStrings(String[][] array) {
         int result = 0;
         for (String[] strings : array) {
             String longestString = "";
-            longestString = getLongestString(strings, longestString);
+            longestString = getLongestString(strings);
             result += longestString.length();
         }
         return result;
     }
 
-    public static String getLongestString(String[] strings, String longestString) {
+    public static String getLongestString(String[] strings) {
+        String longestString = "";
         for (String string : strings) {
             if (string.length() > longestString.length()) {
                 longestString = string;

@@ -7,11 +7,17 @@ public class ArrayFunExtraTasks3D {
         for (String[][] subArray : array) {
             for (String[] subSubArray : subArray) {
                 for (String strings : subSubArray) {
-                    if (strings.contentEquals(new StringBuilder(strings).reverse())) {
-                        numberOfPalindromes++;
-                    }
+                    numberOfPalindromes += counter(strings);
                 }
             }
+        }
+        return numberOfPalindromes;
+    }
+
+    public static int counter(String string) {
+        int numberOfPalindromes = 0;
+        if (string.contentEquals(new StringBuilder(string).reverse())) {
+            numberOfPalindromes++;
         }
         return numberOfPalindromes;
     }
@@ -70,11 +76,12 @@ public class ArrayFunExtraTasks3D {
         for (String[][] subArray : array) {
             for (String[] subSubArray : subArray) {
                 boolean haveSAtTheEnd = false;
-                for (String strings : subSubArray)
+                for (String strings : subSubArray) {
                     if (strings.endsWith("s")) {
                         haveSAtTheEnd = true;
                         break;
                     }
+                }
                 if (!haveSAtTheEnd) {
                     return false;
                 }
