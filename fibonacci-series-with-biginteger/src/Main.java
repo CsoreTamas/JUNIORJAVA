@@ -24,11 +24,11 @@ public class Main {
 
         // number           .compareTo                  (BigInteger.ZERO)                              == 0
         // the number       is compare       to      primitive 0 converted to an Object                are equal?
-        if (number.compareTo(BigInteger.ZERO) == 0) {
+        if (number.equals(BigInteger.ZERO)) {
             return zero;
         }
         // == 0 means the number and the BigInteger.ONE(meaning 1) should be equal to
-        if (number.compareTo(BigInteger.ONE) == 0) {
+        if (number.equals(BigInteger.ONE)) {
             return one;
         }
         // If :
