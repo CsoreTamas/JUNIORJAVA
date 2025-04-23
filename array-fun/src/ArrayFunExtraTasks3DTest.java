@@ -20,11 +20,11 @@ public class ArrayFunExtraTasks3DTest {
     }
 
     @Test
-    void shouldCountIfItsPalindromes(){
+    void shouldDecideIsPalindrome(){
         String string = "racecar";
-        Assertions.assertEquals(1, ArrayFunExtraTasks3D.counter(string));
+        Assertions.assertTrue(ArrayFunExtraTasks3D.isPalindrome(string));
         String str = "temple";
-        Assertions.assertEquals(0,ArrayFunExtraTasks3D.counter(str));
+        Assertions.assertFalse(ArrayFunExtraTasks3D.isPalindrome(str));
     }
 
     @Test

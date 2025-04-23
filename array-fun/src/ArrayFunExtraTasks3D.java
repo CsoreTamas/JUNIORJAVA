@@ -7,19 +7,17 @@ public class ArrayFunExtraTasks3D {
         for (String[][] subArray : array) {
             for (String[] subSubArray : subArray) {
                 for (String strings : subSubArray) {
-                    numberOfPalindromes += counter(strings);
+                   if (isPalindrome(strings)){
+                       numberOfPalindromes++;
+                   }
                 }
             }
         }
         return numberOfPalindromes;
     }
 
-    public static int counter(String string) {
-        int numberOfPalindromes = 0;
-        if (string.contentEquals(new StringBuilder(string).reverse())) {
-            numberOfPalindromes++;
-        }
-        return numberOfPalindromes;
+    public static boolean isPalindrome(String string) {
+        return string.contentEquals(new StringBuilder(string).reverse());
     }
 
     public static int[] countStringsInSubSubArray(String[][][] array) {

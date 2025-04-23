@@ -94,9 +94,9 @@ public class ArrayFunExtraTasks4D {
         for (String[][][] subArray : array) {
             for (String[][] subSubArray : subArray) {
                 for (String[] subSubSubArray : subSubArray) {
-                    for (String strings : subSubSubArray) {
-                        if (strings.length() < shortestString.length()) {
-                            shortestString = strings;
+                    for (String currentString : subSubSubArray) {
+                        if (currentString.length() < shortestString.length()) {
+                            shortestString = currentString;
                         }
                     }
                 }
