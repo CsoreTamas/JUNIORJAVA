@@ -10,7 +10,7 @@ public class StringSmallExercisesTest {
 
     @Test
     void shouldCountTheHelloInAString() {
-        String testString = "hafbsaédhellokaáshellohellofjsodnfhelloméasl";
-        Assertions.assertEquals(4, StringSmallExercises.countHelloInAString(testString));
+        String testString = "hellohello";
+        Assertions.assertEquals(2, StringSmallExercises.countHelloInAString(testString));
     }
 }

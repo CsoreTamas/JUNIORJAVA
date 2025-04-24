@@ -1,6 +1,6 @@
 public class StringSmallExercises {
     public static void main(String[] args) {
-        System.out.println(countHelloInAString("hellohello"));
+        System.out.println(countHelloInAString("zdfgkhjjgfzgugiho"));
     }
 
     //returns the occurrence of the 'B' character. For example:
@@ -27,6 +27,8 @@ public class StringSmallExercises {
             if (string.substring(index, index + 5).equals("hello")) {
                 count++;
                 index += 5;
+            } else {
+                index++;
             }
         }
         return count;
