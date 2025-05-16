@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1bb97d0f-fc1e-43d8-b700-5a14f5750819" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorld/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Loopsbasictask2/src/LoopBasicTasksTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Loopsbasictask2/src/LoopBasicTasksTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/array4d/ArrayFunExtraTasks4D.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/array4d/ArrayFunExtraTasks4D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/array4d/ArrayFunExtraTasks4DTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/array4d/ArrayFunExtraTasks4DTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/onedimensionalarray/ArrayFun.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/onedimensionalarray/ArrayFun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/onedimensionalarray/ArrayFunTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/onedimensionalarray/ArrayFunTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/threedimensionalarray/ArrayFunExtraTasks3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/threedimensionalarray/ArrayFunExtraTasks3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/threedimensionalarray/ArrayFunExtraTasks3DTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/threedimensionalarray/ArrayFunExtraTasks3DTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/FirstLargeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/FirstLargeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/FirstLargeTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/FirstLargeTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/SecondLargeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/SecondLargeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/SecondLargeTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/SecondLargeTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/ThirdLargeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/ThirdLargeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/ThirdLargeTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/ThirdLargeTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/FirstMediumTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/FirstMediumTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/ForthMediumTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/ForthMediumTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/ForthMediumTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/ForthMediumTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/SecondMediumTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/SecondMediumTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/SecondMediumTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/SecondMediumTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/ThirdMediumTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/ThirdMediumTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/ThirdMediumTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/ThirdMediumTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/small/FirstTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/small/FirstTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/small/ForthTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/small/ForthTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/small/SecondTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/small/SecondTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/small/ThirdTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/small/ThirdTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop10.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop11.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop12.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/TenFirstPowerOfTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/TenFirstPowerOfTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequenceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequenceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tip-calculator/src/TipAmountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tip-calculator/src/TipAmountTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2wwIwOnq9Jse4FhOCP92z6SG4Pd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.FifthTask.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FirstTask.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ForthTask.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SecondTask.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThirdTask.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.FifthTaskTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.FifthTaskTest.shouldDecideIsPrime.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FifthTaskTest.shouldDecideValidOrNot.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FifthTaskTest.shouldGetEveryPrimesUpToNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FifthTaskTest.shouldGetEverySecondPrime.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ForthTaskTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ForthTaskTest.shouldArraySizeUnder100.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/langifruzsina/JUNIORJAVA/csore-tamas/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.FifthTaskTest">
+    <configuration name="FifthTaskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csore-tamas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FifthTaskTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FifthTaskTest.shouldDecideIsPrime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csore-tamas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FifthTaskTest" />
+      <option name="METHOD_NAME" value="shouldDecideIsPrime" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FifthTaskTest.shouldGetEveryPrimesUpToNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csore-tamas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FifthTaskTest" />
+      <option name="METHOD_NAME" value="shouldGetEveryPrimesUpToNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FifthTaskTest.shouldGetEverySecondPrime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csore-tamas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FifthTaskTest" />
+      <option name="METHOD_NAME" value="shouldGetEverySecondPrime" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ForthTaskTest.shouldArraySizeUnder100" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csore-tamas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ForthTaskTest" />
+      <option name="METHOD_NAME" value="shouldArraySizeUnder100" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ForthTaskTest.shouldArraySizeUnder100" />
+        <item itemvalue="JUnit.FifthTaskTest" />
+        <item itemvalue="JUnit.FifthTaskTest.shouldGetEverySecondPrime" />
+        <item itemvalue="JUnit.FifthTaskTest.shouldGetEveryPrimesUpToNumber" />
+        <item itemvalue="JUnit.FifthTaskTest.shouldDecideIsPrime" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1bb97d0f-fc1e-43d8-b700-5a14f5750819" name="Changes" comment="" />
+      <created>1746946446526</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746946446526</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/csore_tamas$FifthTaskTest.ic" NAME="FifthTaskTest Coverage Results" MODIFIED="1746951163701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="98b7d316-7978-472e-9ac2-b2959c276ab4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorld/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Loopsbasictask2/src/LoopBasicTasksTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Loopsbasictask2/src/LoopBasicTasksTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/array4d/ArrayFunExtraTasks4D.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/array4d/ArrayFunExtraTasks4D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/array4d/ArrayFunExtraTasks4DTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/array4d/ArrayFunExtraTasks4DTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/onedimensionalarray/ArrayFun.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/onedimensionalarray/ArrayFun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/onedimensionalarray/ArrayFunTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/onedimensionalarray/ArrayFunTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/threedimensionalarray/ArrayFunExtraTasks3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/threedimensionalarray/ArrayFunExtraTasks3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array-fun/src/threedimensionalarray/ArrayFunExtraTasks3DTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array-fun/src/threedimensionalarray/ArrayFunExtraTasks3DTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/FirstLargeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/FirstLargeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/FirstLargeTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/FirstLargeTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/SecondLargeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/SecondLargeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/SecondLargeTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/SecondLargeTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/ThirdLargeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/ThirdLargeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/large/ThirdLargeTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/large/ThirdLargeTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/FirstMediumTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/FirstMediumTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/ForthMediumTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/ForthMediumTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/ForthMediumTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/ForthMediumTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/SecondMediumTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/SecondMediumTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/SecondMediumTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/SecondMediumTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/ThirdMediumTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/ThirdMediumTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/medium/ThirdMediumTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/medium/ThirdMediumTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/small/FirstTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/small/FirstTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/small/ForthTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/small/ForthTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/small/SecondTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/small/SecondTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exem-practice/src/small/ThirdTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exem-practice/src/small/ThirdTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop10.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop11.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop12.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/TenFirstPowerOfTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/TenFirstPowerOfTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequenceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequenceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tip-calculator/src/TipAmountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tip-calculator/src/TipAmountTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2vlXWkgOCoRILZEOR9t7oZt3ooo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CodeReading4.executor": "Debug",
+    "Application.CodeReading5.executor": "Run",
+    "Application.RecamansSequence.executor": "Run",
+    "Application.main.executor": "Run",
+    "Application.practice.executor": "Debug",
+    "Application.test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "/Users/langifruzsina/JUNIORJAVA/practice/src/Main.java",
+    "settings.editor.selected.configurable": "settings.sync"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.practice">
+    <configuration name="RecamansSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RecamansSequence" />
+      <module name="practice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="practice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="practice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practice" />
+      <module name="practice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.practice" />
+        <item itemvalue="Application.main" />
+        <item itemvalue="Application.RecamansSequence" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98b7d316-7978-472e-9ac2-b2959c276ab4" name="Changes" comment="" />
+      <created>1744720667693</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744720667693</updated>
+    </task>
+    <servers />
+  </component>
+</project>

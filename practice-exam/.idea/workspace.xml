@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25081309-8ceb-4834-81e4-3540fddcecb2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../HelloWorld/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloWorld/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Loopsbasictask2/src/LoopBasicTasksTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Loopsbasictask2/src/LoopBasicTasksTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop10.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop11.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop12.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/ForLoop12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loopbasictasks/src/TenFirstPowerOfTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loopbasictasks/src/TenFirstPowerOfTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequenceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../recamans-sequence/src/RecamansSequenceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tip-calculator/src/TipAmountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tip-calculator/src/TipAmountTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2wIry4qIQGzSdnzaEDfDoxkbJqu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.FifthTask.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.FirstTask.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FourthTask.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SecondTask.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.FifthTaskTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.FifthTaskTest.shouldAddEveryThirdNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FourthTaskTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FourthTaskTest.shouldCalculateTheStrangeSum.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/langifruzsina/JUNIORJAVA/practice-exam/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.FourthTask">
+    <configuration name="FourthTask" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FourthTask" />
+      <module name="practice-exam" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FifthTaskTest.shouldAddEveryThirdNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="practice-exam" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FifthTaskTest" />
+      <option name="METHOD_NAME" value="shouldAddEveryThirdNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FourthTaskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="practice-exam" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FourthTaskTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FourthTaskTest.shouldCalculateTheStrangeSum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="practice-exam" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FourthTaskTest" />
+      <option name="METHOD_NAME" value="shouldCalculateTheStrangeSum" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FifthTaskTest.shouldAddEveryThirdNumber" />
+        <item itemvalue="Application.FourthTask" />
+        <item itemvalue="JUnit.FourthTaskTest" />
+        <item itemvalue="JUnit.FourthTaskTest.shouldCalculateTheStrangeSum" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25081309-8ceb-4834-81e4-3540fddcecb2" name="Changes" comment="" />
+      <created>1745740179921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745740179921</updated>
+    </task>
+    <servers />
+  </component>
+</project>
