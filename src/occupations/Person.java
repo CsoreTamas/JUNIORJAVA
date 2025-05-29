@@ -2,6 +2,7 @@ package occupations;
 
 public class Person {
     private int age;
+
     private String name;
     private Gender gender;
 
@@ -18,11 +19,11 @@ public class Person {
     }
 
     public void introduce() {
-        System.out.printf("My name is " + name + ". I am " + age + " old. I am a " + gender + ".");
+        System.out.printf("My name is %s. I am %d years old. I am a %s.", name, age, gender.name().toLowerCase());
     }
 
     public void printGoal() {
-        System.out.println("My goal is to be happy in the future.");
+        System.out.println(" My goal is to be happy in the future.");
     }
 
     public int getAge() {

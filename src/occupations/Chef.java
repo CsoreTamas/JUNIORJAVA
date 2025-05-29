@@ -26,11 +26,11 @@ public class Chef extends Person {
     }
 
     public void cook() {
-        System.out.printf(getName() + " has cooked some " + food);
+        System.out.printf("%s has cooked some %s", getName(), food);
     }
 
     @Override
     public void introduce() {
-        System.out.printf("My name is " + getName() + ". I am " + getAge() + " old. I am a " + getGender() + " and a Chef. ");
+        System.out.printf("My name is %s. I am %d years old. I am %s and a Chef!", getName(), getAge(), getGender().name().toLowerCase());
     }
 }
