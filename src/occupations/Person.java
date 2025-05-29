@@ -18,7 +18,7 @@ public class Person {
     }
 
     public void introduce() {
-        System.out.println("My name is " + name + ". I am " + age + " old. I am a " + gender + ".");
+        System.out.printf("My name is " + name + ". I am " + age + " old. I am a " + gender + ".");
     }
 
     public void printGoal() {
