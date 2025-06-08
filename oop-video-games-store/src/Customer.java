@@ -9,7 +9,7 @@ public class Customer {
     public Customer(String name, double walletBalance) {
         this.name = name;
         this.walletBalance = walletBalance;
-        this.ownedGames = new ArrayList();
+        this.ownedGames = new ArrayList<>();
     }
 
     public String getName() {
@@ -51,7 +51,7 @@ public class Customer {
             sb.append("You don't have any games.");
         }
 
-        for(Game game : this.ownedGames) {
+        for (Game game : this.ownedGames) {
             sb.append(game.getTitle()).append(", ").append("\n");
         }
 
