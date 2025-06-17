@@ -51,7 +51,7 @@ public class Customer {
             sb.append("You don't have any games.");
         }
 
-        for (Game game : this.ownedGames) {
+        for(Game game : this.ownedGames) {
             sb.append(game.getTitle()).append(", ").append("\n");
         }
 

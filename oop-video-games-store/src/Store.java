@@ -5,7 +5,6 @@ public class Store {
     private final List<Game> availableGames = new ArrayList<>();
     private final List<Customer> registeredCustomers = new ArrayList<>();
 
-
     public void addGame(Game game) {
         this.availableGames.add(game);
     }
@@ -17,13 +16,14 @@ public class Store {
     public void listAvailableGames() {
         System.out.println("Available games:");
 
-        for (Game game : this.availableGames) {
+        for(Game game : this.availableGames) {
             System.out.print(game);
         }
+
     }
 
     public Game findGameByTitle(String title) {
-        for (Game game : this.availableGames) {
+        for(Game game : this.availableGames) {
             if (game.getTitle().equals(title)) {
                 return game;
             }
@@ -39,7 +39,7 @@ public class Store {
     }
 
     public Customer findCustomerByName(String name) {
-        for (Customer customer : this.registeredCustomers) {
+        for(Customer customer : this.registeredCustomers) {
             if (customer.getName().equals(name)) {
                 return customer;
             }
@@ -51,7 +51,7 @@ public class Store {
     public void listCustomers() {
         System.out.println("Registered customers:");
 
-        for (Customer customer : this.registeredCustomers) {
+        for(Customer customer : this.registeredCustomers) {
             System.out.print(customer);
         }
 
