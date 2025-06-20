@@ -1,16 +1,16 @@
-package usercomment;
+package user;
 
 import java.util.Objects;
 
-public class UserComment {
+public class User {
     private String name;
     private String email;
     private String comment;
 
-    public UserComment() {
+    public User() {
     }
 
-    public UserComment(String name, String email, String comment) {
+    public User(String name, String email, String comment) {
         this.name = name;
         this.email = email;
         this.comment = comment;
@@ -48,7 +48,7 @@ public class UserComment {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        UserComment that = (UserComment) o;
+        User that = (User) o;
         return Objects.equals(name, that.name) && Objects.equals(email, that.email) && Objects.equals(comment, that.comment);
     }
 
