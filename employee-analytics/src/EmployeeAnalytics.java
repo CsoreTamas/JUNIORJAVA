@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeAnalytics {
 
@@ -11,7 +12,7 @@ public class EmployeeAnalytics {
     }
 
     public static double calculateAverageOfEach(Employee employee) {
-        ArrayList<Integer> hours = employee.getHoursADay();
+        List<Integer> hours = employee.getHoursADay();
         int total = 0;
         for (int hour : hours) {
             total += hour;
@@ -19,9 +20,9 @@ public class EmployeeAnalytics {
         return (double) total / hours.size();
     }
 
-    public static ArrayList<String> getAverageByDepartments(ArrayList<Employee> employees) {
-        ArrayList<String> departments = new ArrayList<>();
-        ArrayList<String> result = new ArrayList<>();
+    public static List<String> getAverageByDepartments(List<Employee> employees) {
+        List<String> departments = new ArrayList<>();
+        List<String> result = new ArrayList<>();
         for (Employee emp : employees) {
             if (!departments.contains(emp.getDepartment())) {
                 departments.add(emp.getDepartment());
@@ -43,7 +44,7 @@ public class EmployeeAnalytics {
         return result;
     }
 
-    public static Employee searchTheMostDiligentEmployee(ArrayList<Employee> employees) {
+    public static Employee searchTheMostDiligentEmployee(List<Employee> employees) {
         Employee topEmployee = null;
         int highest = 0;
         for (Employee emp : employees) {
@@ -55,7 +56,7 @@ public class EmployeeAnalytics {
         return topEmployee;
     }
 
-    public static ArrayList<String> searchTheMostDiligentEmployeeByDepartment(ArrayList<Employee> employees) {
+    public static ArrayList<String> searchTheMostDiligentEmployeeByDepartment(List<Employee> employees) {
         ArrayList<String> departments = new ArrayList<>();
         ArrayList<String> result = new ArrayList<>();
 

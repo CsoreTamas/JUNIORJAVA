@@ -1,21 +1,21 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Employee {
     private String name;
     private String department;
     private ArrayList<String> day;
-    private ArrayList<Integer> hoursADay;
+    private List<Integer> hoursADay;
 
     Employee() {
     }
 
-    Employee(String firstName, String department, ArrayList<String> day, ArrayList<Integer> hoursADay) {
+    Employee(String firstName, String department, ArrayList<String> day, List<Integer> hoursADay) {
         this.name = firstName;
         this.department = department;
         this.day = day;
         this.hoursADay = hoursADay;
-
     }
 
     public String getName() {
@@ -26,11 +26,11 @@ public class Employee {
         this.name = name;
     }
 
-    public ArrayList<Integer> getHoursADay() {
+    public List<Integer> getHoursADay() {
         return hoursADay;
     }
 
-    public void setHoursADay(ArrayList<Integer> hoursADay) {
+    public void setHoursADay(List<Integer> hoursADay) {
         this.hoursADay = hoursADay;
     }
 

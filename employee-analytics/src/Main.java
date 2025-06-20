@@ -1,7 +1,7 @@
-
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -26,7 +26,7 @@ public class Main {
         System.out.println("--------------------------------------");
 
         //Determine the average weekly hours in each department
-        ArrayList<String> departmentsAverage = EmployeeAnalytics.getAverageByDepartments(employees);
+        List<String> departmentsAverage = EmployeeAnalytics.getAverageByDepartments(employees);
         for (String line : departmentsAverage) {
             System.out.println(line);
         }
