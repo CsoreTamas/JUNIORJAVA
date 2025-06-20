@@ -32,6 +32,7 @@ public class Game {
     }
 
     public String toString() {
-        return "Title: " + this.title + " , Genre: " + this.genre + " , Price: " + this.price + " Forint , In stock: " + (this.inStock ? "Yes" : "No") + "\n";
+        return String.format("Title: %s , Genre: %s , Price: %s Forint. , In stock: %s%n", this.title, this.genre, this.price, (this.inStock ? "Yes" : "No"));
+        // return "Title: " + this.title + " , Genre: " + this.genre + " , Price: " + this.price + " Forint , In stock: " + (this.inStock ? "Yes" : "No") + "\n";
     }
 }

@@ -13,19 +13,31 @@ public class Store {
         this.registeredCustomers.add(customer);
     }
 
-    public void listAvailableGames() {
+    public List<Game> listAvailableGames() {
         System.out.println("Available games:");
-
-        for(Game game : this.availableGames) {
-            System.out.print(game);
+        List<Game> result = new ArrayList<>();
+        for (Game game : this.availableGames) {
+            if (game.isInStock()) {
+                result.add(game);
+            }
         }
-
+        return result;
     }
 
     public Game findGameByTitle(String title) {
-        for(Game game : this.availableGames) {
+        for (Game game : this.availableGames) {
             if (game.getTitle().equals(title)) {
                 return game;
+            }
+        }
+
+        return null;
+    }
+
+    public Customer findCustomerByName(String name) {
+        for (Customer customer : this.registeredCustomers) {
+            if (customer.getName().equals(name)) {
+                return customer;
             }
         }
 
@@ -38,22 +50,13 @@ public class Store {
         customer.purchaseGame(game);
     }
 
-    public Customer findCustomerByName(String name) {
-        for(Customer customer : this.registeredCustomers) {
-            if (customer.getName().equals(name)) {
-                return customer;
-            }
-        }
-
-        return null;
-    }
-
-    public void listCustomers() {
+    public List<Customer> listCustomers() {
         System.out.println("Registered customers:");
-
-        for(Customer customer : this.registeredCustomers) {
-            System.out.print(customer);
+        List<Customer> result = new ArrayList<>();
+        for (Customer customer : this.registeredCustomers) {
+            result.add(customer);
+            System.out.println(customer);
         }
-
+        return result;
     }
 }
