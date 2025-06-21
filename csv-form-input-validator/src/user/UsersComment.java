@@ -2,15 +2,15 @@ package user;
 
 import java.util.Objects;
 
-public class User {
+public class UsersComment {
     private String name;
     private String email;
     private String comment;
 
-    public User() {
+    public UsersComment() {
     }
 
-    public User(String name, String email, String comment) {
+    public UsersComment(String name, String email, String comment) {
         this.name = name;
         this.email = email;
         this.comment = comment;
@@ -48,7 +48,7 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        User that = (User) o;
+        UsersComment that = (UsersComment) o;
         return Objects.equals(name, that.name) && Objects.equals(email, that.email) && Objects.equals(comment, that.comment);
     }
 

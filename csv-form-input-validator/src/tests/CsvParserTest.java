@@ -1,34 +1,35 @@
 package tests;
 
 import csvparser.CsvParser;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import user.User;
+import user.UsersComment;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CsvParserTest {
     @Test
     void shouldReadCsvFile() throws IOException {
         Path expected = Path.of("/Users/csoretamas/files/csvparserXXS.csv");
-        List<User> expectedList = CsvParser.reader(expected);
+        List<UsersComment> expectedList = CsvParser.reader(expected);
 
-        ArrayList<User> result = new ArrayList<>();
+        List<UsersComment> result = new ArrayList<>();
 
-        User johnDoe = new User("Invalid name", "john@example.com", "Hello world!");
+        UsersComment johnDoe = new UsersComment("Invalid name", "john@example.com", "Hello world!");
         result.add(johnDoe);
-        User peterParker = new User("Invalid name", "peter@parker.com", "Invalid comment");
+        UsersComment peterParker = new UsersComment("Invalid name", "peter@parker.com", "Invalid comment");
         result.add(peterParker);
-        User script = new User("Invalid name", "bad@data.com", "Invalid comment");
+        UsersComment script = new UsersComment("Invalid name", "bad@data.com", "Invalid comment");
         result.add(script);
-        User alice = new User("alice", "Invalid e-mail", "Just a comment");
+        UsersComment alice = new UsersComment("alice", "Invalid e-mail", "Just a comment");
         result.add(alice);
-        User bob = new User("bob", "bob@example.com", "Invalid comment");
+        UsersComment bob = new UsersComment("bob", "bob@example.com", "Invalid comment");
         result.add(bob);
 
-        Assertions.assertEquals(expectedList, result);
+        assertEquals(expectedList, result);
     }
 }

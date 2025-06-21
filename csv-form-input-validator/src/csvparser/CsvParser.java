@@ -1,7 +1,7 @@
 package csvparser;
 
 import inputsanitization.InputSanitization;
-import user.User;
+import user.UsersComment;
 import validators.CommentValidator;
 import validators.EmailValidator;
 import validators.UsernameValidator;
@@ -14,19 +14,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CsvParser {
-    public static List<User> reader(Path path) throws IOException {
+    public static List<UsersComment> reader(Path path) throws IOException {
         List<String> fileReader = Files.readAllLines(path);
-        ArrayList<User> userComments = new ArrayList<>();
+        List<UsersComment> usersComment = new ArrayList<>();
 
         for (int i = 1; i < fileReader.size(); i++) {
             String[] lines = fileReader.get(i).split(",");
-            User user = isValid(lines);
-            userComments.add(user);
+            UsersComment user = sanitizeAndValidateUserInput(lines);
+            usersComment.add(user);
         }
-        return userComments;
+        return usersComment;
     }
 
-    public static User isValid(String[] lines) {
+    public static UsersComment sanitizeAndValidateUserInput(String[] lines) {
         Validator<String> usernameValidator = new UsernameValidator();
         Validator<String> emailValidator = new EmailValidator();
         Validator<String> commentValidator = new CommentValidator();
@@ -35,7 +35,7 @@ public class CsvParser {
         String email = InputSanitization.sanitize(lines[1]);
         String comment = InputSanitization.sanitize(lines[2]);
 
-        User user = new User();
+        UsersComment user = new UsersComment();
 
         if (usernameValidator.isValid(lines[0])) {
             user.setName(name);
