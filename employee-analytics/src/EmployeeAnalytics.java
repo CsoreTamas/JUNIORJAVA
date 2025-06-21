@@ -56,9 +56,9 @@ public class EmployeeAnalytics {
         return topEmployee;
     }
 
-    public static ArrayList<String> searchTheMostDiligentEmployeeByDepartment(List<Employee> employees) {
-        ArrayList<String> departments = new ArrayList<>();
-        ArrayList<String> result = new ArrayList<>();
+    public static List<String> searchTheMostDiligentEmployeeByDepartment(List<Employee> employees) {
+        List<String> departments = new ArrayList<>();
+        List<String> result = new ArrayList<>();
 
         for (Employee employee : employees) {
             if (!departments.contains(employee.getDepartment())) {

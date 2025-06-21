@@ -5,13 +5,13 @@ import java.util.Objects;
 public class Employee {
     private String name;
     private String department;
-    private ArrayList<String> day;
+    private List<String> day;
     private List<Integer> hoursADay;
 
     Employee() {
     }
 
-    Employee(String firstName, String department, ArrayList<String> day, List<Integer> hoursADay) {
+    Employee(String firstName, String department, List<String> day, List<Integer> hoursADay) {
         this.name = firstName;
         this.department = department;
         this.day = day;
@@ -42,11 +42,11 @@ public class Employee {
         this.department = department;
     }
 
-    public ArrayList<String> getDay() {
+    public List<String> getDay() {
         return day;
     }
 
-    public void setDay(ArrayList<String> day) {
+    public void setDay(List<String> day) {
         this.day = day;
     }
 

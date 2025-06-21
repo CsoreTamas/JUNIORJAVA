@@ -6,9 +6,9 @@ import java.util.List;
 
 
 public class FileReader {
-    public static ArrayList<Employee> reader(Path path) throws IOException {
+    public static List<Employee> reader(Path path) throws IOException {
         List<String> fileReader = Files.readAllLines(path);
-        ArrayList<Employee> employees = new ArrayList<>();
+        List<Employee> employees = new ArrayList<>();
         String[] headers = fileReader.get(0).split(",");
 
         for (int i = 1; i < fileReader.size(); i++) {
@@ -18,8 +18,8 @@ public class FileReader {
             }
 
             String[] data = fileReader.get(i).split(",");
-            ArrayList<Integer> hours = new ArrayList<>();
-            ArrayList<String> days = new ArrayList<>();
+            List<Integer> hours = new ArrayList<>();
+            List<String> days = new ArrayList<>();
 
             for (int j = 2; j < data.length; j++) {
                 days.add(headers[j]);

@@ -1,11 +1,10 @@
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        ArrayList<Employee> employees = FileReader.reader(Path.of("/Users/csoretamas/files/employee_hours.csv"));
+        List<Employee> employees = FileReader.reader(Path.of("/Users/csoretamas/files/employee_hours.csv"));
 
         for (Employee emp : employees) {
             System.out.println(emp);
@@ -40,7 +39,7 @@ public class Main {
         System.out.println("--------------------------------------");
 
         //Identify the employee with the highest total hours in each department
-        ArrayList<String> result = EmployeeAnalytics.searchTheMostDiligentEmployeeByDepartment(employees);
+        List<String> result = EmployeeAnalytics.searchTheMostDiligentEmployeeByDepartment(employees);
         for (String emp : result) {
             System.out.println(emp);
         }
