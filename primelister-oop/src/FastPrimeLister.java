@@ -3,29 +3,29 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FastPrimeLister implements PrimeLister {
+    static boolean[] sieve = new boolean[Integer.MAX_VALUE];
+
     @Override
     public List<Integer> generatePrimes(int number) {
+        if (sieve.length <= number) {
+            System.err.println("Oops!");
+        }
         List<Integer> primes = new ArrayList<>();
-        //create a boolean array up to number
-        boolean[] prime = new boolean[number + 1];
-        //fill with true.
-        Arrays.fill(prime, true);
-        //the first two element are false cause 0 and 1 is not prime.
-        prime[0] = false;
-        prime[1] = false;
-
+        sieve[0] = false;
+        sieve[1] = false;
+        Arrays.fill(sieve, true);
 
         for (int i = 2; i * i <= number; i++) {
-            if (prime[i]) { // i stays true
+            if (sieve[i]) { // i stays true
                 //All multiples of 'i' are marked as false (not prime).
                 for (int j = i * i; j <= number; j += i) {
-                    prime[j] = false;
+                    sieve[j] = false;
                 }
             }
         }
         //than we can fill the List with the true indexes.
         for (int i = 2; i <= number; i++) {
-            if (prime[i]) {
+            if (sieve[i]) {
                 primes.add(i);
             }
         }
