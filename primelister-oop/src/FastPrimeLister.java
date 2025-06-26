@@ -3,7 +3,31 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FastPrimeLister implements PrimeLister {
-    static boolean[] sieve = new boolean[Integer.MAX_VALUE];
+    static int max = 1_000_000;
+    static boolean[] sieve = new boolean[max + 1];
+    static List<Integer> primesUpToIntegerMax = new ArrayList<>();
+
+    static {
+        Arrays.fill(sieve, true);
+        sieve[0] = false;
+        sieve[1] = false;
+
+        for (int i = 2; i * i <= max; i++) {
+            if (sieve[i]) { // i stays true
+                //All multiples of 'i' are marked as false (not prime).
+                for (int j = i * i; j <= max; j += i) {
+                    sieve[j] = false;
+                }
+            }
+        }
+        //than we can fill the List with the true indexes until Integer.MAX_VALUE
+        for (int i = 2; i <= max; i++) {
+            if (sieve[i]) {
+                primesUpToIntegerMax.add(i);
+            }
+        }
+    }
+
 
     @Override
     public List<Integer> generatePrimes(int number) {
@@ -11,23 +35,13 @@ public class FastPrimeLister implements PrimeLister {
             System.err.println("Oops!");
         }
         List<Integer> primes = new ArrayList<>();
-        sieve[0] = false;
-        sieve[1] = false;
-        Arrays.fill(sieve, true);
 
-        for (int i = 2; i * i <= number; i++) {
-            if (sieve[i]) { // i stays true
-                //All multiples of 'i' are marked as false (not prime).
-                for (int j = i * i; j <= number; j += i) {
-                    sieve[j] = false;
-                }
+        //than we go until number.
+        for (int prime : primesUpToIntegerMax) {
+            if (prime > number) {
+                break;
             }
-        }
-        //than we can fill the List with the true indexes.
-        for (int i = 2; i <= number; i++) {
-            if (sieve[i]) {
-                primes.add(i);
-            }
+            primes.add(prime);
         }
         return primes;
     }
