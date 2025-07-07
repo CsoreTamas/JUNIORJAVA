@@ -1,0 +1,125 @@
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class SensorAnalyzerTest {
+    @Test
+    void shouldGetAverageOfReadings() {
+
+        Sensor tempActualSensor = new TemperatureSensor("temp sensor");
+        tempActualSensor.addReading(new Reading(20, LocalTime.of(8, 0)));
+        tempActualSensor.addReading(new Reading(10, LocalTime.of(9, 0)));
+        tempActualSensor.addReading(new Reading(15, LocalTime.of(10, 0)));
+        tempActualSensor.addReading(new Reading(25, LocalTime.of(11, 0)));
+        tempActualSensor.addReading(new Reading(30, LocalTime.of(12, 0)));
+
+        assertEquals(20, SensorAnalyzer.getAverageOfReadings(tempActualSensor));
+    }
+
+    @Test
+    void shouldListSensorsAboveThreshold() {
+        List<Sensor> sensorList = new ArrayList<>();
+
+        Sensor humSensorInSide = new HumiditySensor("Inside");
+        humSensorInSide.addReading(new Reading(50, LocalTime.of(12, 0)));
+        sensorList.add(humSensorInSide);
+
+        Sensor humSensorOutSide = new HumiditySensor("Outside");
+        humSensorOutSide.addReading(new Reading(75, LocalTime.of(12, 0)));
+        sensorList.add(humSensorOutSide);
+
+        Sensor humSensorFarAway = new HumiditySensor("Faraway");
+        humSensorFarAway.addReading(new Reading(63, LocalTime.of(12, 0)));
+        sensorList.add(humSensorFarAway);
+
+        List<Sensor> expectedList = List.of(humSensorOutSide, humSensorFarAway);
+
+        assertEquals(expectedList, SensorAnalyzer.getSensorsAboveSThreshold(sensorList, 50, SensorType.HUMIDITY));
+    }
+
+    @Test
+    void shouldSearchHighestReaderSensor() {
+        List<Sensor> sensors = new ArrayList<>();
+
+        Sensor tempIn = new TemperatureSensor("tempin");
+        tempIn.addReading(new Reading(20, LocalTime.of(12, 0)));
+        sensors.add(tempIn);
+
+        Sensor tempOut = new TemperatureSensor("tempout");
+        tempOut.addReading(new Reading(21, LocalTime.of(12, 0)));
+        sensors.add(tempOut);
+
+        Sensor tempAnywhere = new TemperatureSensor("anywhere");
+        tempAnywhere.addReading(new Reading(22, LocalTime.of(12, 0)));
+        sensors.add(tempAnywhere);
+
+        List<Reading> expectedList = new ArrayList<>();
+        Sensor expected = new SensorWithSingleReading("anywhere", SensorType.TEMPERATURE, expectedList);
+        Reading reading = new Reading(22, LocalTime.of(12, 0));
+        expectedList.add(reading);
+
+        assertEquals(expected, SensorAnalyzer.getSensorWithHighestLatestReading(sensors, SensorType.TEMPERATURE));
+    }
+
+    @Test
+    void shouldGetTheLatestReadingByType() {
+        LocalTime morning = LocalTime.of(8, 0);
+        LocalTime noon = LocalTime.of(12, 0);
+        LocalTime evening = LocalTime.of(22, 0);
+
+        List<Sensor> sensorList = new ArrayList<>();
+
+        Sensor tempInSide = new TemperatureSensor("In side");
+        tempInSide.addReading(new Reading(29.5, morning));
+        tempInSide.addReading(new Reading(25.2, noon));
+        tempInSide.addReading(new Reading(20.2, evening));
+        sensorList.add(tempInSide);
+
+        Sensor tempOutSide = new TemperatureSensor("Out side");
+        tempOutSide.addReading(new Reading(26.3, morning));
+        tempOutSide.addReading(new Reading(35.4, noon));
+        tempOutSide.addReading(new Reading(23.8, evening));
+        sensorList.add(tempOutSide);
+
+        Sensor humInSide = new HumiditySensor("In side");
+        humInSide.addReading(new Reading(45.4, morning));
+        humInSide.addReading(new Reading(40.9, noon));
+        humInSide.addReading(new Reading(34.0, evening));
+        sensorList.add(humInSide);
+
+        Sensor humOutSide = new HumiditySensor("Out side");
+        humOutSide.addReading(new Reading(60.1, morning));
+        humOutSide.addReading(new Reading(55.4, noon));
+        humOutSide.addReading(new Reading(58.2, evening));
+        sensorList.add(humOutSide);
+
+        Sensor co2Kitchen = new CO2Sensor("Kitchen");
+        co2Kitchen.addReading(new Reading(0.1, morning));
+        co2Kitchen.addReading(new Reading(0.13, noon));
+        co2Kitchen.addReading(new Reading(0.15, evening));
+        sensorList.add(co2Kitchen);
+
+        Sensor co2Toilet = new CO2Sensor("Toilet");
+        co2Toilet.addReading(new Reading(0.2, morning));
+        co2Toilet.addReading(new Reading(0.25, noon));
+        co2Toilet.addReading(new Reading(0.30, evening));
+        sensorList.add(co2Toilet);
+
+        Map<SensorType, Reading> expectedMapTemp = new HashMap<>();
+        expectedMapTemp.put(SensorType.TEMPERATURE, new Reading(23.8, evening));
+        Map<SensorType, Reading> expectedMapHum = new HashMap<>();
+        expectedMapHum.put(SensorType.HUMIDITY, new Reading(58.2, evening));
+        Map<SensorType, Reading> expectedMapCO = new HashMap<>();
+        expectedMapCO.put(SensorType.CO2, new Reading(0.3, evening));
+
+        assertEquals(expectedMapTemp, SensorAnalyzer.getLatestReadingsGroupedByType(sensorList, SensorType.TEMPERATURE));
+        assertEquals(expectedMapHum, SensorAnalyzer.getLatestReadingsGroupedByType(sensorList, SensorType.HUMIDITY));
+        assertEquals(expectedMapCO, SensorAnalyzer.getLatestReadingsGroupedByType(sensorList, SensorType.CO2));
+    }
+}

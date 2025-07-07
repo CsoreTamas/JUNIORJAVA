@@ -1,0 +1,333 @@
+{
+   "sensors":[
+       {
+         "Sensor type": "TEMPERATURE",
+         "Sensor ID": "In side",
+         "Readings": [
+            {
+                "Value": 29.5,
+                "Time": "08:00" 
+            }, 
+            {
+                "Value": 25.2,
+                "Time": "12:00" 
+            }, 
+            {
+                "Value": 20.2,
+                "Time": "22:00" 
+            }
+       ]
+     }, 
+       {
+         "Sensor type": "TEMPERATURE",
+         "Sensor ID": "Out side",
+         "Readings": [
+            {
+                "Value": 26.3,
+                "Time": "08:00" 
+            }, 
+            {
+                "Value": 35.4,
+                "Time": "12:00" 
+            }, 
+            {
+                "Value": 23.8,
+                "Time": "22:00" 
+            }
+       ]
+     }, 
+       {
+         "Sensor type": "TEMPERATURE",
+         "Sensor ID": "Garage",
+         "Readings": [
+            {
+                "Value": 27.1,
+                "Time": "08:00" 
+            }, 
+            {
+                "Value": 29.8,
+                "Time": "12:00" 
+            }, 
+            {
+                "Value": 22.7,
+                "Time": "22:00" 
+            }
+       ]
+     }, 
+       {
+         "Sensor type": "HUMIDITY",
+         "Sensor ID": "In side",
+         "Readings": [
+            {
+                "Value": 45.4,
+                "Time": "08:00" 
+            }, 
+            {
+                "Value": 40.9,
+                "Time": "12:00" 
+            }, 
+            {
+                "Value": 34.0,
+                "Time": "22:00" 
+            }
+       ]
+     }, 
+       {
+         "Sensor type": "HUMIDITY",
+         "Sensor ID": "Out side",
+         "Readings": [
+            {
+                "Value": 60.1,
+                "Time": "08:00" 
+            }, 
+            {
+                "Value": 55.4,
+                "Time": "12:00" 
+            }, 
+            {
+                "Value": 58.2,
+                "Time": "22:00" 
+            }
+       ]
+     }, 
+       {
+         "Sensor type": "HUMIDITY",
+         "Sensor ID": "Garage",
+         "Readings": [
+            {
+                "Value": 40.1,
+                "Time": "08:00" 
+            }, 
+            {
+                "Value": 50.7,
+                "Time": "12:00" 
+            }, 
+            {
+                "Value": 55.3,
+                "Time": "22:00" 
+            }
+       ]
+     }, 
+       {
+         "Sensor type": "CO2",
+         "Sensor ID": "Garage",
+         "Readings": [
+            {
+                "Value": 0.1,
+                "Time": "08:00" 
+            }, 
+            {
+                "Value": 0.2,
+                "Time": "12:00" 
+            }, 
+            {
+                "Value": 0.15,
+                "Time": "22:00" 
+            }
+       ]
+     }, 
+       {
+         "Sensor type": "CO2",
+         "Sensor ID": "Kitchen",
+         "Readings": [
+            {
+                "Value": 0.1,
+                "Time": "08:00" 
+            }, 
+            {
+                "Value": 0.13,
+                "Time": "12:00" 
+            }, 
+            {
+                "Value": 0.15,
+                "Time": "22:00" 
+            }
+       ]
+     }, 
+       {
+         "Sensor type": "CO2",
+         "Sensor ID": "Toilet",
+         "Readings": [
+            {
+                "Value": 0.2,
+                "Time": "08:00" 
+            }, 
+            {
+                "Value": 0.25,
+                "Time": "12:00" 
+            }, 
+            {
+                "Value": 0.3,
+                "Time": "22:00" 
+            }
+       ]
+     }
+  ],
+"Sensors average": [
+  {
+    "sensor type" : "TEMPERATURE",
+    "sensor id" : "In side",
+    "data" : {
+        "average" : 24.96666666666667
+       }
+  }, 
+  {
+    "sensor type" : "TEMPERATURE",
+    "sensor id" : "Out side",
+    "data" : {
+        "average" : 28.5
+       }
+  }, 
+  {
+    "sensor type" : "TEMPERATURE",
+    "sensor id" : "Garage",
+    "data" : {
+        "average" : 26.533333333333335
+       }
+  }, 
+  {
+    "sensor type" : "HUMIDITY",
+    "sensor id" : "In side",
+    "data" : {
+        "average" : 40.1
+       }
+  }, 
+  {
+    "sensor type" : "HUMIDITY",
+    "sensor id" : "Out side",
+    "data" : {
+        "average" : 57.9
+       }
+  }, 
+  {
+    "sensor type" : "HUMIDITY",
+    "sensor id" : "Garage",
+    "data" : {
+        "average" : 48.70000000000001
+       }
+  }, 
+  {
+    "sensor type" : "CO2",
+    "sensor id" : "Garage",
+    "data" : {
+        "average" : 0.15000000000000002
+       }
+  }, 
+  {
+    "sensor type" : "CO2",
+    "sensor id" : "Kitchen",
+    "data" : {
+        "average" : 0.12666666666666668
+       }
+  }, 
+  {
+    "sensor type" : "CO2",
+    "sensor id" : "Toilet",
+    "data" : {
+        "average" : 0.25
+       }
+  }
+],
+"Sensors above threshold": [
+  {
+    "sensor type" : "TEMPERATURE",
+    "above threshold": [
+       {
+         "sensor id" : "In side",
+         "value" : 20.2
+       },
+       {
+         "sensor id" : "Out side",
+         "value" : 23.8
+       },
+       {
+         "sensor id" : "Garage",
+         "value" : 22.7
+       }
+     ]
+   },
+
+  {
+    "sensor type" : "HUMIDITY",
+    "above threshold": [
+       {
+         "sensor id" : "In side",
+         "value" : 34.0
+       },
+       {
+         "sensor id" : "Out side",
+         "value" : 58.2
+       },
+       {
+         "sensor id" : "Garage",
+         "value" : 55.3
+       }
+     ]
+   },
+
+  {
+    "sensor type" : "CO2",
+    "above threshold": [
+       {
+         "sensor id" : "Toilet",
+         "value" : 0.3
+       }
+     ]
+   }
+],
+"Sensors with highest readings": [
+   {
+    "sensor type" : "TEMPERATURE",
+    "sensor id" : "Out side",
+    "reading" : {
+        "highest" : {
+              "value": 35.4,
+              "time" : "12:00"
+               }
+        }
+   }, 
+   {
+    "sensor type" : "HUMIDITY",
+    "sensor id" : "Out side",
+    "reading" : {
+        "highest" : {
+              "value": 60.1,
+              "time" : "08:00"
+               }
+        }
+   }, 
+   {
+    "sensor type" : "CO2",
+    "sensor id" : "Toilet",
+    "reading" : {
+        "highest" : {
+              "value": 0.3,
+              "time" : "22:00"
+               }
+        }
+   }
+],
+"Sensors latest readings": [
+    {
+    "sensor type" : "TEMPERATURE",
+       "reading" : {
+           "latest" : "TEMPERATURE",
+           "time" : "22:00"
+        }
+  },
+    {
+    "sensor type" : "HUMIDITY",
+       "reading" : {
+           "latest" : "HUMIDITY",
+           "time" : "22:00"
+        }
+  },
+    {
+    "sensor type" : "CO2",
+       "reading" : {
+           "latest" : "CO2",
+           "time" : "22:00"
+        }
+  }
+]
+}
