@@ -1,4 +1,4 @@
-public class HumiditySensor extends Sensor implements Sensors {
+public class HumiditySensor extends AbstractSensor implements Sensor {
 
     public HumiditySensor(String id) {
         super(id);

@@ -3,15 +3,15 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class JsonExport {
+public class JsonExporter {
     private final String fileName;
 
 
-    public JsonExport(String fileName) {
+    public JsonExporter(String fileName) {
         this.fileName = fileName;
     }
 
-    public void writeJson(List<Sensor> sensors, double threshold) throws IOException {
+    public void writeJson(List<AbstractSensor> sensors, double threshold) throws IOException {
         try (FileWriter fileWriter = new FileWriter(fileName)) {
             writeSensorsJson(fileWriter, sensors);
             writeAverageJson(fileWriter, sensors);
@@ -21,11 +21,11 @@ public class JsonExport {
         }
     }
 
-    private void writeSensorsJson(FileWriter fileWriter, List<Sensor> sensorsList) throws IOException {
+    private void writeSensorsJson(FileWriter fileWriter, List<AbstractSensor> sensorsList) throws IOException {
         fileWriter.write("{\n");
         fileWriter.write("   \"sensors\":[\n");
         for (int i = 0; i < sensorsList.size(); i++) {
-            Sensor sensor = sensorsList.get(i);
+            AbstractSensor sensor = sensorsList.get(i);
             fileWriter.write("       {\n");
             fileWriter.write("         \"Sensor type\": \"" + sensor.getSensorType() + "\",\n");
             fileWriter.write("         \"Sensor ID\": \"" + sensor.getId() + "\",\n");
@@ -51,10 +51,10 @@ public class JsonExport {
         fileWriter.write("  ],\n");
     }
 
-    private void writeAverageJson(FileWriter fileWriter, List<Sensor> sensorList) throws IOException {
+    private void writeAverageJson(FileWriter fileWriter, List<AbstractSensor> sensorList) throws IOException {
         fileWriter.write("\"Sensors average\": [\n");
         for (int i = 0; i < sensorList.size(); i++) {
-            Sensor sensor = sensorList.get(i);
+            AbstractSensor sensor = sensorList.get(i);
             fileWriter.write("  {\n");
             fileWriter.write("    \"sensor type\" : " + "\"" + sensor.getSensorType() + "\",\n");
             fileWriter.write("    \"sensor id\" : " + "\"" + sensor.getId() + "\",\n");
@@ -70,18 +70,18 @@ public class JsonExport {
         fileWriter.write("],\n");
     }
 
-    private void writeSensorAboveThresholdJson(FileWriter fileWriter, List<Sensor> sensorList, double threshold) throws IOException {
+    private void writeSensorAboveThresholdJson(FileWriter fileWriter, List<AbstractSensor> sensorList, double threshold) throws IOException {
 
         fileWriter.write("\"Sensors above threshold\": [\n");
         SensorType[] types = SensorType.values();
         for (int i = 0; i < types.length; i++) {
             SensorType type = types[i];
-            List<Sensor> aboveThreshold = SensorAnalyzer.getSensorsAboveSThreshold(sensorList, threshold, type);
+            List<AbstractSensor> aboveThreshold = SensorAnalyzer.getSensorsAboveSThreshold(sensorList, threshold, type);
             fileWriter.write("  {\n");
             fileWriter.write("    \"sensor type\" : " + "\"" + type + "\",\n");
             fileWriter.write("    \"above threshold\": [\n");
             for (int j = 0; j < aboveThreshold.size(); j++) {
-                Sensor sensor = aboveThreshold.get(j);
+                AbstractSensor sensor = aboveThreshold.get(j);
                 fileWriter.write("       {\n");
                 fileWriter.write("         \"sensor id\" : " + "\"" + sensor.getId() + "\",\n");
                 fileWriter.write("         \"value\" : " + sensor.getLatestReadingValue() + "\n");
@@ -101,12 +101,12 @@ public class JsonExport {
         fileWriter.write("],\n");
     }
 
-    private void writeSensorsWithHighestLatestReadingJson(FileWriter fileWriter, List<Sensor> sensorList) throws IOException {
+    private void writeSensorsWithHighestLatestReadingJson(FileWriter fileWriter, List<AbstractSensor> sensorList) throws IOException {
         fileWriter.write("\"Sensors with highest readings\": [\n");
         SensorType[] types = SensorType.values();
         for (int i = 0; i < types.length; i++) {
             SensorType type = types[i];
-            Sensor sensor = SensorAnalyzer.getSensorWithHighestLatestReading(sensorList, type);
+            AbstractSensor sensor = SensorAnalyzer.getSensorWithHighestLatestReading(sensorList, type);
 
             fileWriter.write("   {\n");
             fileWriter.write("    \"sensor type\" : " + "\"" + sensor.getSensorType() + "\",\n");
@@ -128,7 +128,7 @@ public class JsonExport {
         fileWriter.write("],\n");
     }
 
-    private void writeLatestReadingJson(FileWriter fileWriter, List<Sensor> sensorList) throws IOException {
+    private void writeLatestReadingJson(FileWriter fileWriter, List<AbstractSensor> sensorList) throws IOException {
         fileWriter.write("\"Sensors latest readings\": [\n");
         SensorType[] types = SensorType.values();
         for (int i = 0; i < types.length; i++) {

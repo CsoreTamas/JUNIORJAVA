@@ -269,6 +269,14 @@
     "sensor type" : "CO2",
     "above threshold": [
        {
+         "sensor id" : "Garage",
+         "value" : 0.15
+       },
+       {
+         "sensor id" : "Kitchen",
+         "value" : 0.15
+       },
+       {
          "sensor id" : "Toilet",
          "value" : 0.3
        }

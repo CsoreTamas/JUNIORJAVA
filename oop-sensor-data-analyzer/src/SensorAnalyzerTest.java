@@ -12,7 +12,7 @@ public class SensorAnalyzerTest {
     @Test
     void shouldGetAverageOfReadings() {
 
-        Sensor tempActualSensor = new TemperatureSensor("temp sensor");
+        AbstractSensor tempActualSensor = new TemperatureSensor("temp sensor");
         tempActualSensor.addReading(new Reading(20, LocalTime.of(8, 0)));
         tempActualSensor.addReading(new Reading(10, LocalTime.of(9, 0)));
         tempActualSensor.addReading(new Reading(15, LocalTime.of(10, 0)));
@@ -24,43 +24,43 @@ public class SensorAnalyzerTest {
 
     @Test
     void shouldListSensorsAboveThreshold() {
-        List<Sensor> sensorList = new ArrayList<>();
+        List<AbstractSensor> sensorList = new ArrayList<>();
 
-        Sensor humSensorInSide = new HumiditySensor("Inside");
+        AbstractSensor humSensorInSide = new HumiditySensor("Inside");
         humSensorInSide.addReading(new Reading(50, LocalTime.of(12, 0)));
         sensorList.add(humSensorInSide);
 
-        Sensor humSensorOutSide = new HumiditySensor("Outside");
+        AbstractSensor humSensorOutSide = new HumiditySensor("Outside");
         humSensorOutSide.addReading(new Reading(75, LocalTime.of(12, 0)));
         sensorList.add(humSensorOutSide);
 
-        Sensor humSensorFarAway = new HumiditySensor("Faraway");
+        AbstractSensor humSensorFarAway = new HumiditySensor("Faraway");
         humSensorFarAway.addReading(new Reading(63, LocalTime.of(12, 0)));
         sensorList.add(humSensorFarAway);
 
-        List<Sensor> expectedList = List.of(humSensorOutSide, humSensorFarAway);
+        List<AbstractSensor> expectedList = List.of(humSensorOutSide, humSensorFarAway);
 
         assertEquals(expectedList, SensorAnalyzer.getSensorsAboveSThreshold(sensorList, 50, SensorType.HUMIDITY));
     }
 
     @Test
     void shouldSearchHighestReaderSensor() {
-        List<Sensor> sensors = new ArrayList<>();
+        List<AbstractSensor> sensors = new ArrayList<>();
 
-        Sensor tempIn = new TemperatureSensor("tempin");
+        AbstractSensor tempIn = new TemperatureSensor("tempin");
         tempIn.addReading(new Reading(20, LocalTime.of(12, 0)));
         sensors.add(tempIn);
 
-        Sensor tempOut = new TemperatureSensor("tempout");
+        AbstractSensor tempOut = new TemperatureSensor("tempout");
         tempOut.addReading(new Reading(21, LocalTime.of(12, 0)));
         sensors.add(tempOut);
 
-        Sensor tempAnywhere = new TemperatureSensor("anywhere");
+        AbstractSensor tempAnywhere = new TemperatureSensor("anywhere");
         tempAnywhere.addReading(new Reading(22, LocalTime.of(12, 0)));
         sensors.add(tempAnywhere);
 
         List<Reading> expectedList = new ArrayList<>();
-        Sensor expected = new SensorWithSingleReading("anywhere", SensorType.TEMPERATURE, expectedList);
+        AbstractSensor expected = new SensorWithSingleReading("anywhere", SensorType.TEMPERATURE, expectedList);
         Reading reading = new Reading(22, LocalTime.of(12, 0));
         expectedList.add(reading);
 
@@ -73,39 +73,39 @@ public class SensorAnalyzerTest {
         LocalTime noon = LocalTime.of(12, 0);
         LocalTime evening = LocalTime.of(22, 0);
 
-        List<Sensor> sensorList = new ArrayList<>();
+        List<AbstractSensor> sensorList = new ArrayList<>();
 
-        Sensor tempInSide = new TemperatureSensor("In side");
+        AbstractSensor tempInSide = new TemperatureSensor("In side");
         tempInSide.addReading(new Reading(29.5, morning));
         tempInSide.addReading(new Reading(25.2, noon));
         tempInSide.addReading(new Reading(20.2, evening));
         sensorList.add(tempInSide);
 
-        Sensor tempOutSide = new TemperatureSensor("Out side");
+        AbstractSensor tempOutSide = new TemperatureSensor("Out side");
         tempOutSide.addReading(new Reading(26.3, morning));
         tempOutSide.addReading(new Reading(35.4, noon));
         tempOutSide.addReading(new Reading(23.8, evening));
         sensorList.add(tempOutSide);
 
-        Sensor humInSide = new HumiditySensor("In side");
+        AbstractSensor humInSide = new HumiditySensor("In side");
         humInSide.addReading(new Reading(45.4, morning));
         humInSide.addReading(new Reading(40.9, noon));
         humInSide.addReading(new Reading(34.0, evening));
         sensorList.add(humInSide);
 
-        Sensor humOutSide = new HumiditySensor("Out side");
+        AbstractSensor humOutSide = new HumiditySensor("Out side");
         humOutSide.addReading(new Reading(60.1, morning));
         humOutSide.addReading(new Reading(55.4, noon));
         humOutSide.addReading(new Reading(58.2, evening));
         sensorList.add(humOutSide);
 
-        Sensor co2Kitchen = new CO2Sensor("Kitchen");
+        AbstractSensor co2Kitchen = new CO2Sensor("Kitchen");
         co2Kitchen.addReading(new Reading(0.1, morning));
         co2Kitchen.addReading(new Reading(0.13, noon));
         co2Kitchen.addReading(new Reading(0.15, evening));
         sensorList.add(co2Kitchen);
 
-        Sensor co2Toilet = new CO2Sensor("Toilet");
+        AbstractSensor co2Toilet = new CO2Sensor("Toilet");
         co2Toilet.addReading(new Reading(0.2, morning));
         co2Toilet.addReading(new Reading(0.25, noon));
         co2Toilet.addReading(new Reading(0.30, evening));

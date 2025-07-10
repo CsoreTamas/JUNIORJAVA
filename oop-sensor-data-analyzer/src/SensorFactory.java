@@ -7,21 +7,21 @@ public class SensorFactory {
     public static LocalTime noon = LocalTime.of(12, 0);
     public static LocalTime evening = LocalTime.of(22, 0);
 
-    public static Sensor tempInSide;
-    public static Sensor tempOutSide;
-    public static Sensor tempGarage;
+    public static AbstractSensor tempInSide;
+    public static AbstractSensor tempOutSide;
+    public static AbstractSensor tempGarage;
 
-    public static Sensor humInSide;
-    public static Sensor humOutSide;
-    public static Sensor humGarage;
+    public static AbstractSensor humInSide;
+    public static AbstractSensor humOutSide;
+    public static AbstractSensor humGarage;
 
-    public static Sensor co2Garage;
-    public static Sensor co2Kitchen;
-    public static Sensor co2Toilet;
+    public static AbstractSensor co2Garage;
+    public static AbstractSensor co2Kitchen;
+    public static AbstractSensor co2Toilet;
 
-    public static List<Sensor> createSensors() {
+    public static List<AbstractSensor> createSensors() {
 
-        List<Sensor> sensorList = new ArrayList<>();
+        List<AbstractSensor> sensorList = new ArrayList<>();
 
         tempInSide = new TemperatureSensor("In side");
         tempInSide.addReading(new Reading(29.5, morning));

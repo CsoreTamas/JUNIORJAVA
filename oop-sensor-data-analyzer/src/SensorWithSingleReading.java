@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Objects;
 
-public class SensorWithSingleReading extends Sensor {
+public class SensorWithSingleReading extends AbstractSensor {
     private final List<Reading> singleReading;
     private final SensorType sensorType;
 

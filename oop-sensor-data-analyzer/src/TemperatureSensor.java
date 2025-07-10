@@ -1,4 +1,4 @@
-public class TemperatureSensor extends Sensor implements Sensors {
+public class TemperatureSensor extends AbstractSensor implements Sensor {
 
     public TemperatureSensor(String id) {
         super(id);

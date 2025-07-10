@@ -1,4 +1,4 @@
-public class CO2Sensor extends Sensor {
+public class CO2Sensor extends AbstractSensor {
 
     public CO2Sensor(String id) {
         super(id);
