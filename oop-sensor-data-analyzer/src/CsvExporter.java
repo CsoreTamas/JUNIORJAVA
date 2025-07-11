@@ -2,27 +2,15 @@ import java.io.IOException;
 import java.io.FileWriter;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
-
-public class CsvExporter {
-    private final String fileName;
+public class CsvExporter extends AbstractExporter {
 
     public CsvExporter(String fileName) {
-        this.fileName = fileName;
+        super(fileName);
     }
 
-    public void writeCsv(List<AbstractSensor> sensors, double threshold) throws IOException {
-        try (FileWriter fileWriter = new FileWriter(fileName)) {
-            writeReadingsCsv(fileWriter, sensors);
-            writeAveragesCsv(fileWriter, sensors);
-            writeSensorsAboveThreshold(fileWriter, sensors, threshold);
-            writeHighestReadingCsv(fileWriter, sensors);
-            writeLatestReadingCsv(fileWriter, sensors);
-        }
-    }
-
-    private void writeReadingsCsv(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
+    @Override
+    void writeSensors(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
         fileWriter.write("SensorType|SensorID|ReadingValue|ReadingTime" + "\n");
 
         for (AbstractSensor sensor : sensors) {
@@ -34,7 +22,8 @@ public class CsvExporter {
         }
     }
 
-    private void writeAveragesCsv(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
+    @Override
+    void writeAverage(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
         fileWriter.write("\nAverage of readings: \n");
         for (AbstractSensor sensor : sensors) {
             double average = SensorAnalyzer.getAverageOfReadings(sensor);
@@ -43,7 +32,8 @@ public class CsvExporter {
         }
     }
 
-    private void writeSensorsAboveThreshold(FileWriter fileWriter, List<AbstractSensor> sensors, double threshold) throws IOException {
+    @Override
+    void writeSensorAboveThreshold(FileWriter fileWriter, List<AbstractSensor> sensors, double threshold) throws IOException {
         fileWriter.write("\nSensors above threshold: \n");
         SensorType[] types = SensorType.values();
         for (SensorType type : types) {
@@ -55,7 +45,8 @@ public class CsvExporter {
         }
     }
 
-    private void writeHighestReadingCsv(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
+    @Override
+    void writeSensorsWithHighestLatestReading(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
         fileWriter.write("\nHighest latest readings :\n");
         for (SensorType type : SensorType.values()) {
             AbstractSensor highestSensor = SensorAnalyzer.getSensorWithHighestLatestReading(sensors, type);
@@ -64,7 +55,8 @@ public class CsvExporter {
         }
     }
 
-    private void writeLatestReadingCsv(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
+    @Override
+    void writeLatestReading(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
         fileWriter.write("\nLatest readings :\n");
         for (SensorType type : SensorType.values()) {
             Map<SensorType, Reading> latestReadings = SensorAnalyzer.getLatestReadingsGroupedByType(sensors, type);
@@ -81,3 +73,4 @@ public class CsvExporter {
         };
     }
 }
+

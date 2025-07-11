@@ -18,11 +18,13 @@ public class FileLoader {
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("application.properties")) {
             if (inputStream == null) {
                 throw new IOException("File not foud.");
-            } else {
-                System.out.println("Successfully write.");
             }
             //.load --> Load the properties from the input stream into the 'properties' object
             properties.load(inputStream);
+            Validator validator = new Validator(this);
+            if (validator.isValid()) {
+                System.out.println("Successfully write.");
+            }
         }
     }
 
@@ -35,6 +37,6 @@ public class FileLoader {
     //Returns the value of the property 'export.filename' from the loaded properties file.
     //for example: "jsonData.json" / "csvData.csv"
     public String getExportFileName() {
-        return properties.getProperty("export.filename");
+        return properties.getProperty("export.file.name");
     }
 }

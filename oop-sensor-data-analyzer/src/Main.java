@@ -6,14 +6,13 @@ public class Main {
     public static void main(String[] args) throws IOException {
         FileLoader fileLoader = new FileLoader();
         List<AbstractSensor> sensorList = SensorFactory.createSensors();
-        String format = fileLoader.getExportFormat();
-        String name = fileLoader.getExportFileName();
 
-        if ("json".equals(format)) {
-            new JsonExporter(name).writeJson(sensorList, 0);
-        } else if ("csv".equals(format)) {
-            new CsvExporter(name).writeCsv(sensorList, 0);
+        if ("json".equals(fileLoader.getExportFormat())) {
+            new JsonExporter(fileLoader.getExportFileName()).writeFile(sensorList, 0);
+        } else if ("csv".equals(fileLoader.getExportFormat())) {
+            new CsvExporter(fileLoader.getExportFileName()).writeFile(sensorList, 0);
         }
+
 /*
         for (AbstractSensor sensor : sensorList) {
             System.out.println(sensor);
