@@ -3,12 +3,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        FileLoader fileLoader = new FileLoader();
+        FilePropertyLoader fileLoader = new FilePropertyLoader();
         List<AbstractSensor> sensorList = SensorFactory.createSensors();
 
-        if ("json".equals(fileLoader.getExportFormat())) {
+        if (fileLoader.getExportFormat().equals("json")) {
             new JsonExporter(fileLoader.getExportFileName()).writeFile(sensorList, 0);
-        } else if ("csv".equals(fileLoader.getExportFormat())) {
+        } else if (fileLoader.getExportFormat().equals("csv")) {
             new CsvExporter(fileLoader.getExportFileName()).writeFile(sensorList, 0);
         }
 
