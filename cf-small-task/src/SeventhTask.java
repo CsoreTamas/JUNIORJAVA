@@ -23,13 +23,11 @@ public class SeventhTask {
     }
 
     public boolean addEmail(String email) {
-        if (!emailList.contains(email)) {
-            emailList.add(email);
-            return true;
-        } else {
+        if (!emailList.add(email)) {
             System.out.println("The email already exist.");
             return false;
         }
+        return true;
     }
 
     public boolean updateEmail(String modifierEmail, String newEmail) {
@@ -49,9 +47,8 @@ public class SeventhTask {
         if (emailList.contains(email)) {
             emailList.remove(email);
             return true;
-        } else {
-            System.out.println("Try again, cause the email does not exist.");
-            return false;
         }
+        System.out.println("Try again, cause the email does not exist.");
+        return false;
     }
 }

@@ -34,7 +34,7 @@ public class TasksTest {
 
     @Test
     void shouldCountTheUniqueLetters() {
-        String actual = "qwertzuiopasdfgqwert";
+        String actual = "qwertzuiopq";
         assertEquals(10, ForthTask.countUniqueChars(actual));
     }
 
@@ -72,17 +72,16 @@ public class TasksTest {
     }
 
     @Test
-    void shouldCanAddNewEmailToTheList() {
+    void shouldAddNewEmailToTheList() {
         Set<String> emails = new LinkedHashSet<>();
         SeventhTask seventhTask = new SeventhTask(emails);
         String email = "idk@idk.com";
 
         assertTrue(seventhTask.addEmail(email));
-
     }
 
     @Test
-    void shouldCantAddNewEmail() {
+    void shouldNotAddNewEmail() {
         Set<String> emails = new LinkedHashSet<>();
         SeventhTask seventhTask = new SeventhTask(emails);
         String email = "idk@idk.com";

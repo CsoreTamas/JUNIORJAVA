@@ -16,8 +16,7 @@ public class SixthTask {
             return 1;
         } else if (secondListSet.size() > firstListSet.size()) {
             return 2;
-        } else {
-            return 0;
         }
+        return 0;
     }
 }

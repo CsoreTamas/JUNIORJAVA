@@ -15,7 +15,6 @@ public class ThirdTask {
     }
 
     public static boolean isPalindrome(String word) {
-        StringBuilder sb = new StringBuilder(word);
-        return sb.reverse().toString().equals(word);
+        return new StringBuilder(word).reverse().toString().equals(word);
     }
 }
