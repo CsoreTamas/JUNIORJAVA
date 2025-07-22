@@ -1,0 +1,29 @@
+1, Store a list of pages a user visited on a website — but each page should only appear once, and in the order it was first visited.
+Set<String> name = new LinkedHashSet<>();
+
+2, You’re building a basic autocomplete feature. Given a list of words, store them so that they are always sorted alphabetically. Then, when a user types a prefix, return all words that start with it in alphabetical order.
+Set<String> words = new TreeSet<>();
+
+3, Design a system that stores player names and their scores. You need to retrieve the scores in ascending order of points for display purposes.
+Map<String, Integer> players = new TreeMap<>();
+
+4, You're storing the temperature of different cities as they are received from a sensor system. The final list should print the cities in the exact order they first reported their temperature.
+Map<String, Double> citiesTemperature = new LinkedHashMap<>();
+
+5, Count how many times each hashtag appears in a list of posts. Print the list of hashtags in the order they first appeared.
+Map<Integer, String> posts = new LinkedHashMap<>();
+
+6, You’re storing a set of tags (as Strings) users attach to blog posts. These tags should always be shown alphabetically without duplicates.
+Set<String> blogs = new TreeSet<>();
+
+7, Students are signing in to a virtual class. Each student can only sign in once. At the end, print the names in the order they signed in.
+Set<String> students = new LinkedHashSet;
+
+8, Build a contact list where each name is associated with a phone number. The contacts should always appear in alphabetical order.
+Map<String, Integer> peoples = new TreeMap<>();
+
+9, Customers earn points when they shop. Track total points per customer, and display the final report in the order customers first joined the loyalty program.
+Map<String, Integer> customerPoints = new LinkedHashMap<>();
+
+10, You’re creating an inventory system for a store. Products have a name and quantity. When showing the inventory, products must be listed in alphabetical order.
+Map<String, Integer> products  = new TreeMap<>();
