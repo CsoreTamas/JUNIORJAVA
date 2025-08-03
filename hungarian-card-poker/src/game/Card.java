@@ -1,3 +1,7 @@
+package game;
+
+import java.util.Objects;
+
 public class Card {
     CardColor color;
     CardValue value;
@@ -18,5 +22,17 @@ public class Card {
     @Override
     public String toString() {
         return String.format("Value: %s | Color: %s", value, color);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return color == card.color && value == card.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color, value);
     }
 }

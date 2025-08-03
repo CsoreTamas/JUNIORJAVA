@@ -1,3 +1,7 @@
+package game;
+
+import exception.InvalidHandException;
+
 import java.util.List;
 
 public class Hand {
