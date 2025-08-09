@@ -3,8 +3,8 @@ package game;
 import java.util.Objects;
 
 public class Card {
-    CardColor color;
-    CardValue value;
+    private final CardColor color;
+    private final CardValue value;
 
     public Card(CardColor color, CardValue value) {
         this.color = color;

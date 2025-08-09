@@ -45,7 +45,7 @@ public class PropertiesReader {
         return new Card(color, value);
     }
 
-    public static void evaluator() {
+    public static void evaluateAndPrintFinalResult() {
         PropertiesReader reader = new PropertiesReader("application.properties");
 
         Map<String, List<Card>> hands = reader.getHands();
