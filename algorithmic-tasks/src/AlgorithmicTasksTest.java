@@ -12,10 +12,13 @@ public class AlgorithmicTasksTest {
     @Test
     void shouldGetSmallestSubstring() {
         String text = "aabcbcdbca";
+        String text1 = "bvkbdkavbvkaakv";
 
-        int result = AlgorithmicTasks.getSmallestSubstring(text);
+        String result = AlgorithmicTasks.getSmallestSubstring(text);
+        String result1 = AlgorithmicTasks.getSmallestSubstring(text1);
 
-        assertEquals(4, result);
+        assertEquals("dbca", result);
+        assertEquals("bdkav", result1);
     }
 
     //16
@@ -68,20 +71,6 @@ public class AlgorithmicTasksTest {
         assertFalse(AlgorithmicTasks.searchDuplicates(first, second));
     }
 
-    @Test
-    void shouldReturnTrueDuplicatesFirst() {
-        int[] first = {1, 2, 2, 3};
-        int[] second = {2, 1, 3, 2};
-        assertTrue(AlgorithmicTasks.searchDuplicatesFirst(first, second));
-    }
-
-    @Test
-    void shouldReturnFalseDuplicatesFirst() {
-        int[] first = {1, 2, 2, 3};
-        int[] second = {3, 4, 5};
-        assertFalse(AlgorithmicTasks.searchDuplicatesFirst(first, second));
-    }
-
     //21.
     @Test
     void shouldCountMinNumberChanges() {
@@ -91,10 +80,10 @@ public class AlgorithmicTasksTest {
 
     //22
     @Test
-    void shouldSearchUniqueElement() {
+    void shouldCollectUniqueElement() {
         int[] array = {1, 2, 2, 3, 4, 4, 5};
         List<Integer> expected = List.of(1, 3, 5);
-        assertEquals(expected, AlgorithmicTasks.searchUniqueElement(array));
+        assertEquals(expected, AlgorithmicTasks.collectUniqueElement(array));
     }
 
     //23

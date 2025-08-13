@@ -5,13 +5,61 @@ public class AlgorithmicTasks {
     //Given a string, find the length of the smallest substring that contains all the
     //unique characters from the original string.
     //Input: "aabcbcdbca" Output: 4 Explanation:
-    // The smallest substring containing all unique characters is "dbca"
-    public static int getSmallestSubstring(String text) {
-        Set<Character> uniqueChars = new LinkedHashSet<>();
+    //The smallest substring containing all unique characters is "dbca"
+    public static String getSmallestSubstring(String text) {
+        //store all unique chars
+        Set<Character> uniqueChars = new HashSet<>();
         for (int i = 0; i < text.length(); i++) {
             uniqueChars.add(text.charAt(i));
         }
-        return uniqueChars.size();
+
+        // stores how many times each chars appears in the current window
+        Map<Character, Integer> charCounter = new HashMap<>();
+        //left index (start)
+        int left = 0;
+        //stores the minimum length of a valid substring
+        int minLength = Integer.MAX_VALUE;
+        //counts unique chars (current)
+        int counter = 0;
+        //stores the starting index
+        int minLeftIndex = 0;
+        //expand the window by moving the right pointer.
+        for (int right = 0; right < text.length(); right++) {
+            char ch = text.charAt(right);
+            if (charCounter.containsKey(ch)) {
+                charCounter.put(ch, charCounter.get(ch) + 1);
+            } else {
+                charCounter.put(ch, 1);
+            }
+            if (charCounter.get(ch) == 1) {
+                //if there is a unique char.
+                counter++;
+            }
+
+            //if the window (map) contains all of the unique chars from the text
+            while (uniqueChars.size() == counter) {
+                //get the current window length
+                int actualLength = right - left + 1;
+
+                //update the length and the left position if the window is smaller
+                if (actualLength < minLength) {
+                    minLength = actualLength;
+                    minLeftIndex = left;
+                }
+
+                char leftChar = text.charAt(left);
+                //trying to decrease the window from the left
+                charCounter.put(leftChar, charCounter.get(leftChar) - 1);
+                if (charCounter.get(leftChar) == 0) {
+                    //if a unique char's count drops to 0 int the map
+                    counter--;
+                }
+                //move left pointer to the right.
+                left++;
+            }
+        }
+        //                   (left pointer, left pointer + substring length)
+        return text.substring(minLeftIndex, minLeftIndex + minLength);
     }
 
     //16.
@@ -33,7 +81,7 @@ public class AlgorithmicTasks {
                 return frequency.getKey();
             }
         }
-        return ' ';
+        return '\0';
     }
 
     //17.
@@ -113,21 +161,10 @@ public class AlgorithmicTasks {
     //with the same frequencies.
     //Input: [1, 2, 2, 3], [2, 1, 3, 2]
     //Output: true
-    public static boolean searchDuplicatesFirst(int[] firstArray, int[] secondArray) {
-        for (int i = 0; i < firstArray.length; i++) {
-            for (int j = i + 1; j < secondArray.length; j++) {
-                if (firstArray[i] == secondArray[j]) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     public static boolean searchDuplicates(int[] firstArray, int[] secondArray) {
-        Set<Integer> nemtom = new HashSet<>(firstArray.length);
+        Set<Integer> uniqueNumbers = new HashSet<>(firstArray.length);
         for (int number : secondArray) {
-            if (!nemtom.add(number)) {
+            if (!uniqueNumbers.add(number)) {
                 return true;
             }
         }
@@ -163,7 +200,7 @@ public class AlgorithmicTasks {
     //Return the list of elements that appear exactly once in the array.
     //Input: [1, 2, 2, 3, 4, 4, 5]
     //Output: [1, 3, 5]
-    public static List<Integer> searchUniqueElement(int[] array) {
+    public static List<Integer> collectUniqueElement(int[] array) {
         Map<Integer, Integer> frequency = new HashMap<>();
         for (int number : array) {
             if (frequency.containsKey(number)) {
