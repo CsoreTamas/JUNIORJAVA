@@ -20,7 +20,7 @@ public class FastPrimeLister implements PrimeLister {
                 }
             }
         }
-        //than we can fill the List with the true indexes until Integer.MAX_VALUE
+        //than we can fill the List with the true indexes until max.
         for (int i = 2; i <= max; i++) {
             if (sieve[i]) {
                 primesUpToIntegerMax.add(i);
