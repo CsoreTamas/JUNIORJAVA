@@ -1,6 +1,8 @@
 package org.example;
 
+import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.FileReader;
@@ -11,7 +13,12 @@ import java.util.List;
 public class CsvParser {
     public static List<City> csvReader(String filepath) {
         List<City> cities = new ArrayList<>();
-        try (CSVReader reader = new CSVReader(new FileReader(filepath))) {
+        try (CSVReader reader = new CSVReaderBuilder(new FileReader(filepath))
+                .withCSVParser(new CSVParserBuilder()
+                        .withSeparator(',')
+                        .build())
+                .build()) {
+
             String[] line;
 
             while ((line = reader.readNext()) != null) {
