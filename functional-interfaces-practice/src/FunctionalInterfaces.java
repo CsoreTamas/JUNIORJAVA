@@ -101,13 +101,13 @@ public class FunctionalInterfaces {
     //Apply it to "world".
     //NOTE
     // PREFIX ---> adds a string to the START of 's'
-    Function<String, String> addPrefix = s -> "Hello " + s;
+    Function<String, String> addPrefix = s -> String.format("Hello %s", s);
     Function<String, String> toUpperCase = s -> s.toUpperCase();
     //Method Reference
     Function<String, String> toUpperCaseMethodReference = String::toUpperCase;
     //NOTE:
     // SUFFIX ---> adds a string to the END of the 's'
-    Function<String, String> addSuffix = s -> s + "!";
+    Function<String, String> addSuffix = s -> String.format("%s!",s);
     Function<String, String> fullFunction = addPrefix.andThen(toUpperCase).andThen(addSuffix);
     String result = fullFunction.apply("world");
 
