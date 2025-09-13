@@ -1,0 +1,8 @@
+username,email,comment
+john_doe,john@example.com,Hello world!
+peter parker,peter@parker.com,<img src="x" onerror="&#97;&#108;&#101;&#114;&#116;&#40;&#39;XSS&#39;&#41;">!
+<script>,bad@data.com,<script>alert("XSS")</script>
+alice,alice[at]example.com,Just a comment
+bob,bob@example.com
+tamas,<img src="x" onerror="&#97;&#108;&#101;&#114;&#116;&#40;&#39;XSS&#39;&#41;">!,hello en vagyok a kiraly
+Hello <b>world</b>!,csoretamas1231232@gmail.com,Click <script>alert(1)</script> here!
