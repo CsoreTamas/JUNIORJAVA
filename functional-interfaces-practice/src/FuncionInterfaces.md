@@ -1,0 +1,81 @@
+# Predicate<T>
+
+It examines an input value and returns a boolean value.  
+Method: `boolean test(T t)`
+
+```java
+Predicate<Integer> predicate = n -> n > 10;
+Predicate<String> isEmpty = s -> s.isEmpty();
+```
+
+# Function\<T,R>
+
+It transforms an input value into another type of value.
+Method: `R apply(T t)`
+
+```java
+Function<String, Integer> functionLambda = string -> string.length();
+Function<String, Integer> function = String::length;
+Function<String, Integer> f = Integer::parseInt;
+```
+
+# Consumer<T>
+
+It accepts an input value but doesn't return anything. -> void
+Method: `void accept(T t)`
+
+```java
+Consumer<String> consumerLambda = s -> System.out.println(s);
+Consumer<String> consumer = System.out::println;
+Consumer<String> combinedConsumer = print.andThen(printLength);
+```
+
+# Supplier<T>
+
+It doesn't accept any input but returns a value.
+Method: `T get()`
+
+```java
+Supplier<Double> supplierLambda = () -> Math.random();
+Supplier<Double> supplier = Math::random;
+Supplier<String> printHello = () -> "Hello";
+```
+
+# Comparator<T>
+
+It compares two elements and returns an integer for sorting purposes. (-,0,+)
+Method: `int compare(T t1, T t2)`
+
+```java
+Comparator<String> stringComparator = (s1, s2) -> s1.compareToIgnoreCase(s2);
+Comparator<String> sComparator = String::compareToIgnoreCase;
+```
+
+# UnaryOperator<T>
+
+It takes a value and returns a value of the same type, often modifying it.
+Method: `T apply(T t)`
+
+```java
+UnaryOperator<String> unaryOperator = s -> s.trim().toUpperCase();
+```
+
+# BiFunction\<T,U,R>
+
+It takes two input parameters of different types and returns a value.
+Method: `R apply(T t, U u)`
+
+```java
+BiFunction<String, String, Integer> biFunction = (s1, s2) -> (s1 + s2).length();
+```
+
+# BinaryOperator<T>
+
+It accepts two input values of the same type and returns a value of the same type.
+Method: `T apply(T t1, T t2)`
+
+```java
+BinaryOperator<Integer> binarySum = (a, b) -> a + b;
+BinaryOperator<Integer> binaryOperator = Integer::sum;
+BinaryOperator<Integer> whichIsGreater = (a, b) -> a > b ? a : b;
+```
