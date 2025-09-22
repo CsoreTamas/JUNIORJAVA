@@ -113,24 +113,20 @@ public class FunctionalInterfaces {
         System.out.println(evenOddMap);
 
         //16. Define your own functional interface StringTransformer with one method transform(String input). Implement it using a lambda to reverse strings.
-        @FunctionalInterface
-        interface StringTransformer {
-            String transform(String input);
-        }
         StringTransformer StringReverser = input -> new StringBuilder(input).reverse().toString();
         System.out.println(StringReverser.transform("HELLO"));
 
         //17. Given a list of people (name, city, age), group them first by city, then by age group (<30, >=30).
-        List<People> listOfPeople = new ArrayList<>(List.of(
-                new People("Gizi", "Győr", 21),
-                new People("Béla", "Budapest", 10),
-                new People("Józsi", "Győr", 75),
-                new People("Fruzsi", "Budapest", 16),
-                new People("Tamás", "Debrecen", 64)
+        List<Person> listOfPeople = new ArrayList<>(List.of(
+                new Person("Gizi", "Győr", 21),
+                new Person("Béla", "Budapest", 10),
+                new Person("Józsi", "Győr", 75),
+                new Person("Fruzsi", "Budapest", 16),
+                new Person("Tamás", "Debrecen", 64)
         ));
-        Map<String, Map<String, List<People>>> grouped = listOfPeople.stream()
+        Map<String, Map<String, List<Person>>> grouped = listOfPeople.stream()
                 .collect(Collectors.groupingBy(
-                        People::city,
+                        Person::city,
                         //person -> person.getCity(),
                         Collectors.groupingBy(person -> person.age() > 30 ? "<30" : ">30")
                 ));

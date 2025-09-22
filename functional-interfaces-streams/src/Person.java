@@ -1,4 +1,4 @@
-public record People(String name, String city, int age) {
+public record Person(String name, String city, int age) {
 
     @Override
     public String toString() {
