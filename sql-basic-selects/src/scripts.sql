@@ -1,25 +1,25 @@
 1. SELECT * FROM city;
 2. SELECT name FROM city;
 3. SELECT name FROM city WHERE CountryCode = 'HUN';
-4. SELECT CountryCode FROM city ORDER BY CountryCode ASC;
+4. SELECT DISTINCT CountryCode FROM city ORDER BY CountryCode;
 5. SELECT CountryCode FROM city ORDER BY CountryCode DESC;
 6. SELECT name FROM city WHERE CountryCode = 'ITA';
 7. SELECT name FROM city WHERE CountryCode = 'AFG';
 8. SELECT name, population FROM city WHERE CountryCode = 'USA';
-9. SELECT name, population FROM city WHERE CountryCode = 'IND' ORDER BY population ASC;
+9. SELECT name, population FROM city WHERE CountryCode = 'IND' ORDER BY population;
 10. SELECT name, population FROM city WHERE CountryCode = 'IND' ORDER BY population DESC;
 11. SELECT * FROM city WHERE name LIKE 'New%';
 12. SELECT name FROM city WHERE CHAR_LENGTH(name) < 7;
 13. SELECT name FROM city WHERE CHAR_LENGTH(name) < 7 ORDER BY CHAR_LENGTH(name) DESC;
 14. SELECT name, CountryCode FROM city WHERE CHAR_LENGTH(name) < 8 AND CountryCode = 'HUN';
-15. SELECT name FROM city WHERE CountryCode = 'HUN' AND population BETWEEN 100000 AND 200000 ORDER BY population ASC;
+15. SELECT name FROM city WHERE CountryCode = 'HUN' AND population BETWEEN 100000 AND 200000 ORDER BY population;
 16. SELECT name FROM city WHERE CountryCode IN ('HUN','ROM','ITA') ORDER BY population DESC LIMIT 1;
 
 1. SELECT name FROM city ORDER BY population DESC LIMIT 5;
 2. SELECT name FROM city WHERE CountryCode = 'IND' ORDER BY population DESC LIMIT 5;
 3. SELECT name FROM city WHERE CountryCode = 'USA' ORDER BY population DESC LIMIT 1;
 4. SELECT name FROM city ORDER BY population DESC LIMIT 1;
-5. SELECT district ,COUNT(*) AS city_count FROM city WHERE CountryCode = 'HUN' GROUP BY district;
+5. SELECT district, COUNT(*) AS city_count FROM city WHERE CountryCode = 'HUN' GROUP BY district;
 6. SELECT district, COUNT(*) AS city_count FROM city WHERE CountryCode = 'USA' AND population > 200000 GROUP BY district;
 7. SELECT CountryCode, COUNT(*) AS city_count FROM city GROUP BY CountryCode;
 8. SELECT CountryCode, COUNT(*) AS city_count FROM city WHERE population < 150000 GROUP BY CountryCode;
@@ -31,4 +31,4 @@
 14. SELECT AVG(CHAR_LENGTH(name)) AS average_name_length FROM city WHERE CountryCode = 'HUN';
 15. SELECT name, AVG(CHAR_LENGTH(name)) AS average_name_length FROM city GROUP BY name ORDER BY average_name_length DESC;
 16. SELECT CountryCode, COUNT(*) AS city_count FROM city GROUP BY CountryCode ORDER BY city_count DESC LIMIT 1;
-17. SELECT CountryCode, COUNT(*) AS city_count FROM city GROUP BY CountryCode ORDER BY city_count ASC LIMIT 5;
+17. SELECT CountryCode, COUNT(*) AS city_count FROM city GROUP BY CountryCode ORDER BY city_count LIMIT 5;
