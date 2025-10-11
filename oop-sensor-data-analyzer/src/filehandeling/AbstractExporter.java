@@ -1,3 +1,8 @@
+package filehandeling;
+
+import sensor.AbstractSensor;
+import sensor.SensorType;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -17,6 +22,14 @@ public abstract class AbstractExporter {
             writeSensorsWithHighestLatestReading(fileWriter, sensors);
             writeLatestReading(fileWriter, sensors);
         }
+    }
+
+    public String getUnit(SensorType sensorType) {
+        return switch (sensorType) {
+            case SensorType.TEMPERATURE -> "°C";
+            case SensorType.HUMIDITY -> "%";
+            case SensorType.CO2 -> "kg";
+        };
     }
 
     abstract void writeSensors(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException;

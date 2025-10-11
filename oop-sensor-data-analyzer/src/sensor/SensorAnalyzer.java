@@ -1,7 +1,6 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+package sensor;
+
+import java.util.*;
 
 public class SensorAnalyzer {
 
@@ -10,7 +9,7 @@ public class SensorAnalyzer {
         double sum = 0;
         int divider = 0;
         for (Reading reading : readings) {
-            sum += reading.getReading();
+            sum += reading.reading();
             divider++;
         }
         return sum / divider;
@@ -36,7 +35,7 @@ public class SensorAnalyzer {
         for (AbstractSensor sensor : sensors) {
             if (sensor.getSensorType() == sensorType) {
                 for (Reading reading : sensor.getReadings()) {
-                    if (maxReading == null || reading.getReading() > maxReading.getReading()) {
+                    if (maxReading == null || reading.reading() > maxReading.reading()) {
                         resultSensor = sensor;
                         maxReading = reading;
                     }
@@ -50,12 +49,12 @@ public class SensorAnalyzer {
         return new SensorWithSingleReading(resultSensor.getId(), sensorType, singleReading);
     }
 
-    public static Map<SensorType, Reading> getLatestReadingsGroupedByType(List<AbstractSensor> sensors, SensorType sensorType) {
-        Map<SensorType, Reading> latestReadings = new HashMap<>();
+    public static Map<AbstractSensor, Reading> getLatestReadingsGroupedByType(List<AbstractSensor> sensors) {
+        Map<AbstractSensor, Reading> latestReadings = new LinkedHashMap<>();
         for (AbstractSensor sensor : sensors) {
             Reading latest = sensor.getLatestReading();
-            if (sensor.getSensorType() == sensorType) {
-                latestReadings.put(sensor.getSensorType(), latest);
+            if (latest != null) {
+                latestReadings.put(sensor, latest);
             }
         }
         return latestReadings;

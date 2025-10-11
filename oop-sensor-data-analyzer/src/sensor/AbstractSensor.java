@@ -1,3 +1,5 @@
+package sensor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public abstract class AbstractSensor implements Sensor {
             System.err.println("You don't have any readings.");
             return null;
         }
-        return readings.get(readings.size() - 1).getReading();
+        return readings.getLast().reading();
     }
 
 

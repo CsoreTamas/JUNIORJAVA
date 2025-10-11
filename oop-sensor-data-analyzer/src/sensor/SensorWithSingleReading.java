@@ -1,3 +1,5 @@
+package sensor;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -23,7 +25,7 @@ public class SensorWithSingleReading extends AbstractSensor {
 
     @Override
     public String toString() {
-        return String.format("%s: %s = %s.", sensorType, getId(), getReadings());
+        return String.format("%s: %s = %s ", sensorType, getId(), getReadings());
     }
 
     @Override

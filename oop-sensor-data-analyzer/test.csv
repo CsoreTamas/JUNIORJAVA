@@ -1,0 +1,93 @@
+sensor.SensorType|SensorID|ReadingValue|ReadingTime
+
+TEMPERATURE|In side|29,50°C|08:00 
+TEMPERATURE|In side|25,20°C|12:00 
+TEMPERATURE|In side|20,20°C|22:00 
+
+TEMPERATURE|Out side|26,30°C|08:00 
+TEMPERATURE|Out side|35,40°C|12:00 
+TEMPERATURE|Out side|23,80°C|22:00 
+
+TEMPERATURE|Garage|27,10°C|08:00 
+TEMPERATURE|Garage|29,80°C|12:00 
+TEMPERATURE|Garage|22,70°C|22:00 
+
+HUMIDITY|In side|45,40%|08:00 
+HUMIDITY|In side|40,90%|12:00 
+HUMIDITY|In side|34,00%|22:00 
+
+HUMIDITY|Out side|60,10%|08:00 
+HUMIDITY|Out side|55,40%|12:00 
+HUMIDITY|Out side|58,20%|22:00 
+
+HUMIDITY|Garage|40,10%|08:00 
+HUMIDITY|Garage|50,70%|12:00 
+HUMIDITY|Garage|55,30%|22:00 
+
+CO2|Garage|0,10kg|08:00 
+CO2|Garage|0,20kg|12:00 
+CO2|Garage|0,15kg|22:00 
+
+CO2|Kitchen|0,10kg|08:00 
+CO2|Kitchen|0,13kg|12:00 
+CO2|Kitchen|0,15kg|22:00 
+
+CO2|Toilet|0,20kg|08:00 
+CO2|Toilet|0,25kg|12:00 
+CO2|Toilet|0,30kg|22:00 
+
+Average of readings: 
+TEMPERATURE|In side|24,97°C 
+TEMPERATURE|Out side|28,50°C 
+TEMPERATURE|Garage|26,53°C 
+HUMIDITY|In side|40,10% 
+HUMIDITY|Out side|57,90% 
+HUMIDITY|Garage|48,70% 
+CO2|Garage|0,15kg 
+CO2|Kitchen|0,13kg 
+CO2|Toilet|0,25kg 
+
+Sensors above threshold: 
+TEMPERATURE|In side|29,50°C|08:00
+TEMPERATURE|In side|25,20°C|12:00
+TEMPERATURE|In side|20,20°C|22:00
+TEMPERATURE|Out side|26,30°C|08:00
+TEMPERATURE|Out side|35,40°C|12:00
+TEMPERATURE|Out side|23,80°C|22:00
+TEMPERATURE|Garage|27,10°C|08:00
+TEMPERATURE|Garage|29,80°C|12:00
+TEMPERATURE|Garage|22,70°C|22:00
+HUMIDITY|In side|45,40%|08:00
+HUMIDITY|In side|40,90%|12:00
+HUMIDITY|In side|34,00%|22:00
+HUMIDITY|Out side|60,10%|08:00
+HUMIDITY|Out side|55,40%|12:00
+HUMIDITY|Out side|58,20%|22:00
+HUMIDITY|Garage|40,10%|08:00
+HUMIDITY|Garage|50,70%|12:00
+HUMIDITY|Garage|55,30%|22:00
+CO2|Garage|0,10kg|08:00
+CO2|Garage|0,20kg|12:00
+CO2|Garage|0,15kg|22:00
+CO2|Kitchen|0,10kg|08:00
+CO2|Kitchen|0,13kg|12:00
+CO2|Kitchen|0,15kg|22:00
+CO2|Toilet|0,20kg|08:00
+CO2|Toilet|0,25kg|12:00
+CO2|Toilet|0,30kg|22:00
+
+Highest latest readings :
+CO2|Toilet|0,30kg|22:00
+TEMPERATURE|Out side|35,40°C|12:00
+HUMIDITY|Out side|60,10%|08:00
+
+Latest readings :
+TEMPERATURE|In side|20,20°C|22:00
+TEMPERATURE|Out side|23,80°C|22:00
+TEMPERATURE|Garage|22,70°C|22:00
+HUMIDITY|In side|34,00%|22:00
+HUMIDITY|Out side|58,20%|22:00
+HUMIDITY|Garage|55,30%|22:00
+CO2|Garage|0,15kg|22:00
+CO2|Kitchen|0,15kg|22:00
+CO2|Toilet|0,30kg|22:00

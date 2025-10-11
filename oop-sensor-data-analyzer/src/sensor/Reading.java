@@ -1,28 +1,15 @@
+package sensor;
+
 import java.time.LocalTime;
 import java.util.Objects;
 
-public class Reading {
-    private final double reading;
-    private final LocalTime timestamp;
-
-    public Reading(double reading, LocalTime timesTamp) {
-        this.reading = reading;
-        this.timestamp = timesTamp;
-    }
-
-    public double getReading() {
-        return reading;
-    }
-
-    public LocalTime getTimestamp() {
-        return timestamp;
-    }
+public record Reading(double reading, LocalTime timestamp) {
 
     @Override
     public String toString() {
         return String.format("%.2f at %s", reading, timestamp);
     }
-
+/*
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -34,4 +21,6 @@ public class Reading {
     public int hashCode() {
         return Objects.hash(reading, timestamp);
     }
+
+ */
 }

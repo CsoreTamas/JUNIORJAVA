@@ -1,3 +1,5 @@
+package sensor;
+
 public class HumiditySensor extends AbstractSensor implements Sensor {
 
     public HumiditySensor(String id) {

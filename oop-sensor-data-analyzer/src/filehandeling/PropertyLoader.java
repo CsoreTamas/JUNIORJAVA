@@ -1,3 +1,5 @@
+package filehandeling;
+
 public interface PropertyLoader {
     String getExportFormat();
 
