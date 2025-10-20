@@ -1,0 +1,34 @@
+1. SELECT city.name AS city, country.name AS country FROM city JOIN country ON city.CountryCode = country.code;
+2. SELECT city.name, city.population, country.continent FROM city JOIN country ON city.CountryCode = country.code WHERE country.name = 'Germany';
+3. SELECT city.name AS city, country.name AS country FROM city JOIN country ON country.capital = city.id ORDER BY city.name;
+4. SELECT country.name, CountryLanguage.language FROM country JOIN CountryLanguage ON country.code = CountryLanguage.CountryCode WHERE isOfficial = 'T';
+5. SELECT country.name, COUNT(*) AS num_of_languages FROM country JOIN CountryLanguage ON CountryLanguage.CountryCode = country.code GROUP BY country.name ORDER BY num_of_languages DESC;
+6. SELECT city.name AS city_name, country.name AS country_name, country.continent FROM country JOIN city ON city.CountryCode = country.code ORDER BY city.population DESC LIMIT 5;
+7. SELECT country.name AS country, city.population, city.name AS city FROM city JOIN country ON country.capital = city.id WHERE country.continent = 'South America';
+8. SELECT country.name, country.population, CountryLanguage.language FROM country JOIN CountryLanguage ON CountryLanguage.CountryCode = country.code;
+9. SELECT country.name, country.population, COUNT(CountryLanguage.language) AS num_of_languages FROM country JOIN CountryLanguage ON CountryLanguage.CountryCode = country.code GROUP BY country.name, country.population;
+10.SELECT country.name AS country, city.name AS name  FROM country JOIN city ON country.capital = city.id JOIN CountryLanguage ON CountryLanguage.CountryCode = city.CountryCode WHERE CountryLanguage.isOfficial = TRUE AND CountryLanguage.language = 'French';
+11.SELECT country.continent, COUNT(city.id) AS num_of_continent FROM city JOIN country ON country.code = city.CountryCode GROUP BY country.continent;
+12.SELECT country.name, AVG(city.population) AS avg_population FROM city JOIN country ON city.CountryCode = country.code GROUP BY country.name;
+13.SELECT country.continent, SUM(country.population) AS total_population FROM country GROUP BY country.continent ORDER BY total_population DESC LIMIT 1;
+14.SELECT country.name FROM country JOIN CountryLanguage ON country.code = CountryLanguage.CountryCode GROUP BY country.name HAVING COUNT(CountryLanguage.language) > 5;
+15.SELECT country.name FROM country JOIN city ON city.id = country.capital ORDER BY city.population DESC LIMIT 10;
+16.SELECT country.name, COUNT(city.id) AS cities FROM city JOIN country ON country.code = city.CountryCode WHERE city.population > 1000000 GROUP BY country.name ORDER BY cities DESC;
+17.WITH MaxPopulationPerContinent AS (Select continent, MAX(city.population) AS max_population FROM city JOIN country ON city.CountryCode = country.code GROUP BY continent)
+SELECT city.name, country.continent FROM city JOIN country ON city.CountryCode = country.code JOIN MaxPopulationPerContinent mppc ON country.continent = mppc.continent WHERE city.population = mppc.max_population;
+18.SELECT CountryLanguage.language FROM CountryLanguage GROUP BY CountryLanguage.language HAVING COUNT(CountryCode) >= 10;
+19.SELECT country.name AS country, city.name AS city, CountryLanguage.language FROM country JOIN city ON country.capital = city.id JOIN CountryLanguage ON CountryLanguage.CountryCode = country.code WHERE CountryLanguage.isOfficial = 'F';
+20.SELECT country.name AS country, country.continent, city.name AS city FROM city JOIN country ON country.capital = city.id JOIN CountryLanguage ON CountryLanguage.CountryCode = country.code WHERE CountryLanguage.language = 'English';
+21.SELECT country.name, COUNT(CountryLanguage.language) FROM country JOIN CountryLanguage ON country.code = CountryLanguage.CountryCode GROUP BY country.name;
+22.SELECT country.name AS country, city.name AS city, city.population FROM country JOIN city ON country.capital = city.id WHERE country.continent = 'Asia';
+23.SELECT country.continent, city.name FROM country JOIN city ON country.code = city.CountryCode WHERE city.population > 2000000;
+24.SELECT DISTINCT city.name AS city, country.region, country.name AS country FROM city JOIN country ON city.id = country.capital WHERE EXISTS (SELECT 1 FROM CountryLanguage WHERE CountryLanguage.CountryCode = country.code AND CountryLanguage.language = 'Spanish');
+25.SELECT country.name AS country, city.name AS city FROM city JOIN country ON city.CountryCode = country.code ORDER BY city.population DESC;
+26.SELECT country.name AS country, city.name AS city, CountryLanguage.language FROM country JOIN city ON country.capital = city.id JOIN CountryLanguage ON country.code = CountryLanguage.CountryCode WHERE country.continent = 'Europe' AND CountryLanguage.isOfficial = 'T';
+27.SELECT country.name, SUM(city.population) AS city_population, country.population FROM city JOIN country ON country.code = city.CountryCode GROUP BY country.code;
+28.SELECT country.name AS country, city.name AS city FROM city JOIN country ON country.capital = city.id WHERE city.population < 0.05 * country.population;
+29.SELECT country, region, city FROM (SELECT city.name AS city, country.region, country.name AS country, RANK() OVER (PARTITION BY country.code ORDER BY city.population DESC) AS rank_of_population FROM city JOIN country ON city.CountryCode = country.code) ranked WHERE rank_of_population = 1;
+30.SELECT country.continent, city.name AS city, country.name AS country, city.population FROM city city JOIN country country ON city.CountryCode = country.code WHERE (SELECT COUNT(*) FROM city city2 JOIN country country2 ON city2.CountryCode = country2.code
+WHERE country2.continent = country.continent AND city2.population > city.population) < 3 ORDER BY country.continent, city.population DESC;
+31.SELECT city.name AS city, country.name AS country FROM city JOIN country ON city.id = country.capital WHERE city.population > country.population * 0.5;
+32.SELECT CountryLanguage.language FROM country JOIN CountryLanguage ON country.code = CountryLanguage.CountryCode WHERE country.lifeExpectancy = (SELECT MAX(lifeExpectancy) FROM country) AND CountryLanguage.isOfficial = 'T';
