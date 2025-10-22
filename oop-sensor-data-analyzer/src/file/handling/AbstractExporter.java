@@ -1,6 +1,7 @@
-package filehandeling;
+package file.handling;
 
 import sensor.AbstractSensor;
+import sensor.Sensor;
 import sensor.SensorType;
 
 import java.io.FileWriter;
@@ -14,7 +15,7 @@ public abstract class AbstractExporter {
         this.fileName = fileName;
     }
 
-    public void writeFile(List<AbstractSensor> sensors, double threshold) throws IOException {
+    public void writeFile(List<Sensor> sensors, double threshold) throws IOException {
         try (FileWriter fileWriter = new FileWriter(fileName)) {
             writeSensors(fileWriter, sensors);
             writeAverage(fileWriter, sensors);
@@ -32,13 +33,13 @@ public abstract class AbstractExporter {
         };
     }
 
-    abstract void writeSensors(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException;
+    abstract void writeSensors(FileWriter fileWriter, List<Sensor> sensors) throws IOException;
 
-    abstract void writeAverage(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException;
+    abstract void writeAverage(FileWriter fileWriter, List<Sensor> sensors) throws IOException;
 
-    abstract void writeSensorAboveThreshold(FileWriter fileWriter, List<AbstractSensor> sensors, double threshold) throws IOException;
+    abstract void writeSensorAboveThreshold(FileWriter fileWriter, List<Sensor> sensors, double threshold) throws IOException;
 
-    abstract void writeSensorsWithHighestLatestReading(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException;
+    abstract void writeSensorsWithHighestLatestReading(FileWriter fileWriter, List<Sensor> sensors) throws IOException;
 
-    abstract void writeLatestReading(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException;
+    abstract void writeLatestReading(FileWriter fileWriter, List<Sensor> sensors) throws IOException;
 }

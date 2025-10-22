@@ -1,7 +1,8 @@
 package tests;
 
-import filehandeling.AbstractExporter;
-import filehandeling.CsvExporter;
+import file.handling.AbstractExporter;
+import file.handling.CsvExporter;
+import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -13,10 +14,8 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class CsvFileWriterTest {
-    private List<AbstractSensor> sensorList;
+    private List<Sensor> sensorList;
 
     @BeforeEach
     void setup() {
@@ -70,6 +69,8 @@ public class CsvFileWriterTest {
 
     @Test
     void shouldWriteSensorsData(@TempDir Path tempDir) throws IOException {
+
+
         File tempFile = tempDir.resolve("sensors.csv").toFile();
 
         AbstractExporter csvExporter = new CsvExporter(tempFile.getAbsolutePath());
@@ -83,82 +84,86 @@ public class CsvFileWriterTest {
                 lines.add(line);
             }
         }
+        SoftAssertions softAssertions = new SoftAssertions();
 
-        assertFalse(lines.isEmpty());
-        assertEquals("sensor.SensorType|SensorID|ReadingValue|ReadingTime", lines.getFirst());
-        assertTrue(lines.get(1).isEmpty());
-        assertEquals("CO2|Kitchen|0,10kg|08:00 ", lines.get(2));
-        assertEquals("CO2|Kitchen|0,30kg|18:00 ", lines.get(3));
-        assertTrue(lines.get(4).isEmpty());
-        assertEquals("CO2|Garage|0,20kg|08:00 ", lines.get(5));
-        assertEquals("CO2|Garage|0,15kg|18:00 ", lines.get(6));
-        assertTrue(lines.get(7).isEmpty());
-        assertEquals("CO2|Toilet|0,18kg|08:00 ", lines.get(8));
-        assertEquals("CO2|Toilet|0,32kg|18:00 ", lines.get(9));
-        assertTrue(lines.get(10).isEmpty());
-        assertEquals("TEMPERATURE|Garage|24,00°C|08:00 ", lines.get(11));
-        assertEquals("TEMPERATURE|Garage|30,00°C|18:00 ", lines.get(12));
-        assertTrue(lines.get(13).isEmpty());
-        assertEquals("TEMPERATURE|Inside|20,00°C|08:00 ", lines.get(14));
-        assertEquals("TEMPERATURE|Inside|25,00°C|18:00 ", lines.get(15));
-        assertTrue(lines.get(16).isEmpty());
-        assertEquals("TEMPERATURE|Outside|27,00°C|08:00 ", lines.get(17));
-        assertEquals("TEMPERATURE|Outside|35,00°C|18:00 ", lines.get(18));
-        assertTrue(lines.get(19).isEmpty());
-        assertEquals("HUMIDITY|Garage|34,00%|08:00 ", lines.get(20));
-        assertEquals("HUMIDITY|Garage|36,40%|18:00 ", lines.get(21));
-        assertTrue(lines.get(22).isEmpty());
-        assertEquals("HUMIDITY|Inside|30,00%|08:00 ", lines.get(23));
-        assertEquals("HUMIDITY|Inside|40,40%|18:00 ", lines.get(24));
-        assertTrue(lines.get(25).isEmpty());
-        assertEquals("HUMIDITY|Outside|50,00%|08:00 ", lines.get(26));
-        assertEquals("HUMIDITY|Outside|55,30%|18:00 ", lines.get(27));
-        assertTrue(lines.get(28).isEmpty());
-        assertEquals("Average of readings: ", lines.get(29));
-        assertEquals("CO2|Kitchen|0,20kg ", lines.get(30));
-        assertEquals("CO2|Garage|0,18kg ", lines.get(31));
-        assertEquals("CO2|Toilet|0,25kg ", lines.get(32));
-        assertEquals("TEMPERATURE|Garage|27,00°C ", lines.get(33));
-        assertEquals("TEMPERATURE|Inside|22,50°C ", lines.get(34));
-        assertEquals("TEMPERATURE|Outside|31,00°C ", lines.get(35));
-        assertEquals("HUMIDITY|Garage|35,20% ", lines.get(36));
-        assertEquals("HUMIDITY|Inside|35,20% ", lines.get(37));
-        assertEquals("HUMIDITY|Outside|52,65% ", lines.get(38));
-        assertTrue(lines.get(39).isEmpty());
-        assertEquals("Sensors above threshold: ", lines.get(40));
-        assertEquals("CO2|Kitchen|0,10kg|08:00", lines.get(41));
-        assertEquals("CO2|Kitchen|0,30kg|18:00", lines.get(42));
-        assertEquals("CO2|Garage|0,20kg|08:00", lines.get(43));
-        assertEquals("CO2|Garage|0,15kg|18:00", lines.get(44));
-        assertEquals("CO2|Toilet|0,18kg|08:00", lines.get(45));
-        assertEquals("CO2|Toilet|0,32kg|18:00", lines.get(46));
-        assertEquals("TEMPERATURE|Garage|24,00°C|08:00", lines.get(47));
-        assertEquals("TEMPERATURE|Garage|30,00°C|18:00", lines.get(48));
-        assertEquals("TEMPERATURE|Inside|20,00°C|08:00", lines.get(49));
-        assertEquals("TEMPERATURE|Inside|25,00°C|18:00", lines.get(50));
-        assertEquals("TEMPERATURE|Outside|27,00°C|08:00", lines.get(51));
-        assertEquals("TEMPERATURE|Outside|35,00°C|18:00", lines.get(52));
-        assertEquals("HUMIDITY|Garage|34,00%|08:00", lines.get(53));
-        assertEquals("HUMIDITY|Garage|36,40%|18:00", lines.get(54));
-        assertEquals("HUMIDITY|Inside|30,00%|08:00", lines.get(55));
-        assertEquals("HUMIDITY|Inside|40,40%|18:00", lines.get(56));
-        assertEquals("HUMIDITY|Outside|50,00%|08:00", lines.get(57));
-        assertEquals("HUMIDITY|Outside|55,30%|18:00", lines.get(58));
-        assertTrue(lines.get(59).isEmpty());
-        assertEquals("Highest latest readings :", lines.get(60));
-        assertEquals("CO2|Toilet|0,32kg|18:00", lines.get(61));
-        assertEquals("TEMPERATURE|Outside|35,00°C|18:00", lines.get(62));
-        assertEquals("HUMIDITY|Outside|55,30%|18:00", lines.get(63));
-        assertTrue(lines.get(64).isEmpty());
-        assertEquals("Latest readings :", lines.get(65));
-        assertEquals("CO2|Kitchen|0,30kg|18:00", lines.get(66));
-        assertEquals("CO2|Garage|0,15kg|18:00", lines.get(67));
-        assertEquals("CO2|Toilet|0,32kg|18:00", lines.get(68));
-        assertEquals("TEMPERATURE|Garage|30,00°C|18:00", lines.get(69));
-        assertEquals("TEMPERATURE|Inside|25,00°C|18:00", lines.get(70));
-        assertEquals("TEMPERATURE|Outside|35,00°C|18:00", lines.get(71));
-        assertEquals("HUMIDITY|Garage|36,40%|18:00", lines.get(72));
-        assertEquals("HUMIDITY|Inside|40,40%|18:00", lines.get(73));
-        assertEquals("HUMIDITY|Outside|55,30%|18:00", lines.get(74));
+        softAssertions.assertThat(lines).isNotEmpty();
+        softAssertions.assertThat(lines.getFirst()).isEqualTo("sensor.SensorType|SensorID|ReadingValue|ReadingTime");
+        softAssertions.assertThat(lines.get(1)).isEmpty();
+        softAssertions.assertThat(lines.get(2)).isEqualTo("CO2|Kitchen|0,10kg|08:00 ");
+        softAssertions.assertThat(lines.get(3)).isEqualTo("CO2|Kitchen|0,30kg|18:00 ");
+        softAssertions.assertThat(lines.get(4)).isEmpty();
+
+        softAssertions.assertThat(lines.get(5)).isEqualTo("CO2|Garage|0,20kg|08:00 ");
+        softAssertions.assertThat(lines.get(6)).isEqualTo("CO2|Garage|0,15kg|18:00 ");
+        softAssertions.assertThat(lines.get(1)).isEmpty();
+        softAssertions.assertThat(lines.get(8)).isEqualTo("CO2|Toilet|0,18kg|08:00 ");
+        softAssertions.assertThat(lines.get(9)).isEqualTo("CO2|Toilet|0,32kg|18:00 ");
+        softAssertions.assertThat(lines.get(10)).isEmpty();
+        softAssertions.assertThat(lines.get(11)).isEqualTo("TEMPERATURE|Garage|24,00°C|08:00 ");
+        softAssertions.assertThat(lines.get(12)).isEqualTo("TEMPERATURE|Garage|30,00°C|18:00 ");
+        softAssertions.assertThat(lines.get(13)).isEmpty();
+        softAssertions.assertThat(lines.get(14)).isEqualTo("TEMPERATURE|Inside|20,00°C|08:00 ");
+        softAssertions.assertThat(lines.get(15)).isEqualTo("TEMPERATURE|Inside|25,00°C|18:00 "); //todo
+        softAssertions.assertThat(lines.get(16)).isEmpty();
+        softAssertions.assertThat(lines.get(17)).isEqualTo("TEMPERATURE|Outside|27,00°C|08:00 ");
+        softAssertions.assertThat(lines.get(18)).isEqualTo("TEMPERATURE|Outside|35,00°C|18:00 ");
+        softAssertions.assertThat(lines.get(19)).isEmpty();
+        softAssertions.assertThat(lines.get(20)).isEqualTo("HUMIDITY|Garage|34,00%|08:00 ");
+        softAssertions.assertThat(lines.get(21)).isEqualTo("HUMIDITY|Garage|36,40%|18:00 ");
+        softAssertions.assertThat(lines.get(22)).isEmpty();
+        softAssertions.assertThat(lines.get(23)).isEqualTo("HUMIDITY|Inside|30,00%|08:00 ");
+        softAssertions.assertThat(lines.get(24)).isEqualTo("HUMIDITY|Inside|40,40%|18:00 ");
+        softAssertions.assertThat(lines.get(25)).isEmpty();
+        softAssertions.assertThat(lines.get(26)).isEqualTo("HUMIDITY|Outside|50,00%|08:00 ");
+        softAssertions.assertThat(lines.get(27)).isEqualTo("HUMIDITY|Outside|55,30%|18:00 ");
+        softAssertions.assertThat(lines.get(28)).isEmpty();
+        softAssertions.assertThat(lines.get(29)).isEqualTo("Average of readings: ");
+        softAssertions.assertThat(lines.get(30)).isEqualTo("CO2|Kitchen|0,20kg ");
+        softAssertions.assertThat(lines.get(31)).isEqualTo("CO2|Garage|0,18kg ");
+        softAssertions.assertThat(lines.get(32)).isEqualTo("CO2|Toilet|0,25kg ");
+        softAssertions.assertThat(lines.get(33)).isEqualTo("TEMPERATURE|Garage|27,00°C ");
+        softAssertions.assertThat(lines.get(34)).isEqualTo("TEMPERATURE|Inside|22,50°C ");
+        softAssertions.assertThat(lines.get(35)).isEqualTo("TEMPERATURE|Outside|31,00°C ");
+        softAssertions.assertThat(lines.get(36)).isEqualTo("HUMIDITY|Garage|35,20% ");
+        softAssertions.assertThat(lines.get(37)).isEqualTo("HUMIDITY|Inside|35,20% ");
+        softAssertions.assertThat(lines.get(38)).isEqualTo("HUMIDITY|Outside|52,65% ");
+        softAssertions.assertThat(lines.get(39)).isEmpty();
+        softAssertions.assertThat(lines.get(40)).isEqualTo("Sensors above threshold: ");
+        softAssertions.assertThat(lines.get(41)).isEqualTo("CO2|Kitchen|0,10kg|08:00");
+        softAssertions.assertThat(lines.get(42)).isEqualTo("CO2|Kitchen|0,30kg|18:00");
+        softAssertions.assertThat(lines.get(43)).isEqualTo("CO2|Garage|0,20kg|08:00");
+        softAssertions.assertThat(lines.get(44)).isEqualTo("CO2|Garage|0,15kg|18:00");
+        softAssertions.assertThat(lines.get(45)).isEqualTo("CO2|Toilet|0,18kg|08:00");
+        softAssertions.assertThat(lines.get(46)).isEqualTo("CO2|Toilet|0,32kg|18:00");
+        softAssertions.assertThat(lines.get(47)).isEqualTo("TEMPERATURE|Garage|24,00°C|08:00");
+        softAssertions.assertThat(lines.get(48)).isEqualTo("TEMPERATURE|Garage|30,00°C|18:00");
+        softAssertions.assertThat(lines.get(49)).isEqualTo("TEMPERATURE|Inside|20,00°C|08:00");
+        softAssertions.assertThat(lines.get(50)).isEqualTo("TEMPERATURE|Inside|25,00°C|18:00");
+        softAssertions.assertThat(lines.get(51)).isEqualTo("TEMPERATURE|Outside|27,00°C|08:00");
+        softAssertions.assertThat(lines.get(52)).isEqualTo("TEMPERATURE|Outside|35,00°C|18:00");
+        softAssertions.assertThat(lines.get(53)).isEqualTo("HUMIDITY|Garage|34,00%|08:00");
+        softAssertions.assertThat(lines.get(54)).isEqualTo("HUMIDITY|Garage|36,40%|18:00");
+        softAssertions.assertThat(lines.get(55)).isEqualTo("HUMIDITY|Inside|30,00%|08:00");
+        softAssertions.assertThat(lines.get(56)).isEqualTo("HUMIDITY|Inside|40,40%|18:00");
+        softAssertions.assertThat(lines.get(57)).isEqualTo("HUMIDITY|Outside|50,00%|08:00");
+        softAssertions.assertThat(lines.get(58)).isEqualTo("HUMIDITY|Outside|55,30%|18:00");
+        softAssertions.assertThat(lines.get(59)).isEmpty();
+        softAssertions.assertThat(lines.get(60)).isEqualTo("Highest latest readings :");
+        softAssertions.assertThat(lines.get(61)).isEqualTo("CO2|Toilet|0,32kg|18:00");
+        softAssertions.assertThat(lines.get(62)).isEqualTo("TEMPERATURE|Outside|35,00°C|18:00");
+        softAssertions.assertThat(lines.get(63)).isEqualTo("HUMIDITY|Outside|55,30%|18:00");
+        softAssertions.assertThat(lines.get(64)).isEmpty();
+        softAssertions.assertThat(lines.get(65)).isEqualTo("Latest readings :");
+        softAssertions.assertThat(lines.get(66)).isEqualTo("CO2|Kitchen|0,30kg|18:00");
+        softAssertions.assertThat(lines.get(67)).isEqualTo("CO2|Garage|0,15kg|18:00");
+        softAssertions.assertThat(lines.get(68)).isEqualTo("CO2|Toilet|0,32kg|18:00");
+        softAssertions.assertThat(lines.get(69)).isEqualTo("TEMPERATURE|Garage|30,00°C|18:00");
+        softAssertions.assertThat(lines.get(70)).isEqualTo("TEMPERATURE|Inside|25,00°C|18:00");
+        softAssertions.assertThat(lines.get(71)).isEqualTo("TEMPERATURE|Outside|35,00°C|18:00");
+        softAssertions.assertThat(lines.get(72)).isEqualTo("HUMIDITY|Garage|36,40%|18:00");
+        softAssertions.assertThat(lines.get(73)).isEqualTo("HUMIDITY|Inside|40,40%|18:00");
+        softAssertions.assertThat(lines.get(74)).isEqualTo("HUMIDITY|Outside|55,30%|18:00");
+
+        softAssertions.assertAll();
     }
 }

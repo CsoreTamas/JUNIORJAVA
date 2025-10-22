@@ -1,6 +1,6 @@
 package tests;
 
-import filehandeling.PropertyLoader;
+import file.handling.PropertyLoader;
 
 public class FileLoaderTestHelper implements PropertyLoader {
     private final String fileName;

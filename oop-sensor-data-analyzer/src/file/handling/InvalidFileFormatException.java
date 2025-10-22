@@ -1,4 +1,4 @@
-package filehandeling;
+package file.handling;
 
 public class InvalidFileFormatException extends RuntimeException {
     public InvalidFileFormatException(String message) {

@@ -1,9 +1,6 @@
-package filehandeling;
+package file.handling;
 
-import sensor.AbstractSensor;
-import sensor.Reading;
-import sensor.SensorAnalyzer;
-import sensor.SensorType;
+import sensor.*;
 
 import java.io.IOException;
 import java.io.FileWriter;
@@ -17,9 +14,9 @@ public class CsvExporter extends AbstractExporter {
     }
 
     @Override
-    void writeSensors(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
+    void writeSensors(FileWriter fileWriter, List<Sensor> sensors) throws IOException {
         fileWriter.write("sensor.SensorType|SensorID|ReadingValue|ReadingTime" + "\n");
-        for (AbstractSensor sensor : sensors) {
+        for (Sensor sensor : sensors) {
             String unit = getUnit(sensor.getSensorType());
             fileWriter.write("\n");
             for (Reading reading : sensor.getReadings()) {
@@ -34,9 +31,9 @@ public class CsvExporter extends AbstractExporter {
     }
 
     @Override
-    void writeAverage(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
+    void writeAverage(FileWriter fileWriter, List<Sensor> sensors) throws IOException {
         fileWriter.write("\nAverage of readings: \n");
-        for (AbstractSensor sensor : sensors) {
+        for (Sensor sensor : sensors) {
             double average = SensorAnalyzer.getAverageOfReadings(sensor);
             String unit = getUnit(sensor.getSensorType());
             fileWriter.write(String.format("%s|%s|%.2f%s \n",
@@ -48,11 +45,11 @@ public class CsvExporter extends AbstractExporter {
     }
 
     @Override
-    void writeSensorAboveThreshold(FileWriter fileWriter, List<AbstractSensor> sensors, double threshold) throws IOException {
+    void writeSensorAboveThreshold(FileWriter fileWriter, List<Sensor> sensors, double threshold) throws IOException {
         fileWriter.write("\nSensors above threshold: \n");
 
 
-        for (AbstractSensor sensor : sensors) {
+        for (Sensor sensor : sensors) {
             String unit = getUnit(sensor.getSensorType());
             for (Reading reading : sensor.getReadings()) {
                 double value = reading.reading();
@@ -70,12 +67,12 @@ public class CsvExporter extends AbstractExporter {
     }
 
     @Override
-    void writeSensorsWithHighestLatestReading(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
+    void writeSensorsWithHighestLatestReading(FileWriter fileWriter, List<Sensor> sensors) throws IOException {
         fileWriter.write("\nHighest latest readings :\n");
         for (SensorType type : SensorType.values()) {
             String unit = getUnit(type);
 
-            AbstractSensor highestSensor = SensorAnalyzer.getSensorWithHighestLatestReading(sensors, type);
+            Sensor highestSensor = SensorAnalyzer.getSensorWithHighestLatestReading(sensors, type);
             for (Reading reading : highestSensor.getReadings()) {
                 double value = reading.reading();
                 String formatedReading = String.format("%.2f", value);
@@ -90,13 +87,13 @@ public class CsvExporter extends AbstractExporter {
     }
 
     @Override
-    void writeLatestReading(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
+    void writeLatestReading(FileWriter fileWriter, List<Sensor> sensors) throws IOException {
         fileWriter.write("\nLatest readings :\n");
 
-        Map<AbstractSensor, Reading> latestReadings = SensorAnalyzer.getLatestReadingsGroupedByType(sensors);
+        Map<Sensor, Reading> latestReadings = SensorAnalyzer.getLatestReadingsGroupedByType(sensors);
 
-        for (Map.Entry<AbstractSensor, Reading> entry : latestReadings.entrySet()) {
-            AbstractSensor sensor = entry.getKey();
+        for (Map.Entry<Sensor, Reading> entry : latestReadings.entrySet()) {
+            Sensor sensor = entry.getKey();
             Reading reading = entry.getValue();
 
             String formatedReading = String.format("%.2f", reading.reading());

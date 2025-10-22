@@ -4,7 +4,7 @@ import java.util.*;
 
 public class SensorAnalyzer {
 
-    public static double getAverageOfReadings(AbstractSensor sensor) {
+    public static double getAverageOfReadings(Sensor sensor) {
         List<Reading> readings = sensor.getReadings();
         double sum = 0;
         int divider = 0;
@@ -15,9 +15,9 @@ public class SensorAnalyzer {
         return sum / divider;
     }
 
-    public static List<AbstractSensor> getSensorsAboveSThreshold(List<AbstractSensor> sensors, double threshold, SensorType sensorType) {
-        List<AbstractSensor> result = new ArrayList<>();
-        for (AbstractSensor sensor : sensors) {
+    public static List<Sensor> getSensorsAboveSThreshold(List<Sensor> sensors, double threshold, SensorType sensorType) {
+        List<Sensor> result = new ArrayList<>();
+        for (Sensor sensor : sensors) {
             if (sensor.getSensorType() == sensorType) {
                 double latest = sensor.getLatestReadingValue();
                 if (latest > threshold) {
@@ -28,11 +28,11 @@ public class SensorAnalyzer {
         return result;
     }
 
-    public static AbstractSensor getSensorWithHighestLatestReading(List<AbstractSensor> sensors, SensorType sensorType) {
-        AbstractSensor resultSensor = null;
+    public static Sensor getSensorWithHighestLatestReading(List<Sensor> sensors, SensorType sensorType) {
+        Sensor resultSensor = null;
         Reading maxReading = null;
 
-        for (AbstractSensor sensor : sensors) {
+        for (Sensor sensor : sensors) {
             if (sensor.getSensorType() == sensorType) {
                 for (Reading reading : sensor.getReadings()) {
                     if (maxReading == null || reading.reading() > maxReading.reading()) {
@@ -49,9 +49,9 @@ public class SensorAnalyzer {
         return new SensorWithSingleReading(resultSensor.getId(), sensorType, singleReading);
     }
 
-    public static Map<AbstractSensor, Reading> getLatestReadingsGroupedByType(List<AbstractSensor> sensors) {
-        Map<AbstractSensor, Reading> latestReadings = new LinkedHashMap<>();
-        for (AbstractSensor sensor : sensors) {
+    public static Map<Sensor, Reading> getLatestReadingsGroupedByType(List<Sensor> sensors) {
+        Map<Sensor, Reading> latestReadings = new LinkedHashMap<>();
+        for (Sensor sensor : sensors) {
             Reading latest = sensor.getLatestReading();
             if (latest != null) {
                 latestReadings.put(sensor, latest);

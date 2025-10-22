@@ -1,8 +1,8 @@
 package tests;
 
-import filehandeling.ExportFileValidator;
-import filehandeling.InvalidFileFormatException;
-import filehandeling.PropertyLoader;
+import file.handling.ExportFileValidator;
+import file.handling.InvalidFileFormatException;
+import file.handling.PropertyLoader;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

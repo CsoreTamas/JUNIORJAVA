@@ -10,4 +10,6 @@ public interface Sensor {
     List<Reading> getReadings();
 
     Reading getLatestReading();
+
+    double getLatestReadingValue();
 }

@@ -29,7 +29,7 @@ public class SensorAnalyzerTest {
 
     @Test
     void shouldListSensorsAboveThreshold() {
-        List<AbstractSensor> sensorList = new ArrayList<>();
+        List<Sensor> sensorList = new ArrayList<>();
 
         AbstractSensor humSensorInSide = new HumiditySensor("Inside");
         humSensorInSide.addReading(new Reading(50, LocalTime.of(12, 0)));
@@ -50,7 +50,7 @@ public class SensorAnalyzerTest {
 
     @Test
     void shouldSearchHighestReaderSensor() {
-        List<AbstractSensor> sensors = new ArrayList<>();
+        List<Sensor> sensors = new ArrayList<>();
 
         AbstractSensor tempIn = new TemperatureSensor("tempin");
         tempIn.addReading(new Reading(20, LocalTime.of(12, 0)));
@@ -78,7 +78,7 @@ public class SensorAnalyzerTest {
         LocalTime noon = LocalTime.of(12, 0);
         LocalTime evening = LocalTime.of(22, 0);
 
-        List<AbstractSensor> sensorList = new ArrayList<>();
+        List<Sensor> sensorList = new ArrayList<>();
 
         AbstractSensor tempInSide = new TemperatureSensor("In side");
         tempInSide.addReading(new Reading(29.5, morning));
@@ -121,11 +121,11 @@ public class SensorAnalyzerTest {
         expectedHashMap.put(SensorType.HUMIDITY, new Reading(58.2, evening));
         expectedHashMap.put(SensorType.CO2, new Reading(0.3, evening));
 
-        Map<AbstractSensor, Reading> latestReadings = SensorAnalyzer.getLatestReadingsGroupedByType(sensorList);
+        Map<Sensor, Reading> latestReadings = SensorAnalyzer.getLatestReadingsGroupedByType(sensorList);
 
         Map<SensorType, Reading> actualHashMap = new HashMap<>();
-        for (Map.Entry<AbstractSensor, Reading> entry : latestReadings.entrySet()) {
-            AbstractSensor sensor = entry.getKey();
+        for (Map.Entry<Sensor, Reading> entry : latestReadings.entrySet()) {
+            Sensor sensor = entry.getKey();
             Reading reading = entry.getValue();
             SensorType type = sensor.getSensorType();
 

@@ -1,8 +1,7 @@
 package tests;
 
-import filehandeling.AbstractExporter;
-import filehandeling.JsonExporter;
-import org.junit.jupiter.api.BeforeAll;
+import file.handling.AbstractExporter;
+import file.handling.JsonExporter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -20,7 +19,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JsonFileWriterTest {
-    List<AbstractSensor> sensorList;
+    List<Sensor> sensorList;
 
     @BeforeEach
     void setup() {
@@ -414,6 +413,5 @@ public class JsonFileWriterTest {
         for (int i = 0; i < lines.size(); i++) {
             assertEquals(expectedJson.get(i), lines.get(i), "" + (i + 1));
         }
-
     }
 }

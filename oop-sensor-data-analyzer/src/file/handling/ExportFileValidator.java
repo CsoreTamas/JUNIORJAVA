@@ -1,4 +1,4 @@
-package filehandeling;
+package file.handling;
 
 import java.io.IOException;
 
