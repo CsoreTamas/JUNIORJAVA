@@ -1,4 +1,9 @@
+package tests;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import sensor.*;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -24,7 +29,7 @@ public class SensorAnalyzerTest {
 
     @Test
     void shouldListSensorsAboveThreshold() {
-        List<AbstractSensor> sensorList = new ArrayList<>();
+        List<Sensor> sensorList = new ArrayList<>();
 
         AbstractSensor humSensorInSide = new HumiditySensor("Inside");
         humSensorInSide.addReading(new Reading(50, LocalTime.of(12, 0)));
@@ -45,7 +50,7 @@ public class SensorAnalyzerTest {
 
     @Test
     void shouldSearchHighestReaderSensor() {
-        List<AbstractSensor> sensors = new ArrayList<>();
+        List<Sensor> sensors = new ArrayList<>();
 
         AbstractSensor tempIn = new TemperatureSensor("tempin");
         tempIn.addReading(new Reading(20, LocalTime.of(12, 0)));
@@ -73,7 +78,7 @@ public class SensorAnalyzerTest {
         LocalTime noon = LocalTime.of(12, 0);
         LocalTime evening = LocalTime.of(22, 0);
 
-        List<AbstractSensor> sensorList = new ArrayList<>();
+        List<Sensor> sensorList = new ArrayList<>();
 
         AbstractSensor tempInSide = new TemperatureSensor("In side");
         tempInSide.addReading(new Reading(29.5, morning));
@@ -111,15 +116,22 @@ public class SensorAnalyzerTest {
         co2Toilet.addReading(new Reading(0.30, evening));
         sensorList.add(co2Toilet);
 
-        Map<SensorType, Reading> expectedMapTemp = new HashMap<>();
-        expectedMapTemp.put(SensorType.TEMPERATURE, new Reading(23.8, evening));
-        Map<SensorType, Reading> expectedMapHum = new HashMap<>();
-        expectedMapHum.put(SensorType.HUMIDITY, new Reading(58.2, evening));
-        Map<SensorType, Reading> expectedMapCO = new HashMap<>();
-        expectedMapCO.put(SensorType.CO2, new Reading(0.3, evening));
+        Map<SensorType, Reading> expectedHashMap = new HashMap<>();
+        expectedHashMap.put(SensorType.TEMPERATURE, new Reading(23.8, evening));
+        expectedHashMap.put(SensorType.HUMIDITY, new Reading(58.2, evening));
+        expectedHashMap.put(SensorType.CO2, new Reading(0.3, evening));
 
-        assertEquals(expectedMapTemp, SensorAnalyzer.getLatestReadingsGroupedByType(sensorList, SensorType.TEMPERATURE));
-        assertEquals(expectedMapHum, SensorAnalyzer.getLatestReadingsGroupedByType(sensorList, SensorType.HUMIDITY));
-        assertEquals(expectedMapCO, SensorAnalyzer.getLatestReadingsGroupedByType(sensorList, SensorType.CO2));
+        Map<Sensor, Reading> latestReadings = SensorAnalyzer.getLatestReadingsGroupedByType(sensorList);
+
+        Map<SensorType, Reading> actualHashMap = new HashMap<>();
+        for (Map.Entry<Sensor, Reading> entry : latestReadings.entrySet()) {
+            Sensor sensor = entry.getKey();
+            Reading reading = entry.getValue();
+            SensorType type = sensor.getSensorType();
+
+            actualHashMap.put(type, reading);
+        }
+
+        assertEquals(expectedHashMap, actualHashMap);
     }
 }

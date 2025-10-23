@@ -1,3 +1,7 @@
+package file.handling;
+
+import sensor.*;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -10,21 +14,21 @@ public class JsonExporter extends AbstractExporter {
     }
 
     @Override
-    void writeSensors(FileWriter fileWriter, List<AbstractSensor> sensors) throws IOException {
+    void writeSensors(FileWriter fileWriter, List<Sensor> sensors) throws IOException {
         fileWriter.write("{\n");
         fileWriter.write("   \"sensors\":[\n");
         for (int i = 0; i < sensors.size(); i++) {
-            AbstractSensor sensor = sensors.get(i);
+            Sensor sensor = sensors.get(i);
             fileWriter.write("       {\n");
-            fileWriter.write("         \"Sensor type\": \"" + sensor.getSensorType() + "\",\n");
-            fileWriter.write("         \"Sensor ID\": \"" + sensor.getId() + "\",\n");
+            fileWriter.write("         \"sensor.Sensor type\": \"" + sensor.getSensorType() + "\",\n");
+            fileWriter.write("         \"sensor.Sensor ID\": \"" + sensor.getId() + "\",\n");
             fileWriter.write("         \"Readings\": [\n");
             List<Reading> readings = sensor.getReadings();
             for (int j = 0; j < readings.size(); j++) {
                 Reading reading = readings.get(j);
 
-                fileWriter.write("            {\n                \"Value\": " + reading.getReading() + ",\n");
-                fileWriter.write("                \"Time\": \"" + reading.getTimestamp() + "\" \n            }");
+                fileWriter.write("            {\n                \"Value\": " + reading.reading() + ",\n");
+                fileWriter.write("                \"Time\": \"" + reading.timestamp() + "\" \n            }");
                 if (j != readings.size() - 1) {
                     fileWriter.write(", ");
                 }
@@ -41,10 +45,10 @@ public class JsonExporter extends AbstractExporter {
     }
 
     @Override
-    void writeAverage(FileWriter fileWriter, List<AbstractSensor> sensorList) throws IOException {
+    void writeAverage(FileWriter fileWriter, List<Sensor> sensorList) throws IOException {
         fileWriter.write("\"Sensors average\": [\n");
         for (int i = 0; i < sensorList.size(); i++) {
-            AbstractSensor sensor = sensorList.get(i);
+            Sensor sensor = sensorList.get(i);
             fileWriter.write("  {\n");
             fileWriter.write("    \"sensor type\" : " + "\"" + sensor.getSensorType() + "\",\n");
             fileWriter.write("    \"sensor id\" : " + "\"" + sensor.getId() + "\",\n");
@@ -61,17 +65,17 @@ public class JsonExporter extends AbstractExporter {
     }
 
     @Override
-    void writeSensorAboveThreshold(FileWriter fileWriter, List<AbstractSensor> sensorList, double threshold) throws IOException {
+    void writeSensorAboveThreshold(FileWriter fileWriter, List<Sensor> sensorList, double threshold) throws IOException {
         fileWriter.write("\"Sensors above threshold\": [\n");
         SensorType[] types = SensorType.values();
         for (int i = 0; i < types.length; i++) {
             SensorType type = types[i];
-            List<AbstractSensor> aboveThreshold = SensorAnalyzer.getSensorsAboveSThreshold(sensorList, threshold, type);
+            List<Sensor> aboveThreshold = SensorAnalyzer.getSensorsAboveSThreshold(sensorList, threshold, type);
             fileWriter.write("  {\n");
             fileWriter.write("    \"sensor type\" : " + "\"" + type + "\",\n");
             fileWriter.write("    \"above threshold\": [\n");
             for (int j = 0; j < aboveThreshold.size(); j++) {
-                AbstractSensor sensor = aboveThreshold.get(j);
+                Sensor sensor = aboveThreshold.get(j);
                 fileWriter.write("       {\n");
                 fileWriter.write("         \"sensor id\" : " + "\"" + sensor.getId() + "\",\n");
                 fileWriter.write("         \"value\" : " + sensor.getLatestReadingValue() + "\n");
@@ -92,12 +96,12 @@ public class JsonExporter extends AbstractExporter {
     }
 
     @Override
-    void writeSensorsWithHighestLatestReading(FileWriter fileWriter, List<AbstractSensor> sensorList) throws IOException {
+    void writeSensorsWithHighestLatestReading(FileWriter fileWriter, List<Sensor> sensorList) throws IOException {
         fileWriter.write("\"Sensors with highest readings\": [\n");
         SensorType[] types = SensorType.values();
         for (int i = 0; i < types.length; i++) {
             SensorType type = types[i];
-            AbstractSensor sensor = SensorAnalyzer.getSensorWithHighestLatestReading(sensorList, type);
+            Sensor sensor = SensorAnalyzer.getSensorWithHighestLatestReading(sensorList, type);
 
             fileWriter.write("   {\n");
             fileWriter.write("    \"sensor type\" : " + "\"" + sensor.getSensorType() + "\",\n");
@@ -105,8 +109,8 @@ public class JsonExporter extends AbstractExporter {
             fileWriter.write("    \"reading\" : {\n");
             List<Reading> reading = sensor.getReadings();
             fileWriter.write("        \"highest\" : {\n");
-            fileWriter.write("              \"value\": " + reading.getFirst().getReading() + ",\n");
-            fileWriter.write("              \"time\" : " + "\"" + reading.getFirst().getTimestamp().toString() + "\"" + "\n");
+            fileWriter.write("              \"value\": " + reading.getFirst().reading() + ",\n");
+            fileWriter.write("              \"time\" : " + "\"" + reading.getFirst().timestamp().toString() + "\"" + "\n");
             fileWriter.write("               }\n");
             fileWriter.write("        }\n");
             fileWriter.write("   }");
@@ -120,31 +124,36 @@ public class JsonExporter extends AbstractExporter {
     }
 
     @Override
-    void writeLatestReading(FileWriter fileWriter, List<AbstractSensor> sensorList) throws IOException {
+    void writeLatestReading(FileWriter fileWriter, List<Sensor> sensorList) throws IOException {
         fileWriter.write("\"Sensors latest readings\": [\n");
         SensorType[] types = SensorType.values();
-        for (int i = 0; i < types.length; i++) {
-            SensorType type = types[i];
-            Map<SensorType, Reading> latestReadings = SensorAnalyzer.getLatestReadingsGroupedByType(sensorList, type);
+        boolean first = true;
 
-            fileWriter.write("    {\n");
-            fileWriter.write("    \"sensor type\" : " + "\"" + type + "\",\n");
-            fileWriter.write("       \"reading\" : {" + "\n");
 
-            //Map.Entry<> entry : xy.entrySet used for getting the Map 'Key' and the 'Value'!!
-            for (Map.Entry<SensorType, Reading> entry : latestReadings.entrySet()) {
-                SensorType key = entry.getKey();
-                Reading reading = entry.getValue();
+        Map<Sensor, Reading> latestReadings = SensorAnalyzer.getLatestReadingsGroupedByType(sensorList);
 
-                fileWriter.write("           \"latest\" : \"" + key + "\",\n");
-                fileWriter.write("           \"time\" : \"" + reading.getTimestamp().toString() + "\"\n");
-                fileWriter.write("        }\n");
-                fileWriter.write("  }");
-            }
-            if (i != types.length - 1) {
+        for (Map.Entry<Sensor, Reading> entry : latestReadings.entrySet()) {
+            Sensor key = entry.getKey();
+            Reading reading = entry.getValue();
+            String unit = getUnit(key.getSensorType());
+
+            if (!first) {
                 fileWriter.write(",\n");
+            } else {
+                first = false;
             }
+
+            fileWriter.write("  {\n");
+            fileWriter.write("    \"sensor type\" : " + "\"" + key.getSensorType() + "\",\n");
+            fileWriter.write("    \"sensor id\" : " + "\"" + key.getId() + "\",\n");
+            fileWriter.write("       \"reading\" : {" + "\n");
+            fileWriter.write("          \"value\" : " + reading.reading() + ",\n");
+            fileWriter.write("          \"unit\" : \"" + unit + "\",\n");
+            fileWriter.write("          \"time\" : \"" + reading.timestamp() + "\"\n");
+            fileWriter.write("        }\n");
+            fileWriter.write("  }");
         }
+
         fileWriter.write("\n");
         fileWriter.write("]\n");
         fileWriter.write("}");
