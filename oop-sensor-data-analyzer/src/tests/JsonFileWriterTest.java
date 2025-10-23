@@ -2,6 +2,7 @@ package tests;
 
 import file.handling.AbstractExporter;
 import file.handling.JsonExporter;
+import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -70,11 +71,11 @@ public class JsonFileWriterTest {
 
         jsonExporter.writeFile(sensorList, 0.0);
 
-        List<String> lines = new ArrayList<>();
+        List<String> actualJson = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(tempFile))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                lines.add(line.trim());
+                actualJson.add(line.trim());
             }
         }
 
@@ -410,8 +411,12 @@ public class JsonFileWriterTest {
                 "}"
         );
 
-        for (int i = 0; i < lines.size(); i++) {
-            assertEquals(expectedJson.get(i), lines.get(i), "" + (i + 1));
-        }
+        SoftAssertions.assertSoftly(softly -> {
+            for (int i = 0; i < expectedJson.size(); i++) {
+                softly.assertThat(actualJson.get(i))
+                        .as("Fail at line %d", i)
+                        .isEqualTo(expectedJson.get(i));
+            }
+        });
     }
 }

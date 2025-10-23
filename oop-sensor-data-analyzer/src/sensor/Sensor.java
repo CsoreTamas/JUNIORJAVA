@@ -11,5 +11,5 @@ public interface Sensor {
 
     Reading getLatestReading();
 
-    double getLatestReadingValue();
+    Double getLatestReadingValue();
 }

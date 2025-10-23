@@ -13,10 +13,10 @@ public abstract class AbstractSensor implements Sensor {
 
     public abstract SensorType getSensorType();
 
-    public double getLatestReadingValue() {
+    public Double getLatestReadingValue() {
         if (readings.isEmpty()) {
             System.err.println("You don't have any readings.");
-            return 0;
+            return null;
         }
         return readings.getLast().reading();
     }
