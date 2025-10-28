@@ -5,9 +5,11 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesLoader {
+    private static PropertiesLoader instance;
+
     private final Properties properties = new Properties();
 
-    public PropertiesLoader() {
+    private PropertiesLoader() {
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("application.properties")) {
             if (inputStream == null) {
                 throw new RuntimeException();
@@ -16,6 +18,13 @@ public class PropertiesLoader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static PropertiesLoader getInstance() {
+        if (instance == null) {
+            instance = new PropertiesLoader();
+        }
+        return instance;
     }
 
     public String getUserName() {

@@ -1,13 +1,14 @@
 package dao;
 
-import java.sql.SQLException;
+public interface PersonDAOInterface<T> {
 
-public interface PersonDAOInterface {
-    void create();
+    void findAll();
 
-    void read();
+    void create(T type);
 
-    void update() throws SQLException;
+    void findById(int id);
 
-    void delete();
+    void update(T type);
+
+    void deleteById(int id);
 }
