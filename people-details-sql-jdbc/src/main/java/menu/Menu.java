@@ -1,8 +1,8 @@
 package menu;
 
 import dao.Person;
-import dao.PersonDAO;
-import dao.PersonDAOInterface;
+import dao.DAO;
+import dao.DAOInterface;
 import service.PersonService;
 import loader.PropertiesLoader;
 import org.jline.reader.LineReader;
@@ -18,7 +18,7 @@ public class Menu {
             LineReader lineReader = LineReaderBuilder.builder().build();
             PropertiesLoader propertiesLoader = PropertiesLoader.getInstance();
             Connection connection = DriverManager.getConnection(propertiesLoader.getUrl(), propertiesLoader.getUserName(), propertiesLoader.getPassword());
-            PersonDAOInterface<Person> personDAO = new PersonDAO(connection);
+            DAOInterface<Person> personDAO = new DAO(connection);
             PersonService personService = new PersonService(personDAO, lineReader);
             createMenu(lineReader, personService);
         } catch (SQLException e) {

@@ -7,13 +7,17 @@ import org.jline.reader.UserInterruptException;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
-public class PersonDAO implements PersonDAOInterface<Person> {
+public class DAO implements DAOInterface<Person> {
     private Connection connection;
 
     @Override
-    public void findAll() {
+    public List<Person> findAll() {
+        List<Person> people = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement("SELECT * FROM person");
              ResultSet rs = ps.executeQuery()) {
 
@@ -27,24 +31,15 @@ public class PersonDAO implements PersonDAOInterface<Person> {
                 Gender gender = Gender.valueOf(rs.getString("gender"));
                 HighestEducation highestEducation = HighestEducation.valueOf(rs.getString("highest_education"));
                 int numberOfChildren = rs.getInt("number_of_children");
+                Person person = new Person(id,firstName,lastName,motherName,fatherName,birthDate,gender,highestEducation,numberOfChildren);
 
-                System.out.printf("""
-                                ID: %s
-                                First name: %s
-                                Last name: %s
-                                Mother name: %s
-                                Father name: %s
-                                Birth date: %s
-                                Gender: %s
-                                Highest education: %s
-                                Kids: %d
-                                ---------------------------
-                                """,
-                        id, firstName, lastName, motherName, fatherName, birthDate, gender, highestEducation, numberOfChildren);
+                people.add(person);
             }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return people;
     }
 
     @Override
@@ -74,22 +69,21 @@ public class PersonDAO implements PersonDAOInterface<Person> {
     }
 
     @Override
-    public void findById(int id) {
+    public Optional<Person> findById(int id) {
         try (PreparedStatement ps = connection.prepareStatement("SELECT * FROM person WHERE id = ?");
              ResultSet rs = ps.executeQuery()) {
 
             ps.setInt(1, id);
             if (rs.next()) {
-                System.out.println(
-                        new Person(
-                                rs.getString("first_name"),
-                                rs.getString("last_name"),
-                                rs.getString("mother_name"),
-                                rs.getString("father_name"),
-                                rs.getDate("birth_date").toLocalDate(),
-                                Gender.valueOf(rs.getString("gender")),
-                                HighestEducation.valueOf(rs.getString("highest_education")),
-                                rs.getInt("number_of_children")));
+                return Optional.of(new Person(
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("mother_name"),
+                        rs.getString("father_name"),
+                        rs.getDate("birth_date").toLocalDate(),
+                        Gender.valueOf(rs.getString("gender")),
+                        HighestEducation.valueOf(rs.getString("highest_education")),
+                        rs.getInt("number_of_children")));
             } else {
                 System.err.printf("No person found with ID: %d", id);
             }
@@ -97,6 +91,7 @@ public class PersonDAO implements PersonDAOInterface<Person> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return Optional.empty();
     }
 
     @Override

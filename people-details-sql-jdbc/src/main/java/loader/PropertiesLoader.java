@@ -5,12 +5,15 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesLoader {
+    private final static String PROP_FILE = "application.properties";
+    private final static String URL = "url";
+    private final static String USER_NAME = "username";
+    private final static String PASSWORD = "password";
     private static PropertiesLoader instance;
-
     private final Properties properties = new Properties();
 
     private PropertiesLoader() {
-        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("application.properties")) {
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(PROP_FILE)) {
             if (inputStream == null) {
                 throw new RuntimeException();
             }
@@ -28,14 +31,14 @@ public class PropertiesLoader {
     }
 
     public String getUserName() {
-        return properties.getProperty("username");
+        return properties.getProperty(USER_NAME);
     }
 
     public String getUrl() {
-        return properties.getProperty("url");
+        return properties.getProperty(URL);
     }
 
     public String getPassword() {
-        return properties.getProperty("password");
+        return properties.getProperty(PASSWORD);
     }
 }

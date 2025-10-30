@@ -1,15 +1,16 @@
 package service;
 
 import dao.Person;
-import dao.PersonDAOInterface;
+import dao.DAOInterface;
 import enums.Gender;
 import enums.HighestEducation;
 import org.jline.reader.LineReader;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
-public record PersonService(PersonDAOInterface<Person> personDAO, LineReader lineReader) {
+public record PersonService(DAOInterface<Person> personDAO, LineReader lineReader) {
 
     public void getInputForCreate() {
         personDAO.create(getInputForCreatingPerson());
@@ -36,7 +37,9 @@ public record PersonService(PersonDAOInterface<Person> personDAO, LineReader lin
     }
 
     public void findAll() {
-        personDAO.findAll();
+        List<Person> people = personDAO.findAll();
+
+        people.forEach(System.out::println);
     }
 
     private Person getInputForCreatingPerson() {
