@@ -1,7 +1,7 @@
 import dao.CourseDAO;
-import dao.DAOBasicCurd;
+import dao.DAOBasicCRUD;
 import dao.StudentDAO;
-import entitymananger.EntityManagerUtil;
+import entitymanager.EntityManagerUtil;
 import jakarta.persistence.EntityManager;
 import tables.Course;
 import tables.Student;
@@ -22,21 +22,21 @@ public class Main {
             System.out.println(c.getName() + " " + c.getStudentList().size());
         }
 
-        Course javaCourse = entityManager.find(Course.class, 1);
 
-        entityManager.getTransaction().begin();
+        DAOBasicCRUD<Course> courseDAO = new CourseDAO(entityManager);
+        DAOBasicCRUD<Student> studentDAO = new StudentDAO(entityManager);
+
+        Course javaCourse = courseDAO.read(1);
 
         Student student = new Student("tamas", "peter", "petittamas@example.com", javaCourse);
         javaCourse.addStudent(student);
 
-        entityManager.persist(student);
+        studentDAO.create(student);
 
-        Student tamasPeter = entityManager.find(Student.class, 6);
+        Student tamasPeter = studentDAO.read(6);
         tamasPeter.setEmail("emailhasbeenchanged@example.com");
+        studentDAO.update(tamasPeter);
 
-        Course courseDelete = entityManager.find(Course.class, 2);
-        entityManager.remove(courseDelete);
-
-        entityManager.getTransaction().commit();
+        courseDAO.delete(2);
     }
 }

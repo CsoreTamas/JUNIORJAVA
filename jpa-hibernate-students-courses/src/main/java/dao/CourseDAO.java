@@ -1,5 +1,7 @@
 package dao;
 
+import jakarta.persistence.EntityTransaction;
+import org.hibernate.grammars.hql.HqlParser;
 import tables.Course;
 import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
@@ -7,38 +9,68 @@ import lombok.AllArgsConstructor;
 import java.util.List;
 
 @AllArgsConstructor
-public class CourseDAO implements DAOBasicCurd<Course> {
-    private EntityManager em;
+public class CourseDAO implements DAOBasicCRUD<Course> {
+    private EntityManager entityManager;
 
     @Override
     public void create(Course course) {
-        em.getTransaction().begin();
-        em.persist(course);
-        em.getTransaction().commit();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            entityManager.persist(course);
+            transaction.commit();
+        } catch (RuntimeException exception) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            throw exception;
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
     public void update(Course course) {
-        em.getTransaction().begin();
-        em.merge(course);
-        em.getTransaction().commit();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            entityManager.merge(course);
+            transaction.commit();
+        } catch (RuntimeException exception) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            throw exception;
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
     public Course read(int id) {
-        return em.find(Course.class, id);
+        return entityManager.find(Course.class, id);
     }
 
     @Override
     public List<Course> readAll() {
-        return em.createQuery("SELECT c FROM Course c", Course.class).getResultList();
+        return entityManager.createQuery("SELECT c FROM Course c", Course.class).getResultList();
     }
 
     @Override
     public void delete(int id) {
-        em.getTransaction().begin();
-        Course course = em.find(Course.class, id);
-        em.remove(course);
-        em.getTransaction().commit();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            Course course = entityManager.find(Course.class, id);
+            entityManager.remove(course);
+            transaction.commit();
+        } catch (RuntimeException exception) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            throw exception;
+        } finally {
+            entityManager.close();
+        }
     }
 }

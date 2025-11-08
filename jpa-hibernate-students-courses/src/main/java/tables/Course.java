@@ -24,7 +24,6 @@ public class Course {
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Student> studentList = new ArrayList<>();
 
-
     public void addStudent(Student student) {
         studentList.add(student);
     }

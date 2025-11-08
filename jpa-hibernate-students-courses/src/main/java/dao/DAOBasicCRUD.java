@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-public interface DAOBasicCurd<T> {
+public interface DAOBasicCRUD<T> {
     void create(T type);
 
     void update(T type);
