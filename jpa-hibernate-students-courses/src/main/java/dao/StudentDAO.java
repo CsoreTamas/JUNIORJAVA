@@ -48,12 +48,12 @@ public class StudentDAO implements DAOBasicCRUD<Student> {
     }
 
     @Override
-    public Student read(int id) {
+    public Student findById(int id) {
         return entityManager.find(Student.class, id);
     }
 
     @Override
-    public List<Student> readAll() {
+    public List<Student> findAll() {
         return entityManager.createQuery("SELECT c FROM Student c", Student.class).getResultList();
     }
 

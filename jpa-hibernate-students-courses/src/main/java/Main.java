@@ -26,14 +26,14 @@ public class Main {
         DAOBasicCRUD<Course> courseDAO = new CourseDAO(entityManager);
         DAOBasicCRUD<Student> studentDAO = new StudentDAO(entityManager);
 
-        Course javaCourse = courseDAO.read(1);
+        Course javaCourse = courseDAO.findById(1);
 
         Student student = new Student("tamas", "peter", "petittamas@example.com", javaCourse);
         javaCourse.addStudent(student);
 
         studentDAO.create(student);
 
-        Student tamasPeter = studentDAO.read(6);
+        Student tamasPeter = studentDAO.findById(6);
         tamasPeter.setEmail("emailhasbeenchanged@example.com");
         studentDAO.update(tamasPeter);
 

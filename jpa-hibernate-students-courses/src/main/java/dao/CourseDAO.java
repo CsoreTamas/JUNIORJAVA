@@ -47,12 +47,12 @@ public class CourseDAO implements DAOBasicCRUD<Course> {
     }
 
     @Override
-    public Course read(int id) {
+    public Course findById(int id) {
         return entityManager.find(Course.class, id);
     }
 
     @Override
-    public List<Course> readAll() {
+    public List<Course> findAll() {
         return entityManager.createQuery("SELECT c FROM Course c", Course.class).getResultList();
     }
 

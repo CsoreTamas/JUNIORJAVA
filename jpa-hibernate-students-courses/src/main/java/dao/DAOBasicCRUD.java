@@ -7,9 +7,9 @@ public interface DAOBasicCRUD<T> {
 
     void update(T type);
 
-    T read(int id);
+    T findById(int id);
 
-    List<T> readAll();
+    List<T> findAll();
 
     void delete(int id);
 }
