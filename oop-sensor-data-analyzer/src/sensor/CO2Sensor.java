@@ -1,3 +1,5 @@
+package sensor;
+
 public class CO2Sensor extends AbstractSensor {
 
     public CO2Sensor(String id) {

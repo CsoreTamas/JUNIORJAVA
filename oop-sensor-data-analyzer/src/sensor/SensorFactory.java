@@ -1,3 +1,5 @@
+package sensor;
+
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +21,9 @@ public class SensorFactory {
     public static AbstractSensor co2Kitchen;
     public static AbstractSensor co2Toilet;
 
-    public static List<AbstractSensor> createSensors() {
+    public static List<Sensor> createSensors() {
 
-        List<AbstractSensor> sensorList = new ArrayList<>();
+        List<Sensor> sensorList = new ArrayList<>();
 
         tempInSide = new TemperatureSensor("In side");
         tempInSide.addReading(new Reading(29.5, morning));

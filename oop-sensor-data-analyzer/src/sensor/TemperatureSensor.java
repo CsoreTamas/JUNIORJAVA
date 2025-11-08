@@ -1,3 +1,5 @@
+package sensor;
+
 public class TemperatureSensor extends AbstractSensor implements Sensor {
 
     public TemperatureSensor(String id) {

@@ -1,3 +1,5 @@
+package sensor;
+
 import java.util.List;
 
 public interface Sensor {
@@ -8,4 +10,6 @@ public interface Sensor {
     List<Reading> getReadings();
 
     Reading getLatestReading();
+
+    Double getLatestReadingValue();
 }
