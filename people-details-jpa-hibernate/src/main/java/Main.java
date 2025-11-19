@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         EntityManager entityManager = EntityManagerUtil.entityManager();
-        DAOInterface personDAO = new PersonDAO(entityManager);
+        DAOInterface<Person> personDAO = new PersonDAO(entityManager);
 
         Person pityu = Person.builder()
                 .firstName("János")

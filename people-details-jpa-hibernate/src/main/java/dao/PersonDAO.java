@@ -4,17 +4,18 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 
-public record PersonDAO(EntityManager entityManager) implements DAOInterface {
+public record PersonDAO(EntityManager entityManager) implements DAOInterface<Person> {
     @Override
     public void create(Person person) {
         executeTransaction(entityManager -> entityManager.persist(person));
     }
 
     @Override
-    public Person findByID(int id) {
-        return entityManager.find(Person.class, id);
+    public Optional<Person> findByID(int id) {
+        return Optional.ofNullable(entityManager.find(Person.class, id));
     }
 
     @Override
