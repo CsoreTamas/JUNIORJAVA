@@ -2,7 +2,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import pojo.Employee;
-import writer.CsvWriter;
+import writer.CsvWriterStrategy;
+import writer.Strategy;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,8 +24,8 @@ public class CsvWriterTest {
     void shouldWriteCsvFile(@TempDir Path tempDir) throws IOException {
         File tempFile = tempDir.resolve("employee.json").toFile();
 
-        CsvWriter writer = new CsvWriter(tempFile.getAbsolutePath());
-        writer.write(employeeList);
+        Strategy csvWriterStrategy = new CsvWriterStrategy();
+        csvWriterStrategy.write(employeeList, tempFile.getAbsolutePath());
 
         assertTrue(tempFile.exists());
         assertTrue(tempFile.length() > 0);

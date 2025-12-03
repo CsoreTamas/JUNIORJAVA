@@ -2,7 +2,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import pojo.Employee;
-import writer.JsonWriter;
+import writer.JsonWriterStrategy;
+import writer.Strategy;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,8 +24,8 @@ public class JsonWriterTest {
     void shouldWriteJsonFile(@TempDir Path tempDir) throws IOException {
         File tempFile = tempDir.resolve("employee.json").toFile();
 
-        JsonWriter writer = new JsonWriter(tempFile.getAbsolutePath());
-        writer.write(employeeList);
+        Strategy jsonWriterStrategy = new JsonWriterStrategy();
+        jsonWriterStrategy.write(employeeList, tempFile.getAbsolutePath());
 
         assertTrue(tempFile.exists());
         assertTrue(tempFile.length() > 0);

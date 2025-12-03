@@ -3,8 +3,9 @@ package interact;
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
 import pojo.Employee;
-import writer.CsvWriter;
-import writer.JsonWriter;
+import writer.CsvWriterStrategy;
+import writer.JsonWriterStrategy;
+import writer.Strategy;
 
 import javax.naming.InvalidNameException;
 import java.io.IOException;
@@ -36,18 +37,18 @@ public class UserInteract {
         }
     }
 
-    private static void selectAndWriteFile(LineReader lineReader, List<Employee> employeeList) throws InvalidNameException, IOException {
-        String choose = lineReader.readLine("Choose a file format between csv or jason (csv/json): ");
-        
-        if (choose.equalsIgnoreCase("json")) {
-            JsonWriter writer = new JsonWriter("employee.json");
-            writer.write(employeeList);
-        } else if (choose.equalsIgnoreCase("csv")) {
-            CsvWriter writer = new CsvWriter("employee.csv");
-            writer.write(employeeList);
+    private static void selectAndWriteFile(LineReader lineReader, List<Employee> employeeList) throws IOException, InvalidNameException {
+        String choice = lineReader.readLine("Choose a file format between csv or jason (csv/jason): ");
+        Strategy strategy;
+        if (choice.equalsIgnoreCase("csv")) {
+            strategy = new CsvWriterStrategy();
+            strategy.write(employeeList, "employee.csv");
+
+        } else if (choice.equalsIgnoreCase("json")) {
+            strategy = new JsonWriterStrategy();
+            strategy.write(employeeList, "employee.json");
         } else {
-            System.out.println("Invalid input");
-            throw new InvalidNameException();
+            throw new InvalidNameException("Invalid name");
         }
     }
 }
