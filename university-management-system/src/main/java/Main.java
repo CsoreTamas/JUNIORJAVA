@@ -49,10 +49,10 @@ public class Main {
 
         System.out.println("Participants in MCH-001");
         for (Enrollable enrollable : university.getParticipantsOfCourse(mechanicalCourse)) {
-            if (enrollable instanceof Student) {
-                System.out.println(((Student) enrollable).getName());
-            } else {
-                System.out.println(((Researcher) enrollable).getName());
+            if (enrollable instanceof Student student) {
+                System.out.println(student.getName());
+            } else if (enrollable instanceof Researcher researcher) {
+                System.out.println(researcher.getName());
             }
         }
 

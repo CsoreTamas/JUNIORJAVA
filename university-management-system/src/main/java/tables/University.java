@@ -42,10 +42,10 @@ public class University {
 
     public void admitEnrollable(Enrollable enrollable) {
         if (participants.contains(enrollable)) {
-            if (enrollable instanceof Student) {
-                throw new StudentDuplicateException(enrollable);
-            } else if (enrollable instanceof Researcher) {
-                throw new ResearcherDuplicateException(enrollable);
+            if (enrollable instanceof Student student) {
+                throw new StudentDuplicateException(student);
+            } else if (enrollable instanceof Researcher researcher) {
+                throw new ResearcherDuplicateException(researcher);
             }
         } else {
             participants.add(enrollable);
