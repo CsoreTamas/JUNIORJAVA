@@ -18,7 +18,7 @@ public class StudentIDValidatorTest {
             "1234567q, false"
     })
     void shouldValidateStudentID(String studentID, boolean expected) {
-        Enrollable<Student> enrollable = new Student("Etelka", studentID, "Math");
+        Enrollable enrollable = new Student("Etelka", studentID, "Math");
         Validator<Enrollable> studentIDValidator = new StudentIDValidator();
 
         boolean actual = studentIDValidator.isValid(enrollable);

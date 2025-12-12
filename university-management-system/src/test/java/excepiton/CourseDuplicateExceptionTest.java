@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import tables.Course;
 import tables.Faculty;
 import tables.Professor;
+import tables.University;
 
 import java.util.HashSet;
 
@@ -15,12 +16,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CourseDuplicateExceptionTest {
     @Test
     void shouldThrowException() {
+        University university = University.getInstance();
         Course course = new Course("TST-001", "test", new Professor("Pityu", Faculty.MECHANICAL, 3), new HashSet<>());
 
+        university.offerCourse(course);
+
         assertThrows(
-                CourseDuplicateException.class, () -> {
-                    throw new CourseDuplicateException(course);
-                }
+                CourseDuplicateException.class, ()
+                        -> university.offerCourse(course)
         );
     }
 

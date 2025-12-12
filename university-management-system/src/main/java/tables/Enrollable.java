@@ -1,4 +1,4 @@
 package tables;
 
-public interface Enrollable<T> {
+public interface Enrollable {
 }

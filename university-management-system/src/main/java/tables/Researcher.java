@@ -1,15 +1,10 @@
 package tables;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-@Getter
+@Data
 @AllArgsConstructor
-@Setter
-@ToString
-public class Researcher implements Enrollable<Researcher> {
+public class Researcher implements Enrollable {
     private String name;
     private String researchArea;
     private int yearsOfResearchExperience;

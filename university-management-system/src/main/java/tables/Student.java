@@ -1,15 +1,10 @@
 package tables;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-@Getter
+@Data
 @AllArgsConstructor
-@Setter
-@ToString
-public class Student implements Enrollable<Student> {
+public class Student implements Enrollable {
     private String name;
     private String studentId;
     private String major;

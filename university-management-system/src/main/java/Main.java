@@ -17,17 +17,17 @@ public class Main {
         university.hireProfessor(professorPista);
         university.hireProfessor(professorJohn);
 
+        Enrollable jozsi = new Student("Jozsi Péter", "12345678", "MECHANICAL");
+        Enrollable gereble = new Student("Gereble János", "87654321", "COMPUTER_SCIENCE");
+        Enrollable falseStudentIdJános = new Student("The ID is not valid János", "876543210", "COMPUTER_SCIENCE");
+
         Course mechanicalCourse = new Course("MCH-001", "Mechanical course with Pista Norbert", professorPista, new HashSet<>());
         Course computerScience = new Course("CMP-001", "Computer science", professorJohn, new HashSet<>());
 
+        Enrollable bela = new Researcher("Bela Bela", "mechanical", 2);
+
         university.offerCourse(mechanicalCourse);
         university.offerCourse(computerScience);
-
-        Enrollable<Student> jozsi = new Student("Jozsi Péter", "12345678", "MECHANICAL");
-        Enrollable<Student> gereble = new Student("Gereble János", "87654321", "COMPUTER_SCIENCE");
-        Enrollable<Student> falseStudentIdJános = new Student("The ID is not valid János", "876543210", "COMPUTER_SCIENCE");
-
-        Enrollable<Researcher> bela = new Researcher("Bela Bela", "mechanical", 2);
 
         university.admitEnrollable(jozsi);
         university.admitEnrollable(gereble);

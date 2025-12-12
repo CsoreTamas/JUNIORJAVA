@@ -4,6 +4,7 @@ import exception.ResearcherDuplicateException;
 import org.junit.jupiter.api.Test;
 import tables.Enrollable;
 import tables.Researcher;
+import tables.University;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -11,12 +12,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ResearcherDuplicateExceptionTest {
     @Test
     void shouldThrowException() {
+        University university = University.getInstance();
         Enrollable enrollable = new Researcher("Jozsi", "history", 56);
 
+        university.admitEnrollable(enrollable);
+
         assertThrows(
-                ResearcherDuplicateException.class, () -> {
-                    throw new ResearcherDuplicateException(enrollable);
-                }
+                ResearcherDuplicateException.class, () ->
+                        university.admitEnrollable(enrollable)
         );
     }
 
