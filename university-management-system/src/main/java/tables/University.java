@@ -16,6 +16,9 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class University {
     private static University instance;
+    private final Set<Course> courses = new HashSet<>();
+    private final Set<Professor> professors = new HashSet<>();
+    private final Set<Enrollable> participants = new HashSet<>();
 
     public static University getInstance() {
         if (instance == null) {
@@ -23,10 +26,6 @@ public class University {
         }
         return instance;
     }
-
-    private final Set<Course> courses = new HashSet<>();
-    private final Set<Professor> professors = new HashSet<>();
-    private final Set<Enrollable> participants = new HashSet<>();
 
     public void offerCourse(Course course) {
         if (!courses.add(course)) {
