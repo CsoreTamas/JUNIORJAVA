@@ -40,5 +40,9 @@ public class TaskServiceTest {
     void shouldRemoveTaskByID() {
         boolean isRemoved = service.removeTask(1);
         assertTrue(isRemoved);
+<<<<<<< Updated upstream
+=======
+        assertEquals(1, service.listTasks().size());
+>>>>>>> Stashed changes
     }
 }
