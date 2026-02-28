@@ -37,10 +37,9 @@ public class CarControllerIntegrationTest {
     @BeforeEach
     void setup() {
         carRepository.deleteAll();
-
-        Car car1 = new Car(null, "Mazda", "3", 2015);
-        Car car2 = new Car(null, "Opel", "Astra H", 2006);
-        Car car3 = new Car(null, "Opel", "Astra J", 2007);
+        Car car1 = Car.builder().brand("Mazda").model("3").year(2015).build();
+        Car car2 = Car.builder().brand("Opel").model("Astra H").year(2006).build();
+        Car car3 = Car.builder().brand("Opel").model("Astra J").year(2007).build();
 
         Car saved1 = carRepository.save(car1);
         Car saved2 = carRepository.save(car2);
@@ -58,29 +57,18 @@ public class CarControllerIntegrationTest {
         dto.setModel("3");
         dto.setYear(2015);
 
-        mockMvc.perform(post("/car")
-                        .contentType(MediaType.APPLICATION_JSON) //Json
-                        .content(objectMapper.writeValueAsString(dto)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").exists())
-                .andExpect(jsonPath("$.brand").value("Mazda"))
-                .andExpect(jsonPath("$.model").value("3"))
-                .andExpect(jsonPath("$.year").value(2015));
+        mockMvc.perform(post("/car").contentType(MediaType.APPLICATION_JSON) //Json
+                .content(objectMapper.writeValueAsString(dto))).andExpect(status().isOk()).andExpect(jsonPath("$.id").exists()).andExpect(jsonPath("$.brand").value("Mazda")).andExpect(jsonPath("$.model").value("3")).andExpect(jsonPath("$.year").value(2015));
     }
 
     @Test
     void shouldGetCarByID() throws Exception {
-        mockMvc.perform(get("/car/{id}", car1Id))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.brand").value("Mazda"))
-                .andExpect(jsonPath("$.model").value("3"))
-                .andExpect(jsonPath("$.year").value(2015));
+        mockMvc.perform(get("/car/{id}", car1Id)).andExpect(status().isOk()).andExpect(jsonPath("$.brand").value("Mazda")).andExpect(jsonPath("$.model").value("3")).andExpect(jsonPath("$.year").value(2015));
     }
 
     @Test
     void shouldGetAllCars() throws Exception {
-        mockMvc.perform(get("/car"))
-                .andExpect(status().isOk()) // HTTP 200
+        mockMvc.perform(get("/car")).andExpect(status().isOk()) // HTTP 200
                 .andExpect(jsonPath("$").isArray()) // going to be an array
                 .andExpect(jsonPath("$.length()").value(3)); // array length 2
     }
@@ -92,13 +80,7 @@ public class CarControllerIntegrationTest {
         updated.setModel("Astra K");
         updated.setYear(2014);
 
-        mockMvc.perform(put("/car/{id}", car3Id)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(updated)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.brand").value("Opel"))
-                .andExpect(jsonPath("$.model").value("Astra K"))
-                .andExpect(jsonPath("$.year").value(2014));
+        mockMvc.perform(put("/car/{id}", car3Id).contentType(MediaType.APPLICATION_JSON).content(objectMapper.writeValueAsString(updated))).andExpect(status().isOk()).andExpect(jsonPath("$.brand").value("Opel")).andExpect(jsonPath("$.model").value("Astra K")).andExpect(jsonPath("$.year").value(2014));
     }
 
     @Test
@@ -110,18 +92,11 @@ public class CarControllerIntegrationTest {
                 }
                 """;
 
-        mockMvc.perform(patch("/car/{id}", car2Id)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(patch))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.brand").value("Opel"))
-                .andExpect(jsonPath("$.model").value("Astra GGG"))
-                .andExpect(jsonPath("$.year").value(2006));
+        mockMvc.perform(patch("/car/{id}", car2Id).contentType(MediaType.APPLICATION_JSON).content(patch)).andExpect(status().isOk()).andExpect(jsonPath("$.brand").value("Opel")).andExpect(jsonPath("$.model").value("Astra GGG")).andExpect(jsonPath("$.year").value(2006));
     }
 
     @Test
     void shouldDeleteById() throws Exception {
-        mockMvc.perform(delete("/car/{id}", car1Id))
-                .andExpect(status().isNoContent());
+        mockMvc.perform(delete("/car/{id}", car1Id)).andExpect(status().isNoContent());
     }
 }

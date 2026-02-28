@@ -1,5 +1,6 @@
 package com.example.spring_boot_practice.mapper;
 
+import com.example.spring_boot_practice.dto.CarPatchDTO;
 import com.example.spring_boot_practice.dto.CarResponseDTO;
 import com.example.spring_boot_practice.dto.CarSaveDTO;
 import com.example.spring_boot_practice.model.Car;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-02-26T12:11:09+0100",
+    date = "2026-02-28T17:06:08+0100",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.16 (Eclipse Adoptium)"
 )
 @Component
@@ -20,14 +21,14 @@ public class CarMapperImpl implements CarMapper {
             return null;
         }
 
-        CarSaveDTO carSaveDTO = new CarSaveDTO();
+        CarSaveDTO.CarSaveDTOBuilder carSaveDTO = CarSaveDTO.builder();
 
-        carSaveDTO.setId( car.getId() );
-        carSaveDTO.setBrand( car.getBrand() );
-        carSaveDTO.setModel( car.getModel() );
-        carSaveDTO.setYear( car.getYear() );
+        carSaveDTO.id( car.getId() );
+        carSaveDTO.brand( car.getBrand() );
+        carSaveDTO.model( car.getModel() );
+        carSaveDTO.year( car.getYear() );
 
-        return carSaveDTO;
+        return carSaveDTO.build();
     }
 
     @Override
@@ -36,16 +37,16 @@ public class CarMapperImpl implements CarMapper {
             return null;
         }
 
-        Car car = new Car();
+        Car.CarBuilder car = Car.builder();
 
-        car.setId( carDTO.getId() );
-        car.setBrand( carDTO.getBrand() );
-        car.setModel( carDTO.getModel() );
+        car.id( carDTO.getId() );
+        car.brand( carDTO.getBrand() );
+        car.model( carDTO.getModel() );
         if ( carDTO.getYear() != null ) {
-            car.setYear( carDTO.getYear() );
+            car.year( carDTO.getYear() );
         }
 
-        return car;
+        return car.build();
     }
 
     @Override
@@ -62,5 +63,22 @@ public class CarMapperImpl implements CarMapper {
         carResponseDTO.setYear( car.getYear() );
 
         return carResponseDTO;
+    }
+
+    @Override
+    public void updateCarFromDTO(CarPatchDTO dto, Car car) {
+        if ( dto == null ) {
+            return;
+        }
+
+        if ( dto.getBrand() != null ) {
+            car.setBrand( dto.getBrand() );
+        }
+        if ( dto.getModel() != null ) {
+            car.setModel( dto.getModel() );
+        }
+        if ( dto.getYear() != null ) {
+            car.setYear( dto.getYear() );
+        }
     }
 }

@@ -1,17 +1,23 @@
 package com.example.spring_boot_practice.dto;
 
+import com.example.spring_boot_practice.marker.Create;
+import com.example.spring_boot_practice.marker.Put;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.time.Year;
+
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class CarSaveDTO {
     //post
     //put
 
-    @Null(message = "Id must be null when creating a new car")
+    @NotNull(groups = Put.class, message = "Id is required when updating a car.")
+    @Null(groups = Create.class, message = "Id must be null when creating a new car.")
     private Long id;
 
     @NotBlank(message = "Brand cannot be blank!")
@@ -24,6 +30,10 @@ public class CarSaveDTO {
 
     @NotNull(message = "Year cannot be null!")
     @Min(value = 1900, message = "Year must be 1900 or later.")
-    @Max(value = 2026, message = "Year must be realistic")
     private Integer year;
+
+    @AssertTrue
+    public boolean isYearValid() {
+        return year == null || year <= Year.now().getValue();
+    }
 }

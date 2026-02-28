@@ -8,6 +8,7 @@ import com.example.spring_boot_practice.mapper.CarMapper;
 import com.example.spring_boot_practice.model.Car;
 import com.example.spring_boot_practice.repository.CarRepository;
 import com.example.spring_boot_practice.service.CarService;
+import lombok.Builder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -37,9 +38,10 @@ public class CarServiceUnitTest {
 
     @Test
     void shouldSaveCar() {
-        CarSaveDTO carSaveDTO = new CarSaveDTO(null, "Mazda", "3", 2015);
-        Car entity = new Car(null, "3", "Mazda", 2015);
-        Car savedCar = new Car(1L, "3", "Mazda", 2015);
+        CarSaveDTO carSaveDTO = CarSaveDTO.builder().brand("Mazda").model("3").year(2015).build();
+        Car entity = Car.builder().brand("Mazda").model("3").year(2015).build();
+        Car savedCar = Car.builder().id(1L).brand("Mazda").model("3").year(2015).build();
+
         CarResponseDTO carResponseDTO = new CarResponseDTO(1L, "3", "Mazda", 2015);
 
         when(carMapper.carDtoToCar(carSaveDTO)).thenReturn(entity);
@@ -75,9 +77,10 @@ public class CarServiceUnitTest {
 
         //verify() is Mockito checks that mock method was called (and optionally how many times during the test.
         //It doesn't check the return value, just that the interaction happened.
-        verify(carRepository, times(1)).findAll();
-        verify(carMapper, times(1)).carToResponseDTO(car1);
-        verify(carMapper, times(1)).carToResponseDTO(car2);
+        //(verify(carMapper, times(1)).carToResponseDTO(car1);)
+        verify(carRepository).findAll();
+        verify(carMapper).carToResponseDTO(car1);
+        verify(carMapper).carToResponseDTO(car2);
     }
 
     @Test
@@ -94,8 +97,8 @@ public class CarServiceUnitTest {
         assertEquals("Opel", result.getBrand());
         assertEquals("Astra H", result.getModel());
 
-        verify(carRepository, times(1)).findById(1L);
-        verify(carMapper, times(1)).carToResponseDTO(car);
+        verify(carRepository).findById(1L);
+        verify(carMapper).carToResponseDTO(car);
     }
 
     @Test
@@ -104,12 +107,12 @@ public class CarServiceUnitTest {
 
         assertThrows(CarNotFoundException.class, () -> carService.findCarByID(1L));
 
-        verify(carRepository, times(1)).findById(1L);
+        verify(carRepository).findById(1L);
     }
 
     @Test
     void shouldReplaceCar() {
-        CarSaveDTO saveDTO = new CarSaveDTO(null, "BMW", "X7", 2020);
+        CarSaveDTO saveDTO = CarSaveDTO.builder().brand("BMW").model("X7").year(2020).build();
 
         Car existingCar = new Car(1L, "Mazda", "3", 2015);
 
@@ -129,20 +132,20 @@ public class CarServiceUnitTest {
         assertEquals("X7", resultCar.getModel());
         assertEquals(2020, resultCar.getYear());
 
-        verify(carRepository, times(1)).findById(1L);
-        verify(carMapper, times(1)).carDtoToCar(saveDTO);
-        verify(carRepository, times(1)).save(updatedCar);
-        verify(carMapper, times(1)).carToResponseDTO(updatedCar);
+        verify(carRepository).findById(1L);
+        verify(carMapper).carDtoToCar(saveDTO);
+        verify(carRepository).save(updatedCar);
+        verify(carMapper).carToResponseDTO(updatedCar);
     }
 
     @Test
     void shouldThrowExceptionWhenNoCarToReplace() {
-        CarSaveDTO saveDTO = new CarSaveDTO(null, "BMW", "X7", 2020);
+        CarSaveDTO saveDTO = CarSaveDTO.builder().brand("BMW").model("X7").year(2020).build();
         when(carRepository.findById(1L)).thenReturn(Optional.empty());
 
         assertThrows(CarNotFoundException.class, () -> carService.replaceCar(1L, saveDTO));
 
-        verify(carRepository, times(1)).findById(1L);
+        verify(carRepository).findById(1L);
     }
 
     @Test
@@ -167,9 +170,9 @@ public class CarServiceUnitTest {
         assertEquals(1999, result.getYear());
         assertEquals("X7", result.getModel());
 
-        verify(carRepository, times(1)).findById(1L);
-        verify(carRepository, times(1)).save(existingCar);
-        verify(carMapper, times(1)).carToResponseDTO(updatedCar);
+        verify(carRepository).findById(1L);
+        verify(carRepository).save(existingCar);
+        verify(carMapper).carToResponseDTO(updatedCar);
     }
 
     @Test
@@ -181,7 +184,7 @@ public class CarServiceUnitTest {
 
         assertThrows(CarNotFoundException.class, () -> carService.upgradeCar(1L, patchDTO));
 
-        verify(carRepository, times(1)).findById(1L);
+        verify(carRepository).findById(1L);
     }
 
     @Test
@@ -192,8 +195,8 @@ public class CarServiceUnitTest {
 
         assertDoesNotThrow(() -> carService.deleteCar(1L));
 
-        verify(carRepository, times(1)).findById(1L);
-        verify(carRepository, times(1)).delete(existingCar);
+        verify(carRepository).findById(1L);
+        verify(carRepository).delete(existingCar);
     }
 
     @Test
@@ -202,7 +205,7 @@ public class CarServiceUnitTest {
 
         assertThrows(CarNotFoundException.class, () -> carService.deleteCar(1L));
 
-        verify(carRepository, times(1)).findById(1L);
+        verify(carRepository).findById(1L);
         verify(carRepository, never()).delete(any(Car.class));
     }
 }
