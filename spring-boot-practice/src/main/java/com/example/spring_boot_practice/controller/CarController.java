@@ -3,10 +3,12 @@ package com.example.spring_boot_practice.controller;
 import com.example.spring_boot_practice.dto.CarPatchDTO;
 import com.example.spring_boot_practice.dto.CarResponseDTO;
 import com.example.spring_boot_practice.dto.CarSaveDTO;
+import com.example.spring_boot_practice.marker.Create;
+import com.example.spring_boot_practice.marker.Put;
 import com.example.spring_boot_practice.service.CarService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,12 +30,12 @@ public class CarController {
     }
 
     @PostMapping
-    public ResponseEntity<CarResponseDTO> createCar(@Valid @RequestBody CarSaveDTO carDTO) {
+    public ResponseEntity<CarResponseDTO> createCar(@Validated(Create.class) @RequestBody CarSaveDTO carDTO) {
         return ResponseEntity.ok(carService.saveCar(carDTO));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CarResponseDTO> replaceCar(@PathVariable("id") Long id, @RequestBody CarSaveDTO carDTO) {
+    public ResponseEntity<CarResponseDTO> replaceCar(@Validated(Put.class) @PathVariable("id") Long id, @RequestBody CarSaveDTO carDTO) {
         return ResponseEntity.ok(carService.replaceCar(id, carDTO));
     }
 

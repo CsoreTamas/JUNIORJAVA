@@ -57,15 +57,8 @@ public class CarService {
     public CarResponseDTO upgradeCar(long id, CarPatchDTO carPatchDTO) {
         Car car = carRepository.findById(id).orElseThrow(() -> new CarNotFoundException(id));
 
-        if (carPatchDTO.getBrand() != null) {
-            car.setBrand(carPatchDTO.getBrand());
-        }
-        if (carPatchDTO.getYear() != null) {
-            car.setYear(carPatchDTO.getYear());
-        }
-        if (carPatchDTO.getModel() != null) {
-            car.setModel(carPatchDTO.getModel());
-        }
+        carMapper.updateCarFromDTO(carPatchDTO, car);
+
         Car savedCar = carRepository.save(car);
         return carMapper.carToResponseDTO(savedCar);
     }

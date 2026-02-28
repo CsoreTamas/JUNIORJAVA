@@ -4,7 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a9650e0-7fca-450f-8b5e-78ab1a48937a" name="Changes" comment="" />
+    <list default="true" id="8a9650e0-7fca-450f-8b5e-78ab1a48937a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/cli/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/cli/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/cli/DeleteCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/cli/ListCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/model/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/service/TaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/test/java/TaskServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/controller/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/dto/CarResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/dto/CarResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/dto/CarSaveDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/dto/CarSaveDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/mapper/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/mapper/CarMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/spring_boot_practice/CarControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/spring_boot_practice/CarControllerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/spring_boot_practice/CarServiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/spring_boot_practice/CarServiceUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/controller/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/controller/CarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/dto/CarResponseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/dto/CarResponseDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/dto/CarSaveDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/dto/CarSaveDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/mapper/CarMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/mapper/CarMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/mapper/CarMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/mapper/CarMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/model/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/model/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/service/CarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/service/CarService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/spring_boot_practice/mapper/CarMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/spring_boot_practice/mapper/CarMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/spring_boot_practice/CarControllerIntegrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/spring_boot_practice/CarControllerIntegrationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/spring_boot_practice/CarServiceUnitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/spring_boot_practice/CarServiceUnitTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +48,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Exception" />
         <option value="Record" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -50,40 +85,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.SpringBootPracticeApplication.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarControllerIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarControllerIntegrationTest.shouldCreateCar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarControllerIntegrationTest.shouldDeleteById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarControllerIntegrationTest.shouldGetAllCars.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarControllerIntegrationTest.shouldGetCarByID.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarControllerIntegrationTest.shouldPatchCar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarControllerIntegrationTest.shouldReplaceCarWithPut.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarControllerIntegrationTest.shouldReturn404WhenCarNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarServiceUnitTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarServiceUnitTest.shouldFindCarByID.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarServiceUnitTest.shouldNotFindCarByID.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarServiceUnitTest.shouldReplaceCar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarServiceUnitTest.shouldSaveCar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarServiceUnitTest.shouldThrowExceptionWhenNoCarToReplace.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CarServiceUnitTest.shouldUpgradeCar.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/REFLECTION-465&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/langifruzsina/JUNIORJAVA/spring-boot-practice&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SpringBootPracticeApplication.executor": "Run",
+    "JUnit.CarControllerIntegrationTest.executor": "Coverage",
+    "JUnit.CarControllerIntegrationTest.shouldCreateCar.executor": "Run",
+    "JUnit.CarControllerIntegrationTest.shouldDeleteById.executor": "Run",
+    "JUnit.CarControllerIntegrationTest.shouldGetAllCars.executor": "Run",
+    "JUnit.CarControllerIntegrationTest.shouldGetCarByID.executor": "Run",
+    "JUnit.CarControllerIntegrationTest.shouldPatchCar.executor": "Run",
+    "JUnit.CarControllerIntegrationTest.shouldReplaceCarWithPut.executor": "Run",
+    "JUnit.CarControllerIntegrationTest.shouldReturn404WhenCarNotFound.executor": "Run",
+    "JUnit.CarServiceUnitTest.executor": "Coverage",
+    "JUnit.CarServiceUnitTest.shouldFindCarByID.executor": "Run",
+    "JUnit.CarServiceUnitTest.shouldNotFindCarByID.executor": "Run",
+    "JUnit.CarServiceUnitTest.shouldReplaceCar.executor": "Run",
+    "JUnit.CarServiceUnitTest.shouldSaveCar.executor": "Run",
+    "JUnit.CarServiceUnitTest.shouldThrowExceptionWhenNoCarToReplace.executor": "Run",
+    "JUnit.CarServiceUnitTest.shouldUpgradeCar.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "feature/REFLECTION-465",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/langifruzsina/JUNIORJAVA/spring-boot-practice",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.CarControllerIntegrationTest.shouldDeleteById">
+}]]></component>
+  <component name="RunManager">
     <configuration name="CarControllerIntegrationTest.shouldDeleteById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-practice" />
       <extension name="coverage">
@@ -183,5 +219,24 @@
       <updated>1771837553491</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/spring_boot_practice$CarServiceUnitTest.ic" NAME="CarServiceUnitTest Coverage Results" MODIFIED="1772294793182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.spring_boot_practice.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/spring_boot_practice$CarControllerIntegrationTest.ic" NAME="CarControllerIntegrationTest Coverage Results" MODIFIED="1772294785480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.spring_boot_practice.*</FILTER>
+    </SUITE>
   </component>
 </project>
