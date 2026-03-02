@@ -20,19 +20,19 @@ public class CarSaveDTO {
     @Null(groups = Create.class, message = "Id must be null when creating a new car.")
     private Long id;
 
-    @NotBlank(message = "Brand cannot be blank!")
-    @Size(max = 45, message = "Brand must be at most 45 chars")
+    @NotBlank(groups = {Create.class, Put.class},message = "Brand cannot be blank!")
+    @Size(groups = {Create.class, Put.class},max = 45, message = "Brand must be at most 45 chars")
     private String brand;
 
-    @NotBlank(message = "Model cannot be blank!")
-    @Size(max = 45, message = "Model must be at most 45 chars.")
+    @NotBlank(groups = {Create.class, Put.class},message = "Model cannot be blank!")
+    @Size(groups = {Create.class, Put.class},max = 45, message = "Model must be at most 45 chars.")
     private String model;
 
     @NotNull(message = "Year cannot be null!")
-    @Min(value = 1900, message = "Year must be 1900 or later.")
+    @Min(value = 1900, groups = {Create.class, Put.class}, message = "Year must be 1900 or later.")
     private Integer year;
 
-    @AssertTrue
+    @AssertTrue(groups = {Create.class, Put.class})
     public boolean isYearValid() {
         return year == null || year <= Year.now().getValue();
     }

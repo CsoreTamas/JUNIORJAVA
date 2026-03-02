@@ -5,40 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a9650e0-7fca-450f-8b5e-78ab1a48937a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/cli/AddCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/cli/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/cli/DeleteCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/cli/ListCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/model/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/main/java/service/TaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exam3-trial-coding2-2/src/test/java/TaskServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/controller/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/dto/CarResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/dto/CarResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/dto/CarSaveDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/dto/CarSaveDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/mapper/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/mapper/CarMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/model/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/service/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/spring_boot_practice/CarControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/spring_boot_practice/CarControllerIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/spring_boot_practice/CarServiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/spring_boot_practice/CarServiceUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/controller/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/controller/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/dto/CarResponseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/dto/CarResponseDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/dto/CarSaveDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/dto/CarSaveDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/mapper/CarMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/mapper/CarMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/mapper/CarMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/mapper/CarMapperImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/model/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/model/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/service/CarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_boot_practice/service/CarService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_boot_practice/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/spring_boot_practice/mapper/CarMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/spring_boot_practice/mapper/CarMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/spring_boot_practice/CarControllerIntegrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/spring_boot_practice/CarControllerIntegrationTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/spring_boot_practice/CarServiceUnitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/spring_boot_practice/CarServiceUnitTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +23,8 @@
       <list>
         <option value="Exception" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,6 +50,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -88,7 +64,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.SpringBootPracticeApplication.executor": "Run",
-    "JUnit.CarControllerIntegrationTest.executor": "Coverage",
+    "JUnit.CarControllerIntegrationTest.executor": "Run",
     "JUnit.CarControllerIntegrationTest.shouldCreateCar.executor": "Run",
     "JUnit.CarControllerIntegrationTest.shouldDeleteById.executor": "Run",
     "JUnit.CarControllerIntegrationTest.shouldGetAllCars.executor": "Run",
@@ -96,7 +72,7 @@
     "JUnit.CarControllerIntegrationTest.shouldPatchCar.executor": "Run",
     "JUnit.CarControllerIntegrationTest.shouldReplaceCarWithPut.executor": "Run",
     "JUnit.CarControllerIntegrationTest.shouldReturn404WhenCarNotFound.executor": "Run",
-    "JUnit.CarServiceUnitTest.executor": "Coverage",
+    "JUnit.CarServiceUnitTest.executor": "Run",
     "JUnit.CarServiceUnitTest.shouldFindCarByID.executor": "Run",
     "JUnit.CarServiceUnitTest.shouldNotFindCarByID.executor": "Run",
     "JUnit.CarServiceUnitTest.shouldReplaceCar.executor": "Run",
