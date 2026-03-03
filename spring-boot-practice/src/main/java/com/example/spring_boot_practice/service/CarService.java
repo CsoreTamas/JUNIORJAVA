@@ -8,6 +8,9 @@ import com.example.spring_boot_practice.mapper.CarMapper;
 import com.example.spring_boot_practice.model.Car;
 import com.example.spring_boot_practice.repository.CarRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,6 +41,29 @@ public class CarService {
                 .map(carMapper::carToResponseDTO)
                 .collect(Collectors.toList());
     }
+
+    // Returns a single page of entities using explicit 'page' and 'size' params.
+    // Useful for simple pagination.
+    // You manually control which page to fetch and how many times per page.
+    // Ideal for small projects or quick REST endpoints without complex sorting.
+    // GET --> /car/page?page=1&size=8
+    public Page<CarResponseDTO> listEveryCars(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Car> cars = carRepository.findAll(pageable);
+
+        return cars.map(carMapper::carToResponseDTO);
+    }
+
+    // Returns page of entities using String's Pageable abstraction.
+    // Pageable automatically handles page number, - size, and sorting based on request params.
+    // More flexible than explicit page/size because, you can sort multiple fields.
+    // GET --> /car/pageable?page=1&size=10&sort=brand,asc&sort=id,desc
+    public Page<CarResponseDTO> listAllCarsWithPageable(Pageable pageable) {
+        return carRepository
+                .findAll(pageable)
+                .map(carMapper::carToResponseDTO);
+    }
+
 
     public CarResponseDTO findCarByID(long id) {
         Car car = carRepository.findById(id).orElseThrow(() -> new CarNotFoundException(id));

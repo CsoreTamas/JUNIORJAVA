@@ -1,15 +1,19 @@
 package com.example.spring_boot_practice.aspect;
 
-import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-@Slf4j
 @Aspect
 @Component
 public class TimeAspect {
+
+    //The separate logger is needed so that te measurements are written to a separate file.
+    private static final Logger logger = LoggerFactory.getLogger("TimerLogger");
+
     //If i were use my own custom annotation
     //@Around("execution(* com.example.spring_boot_practice.annotation.TrackTime)")
 
@@ -27,7 +31,7 @@ public class TimeAspect {
         Object result = joinPoint.proceed();
 
         long elapsed = System.currentTimeMillis() - start;
-        log.info("Execution time of {}: {} ms", methodName, elapsed);
+        logger.info("Execution time of {}: {} ms", methodName, elapsed);
 
         return result;
     }
