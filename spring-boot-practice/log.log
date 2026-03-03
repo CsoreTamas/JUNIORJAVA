@@ -1,0 +1,5 @@
+totalElements: 100015
+
+2026-03-03 18:29:50,674 INFO Execution time of CarController.getAllCars(): 420 ms
+2026-03-03 18:30:44,551 INFO Execution time of CarController.getAllCarsInPages(..): 39 ms
+2026-03-03 18:31:22,777 INFO Execution time of CarController.getAllCarsWithPageable(..): 13 ms

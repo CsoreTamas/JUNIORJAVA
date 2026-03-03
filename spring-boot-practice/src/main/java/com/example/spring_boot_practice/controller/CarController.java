@@ -7,6 +7,8 @@ import com.example.spring_boot_practice.marker.Create;
 import com.example.spring_boot_practice.marker.Put;
 import com.example.spring_boot_practice.service.CarService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -24,9 +26,23 @@ public class CarController {
         return ResponseEntity.ok(carService.findCarByID(id));
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<CarResponseDTO>> getAllCars() {
         return ResponseEntity.ok(carService.listAll());
+    }
+
+    //With size and page
+    @GetMapping("/page")
+    public ResponseEntity<Page<CarResponseDTO>> getAllCarsInPages(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        return ResponseEntity.ok(carService.listEveryCars(page, size));
+    }
+
+    //With Pageable
+    @GetMapping("/pageable")
+    public ResponseEntity<Page<CarResponseDTO>> getAllCarsWithPageable(Pageable pageable) {
+        return ResponseEntity.ok(carService.listAllCarsWithPageable(pageable));
     }
 
     @PostMapping
