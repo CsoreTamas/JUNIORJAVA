@@ -8,7 +8,6 @@ import com.example.spring_boot_practice.mapper.CarMapper;
 import com.example.spring_boot_practice.model.Car;
 import com.example.spring_boot_practice.repository.CarRepository;
 import com.example.spring_boot_practice.service.CarService;
-import lombok.Builder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -50,9 +49,9 @@ public class CarServiceUnitTest {
 
         CarResponseDTO result = carService.saveCar(carSaveDTO);
 
-        assertEquals(1L, result.getId());
-        assertEquals("Mazda", result.getBrand());
-        assertEquals("3", result.getModel());
+        assertEquals(1L, result.id());
+        assertEquals("Mazda", result.brand());
+        assertEquals("3", result.model());
     }
 
     @Test
@@ -71,8 +70,8 @@ public class CarServiceUnitTest {
         List<CarResponseDTO> resultList = carService.listAll();
 
         assertEquals(2, resultList.size());
-        assertEquals("Mazda", resultList.get(1).getBrand());
-        assertEquals("Opel", resultList.get(0).getBrand());
+        assertEquals("Mazda", resultList.get(1).brand());
+        assertEquals("Opel", resultList.get(0).brand());
 
 
         //verify() is Mockito checks that mock method was called (and optionally how many times during the test.
@@ -93,9 +92,9 @@ public class CarServiceUnitTest {
 
         CarResponseDTO result = carService.findCarByID(1L);
 
-        assertEquals(1L, result.getId());
-        assertEquals("Opel", result.getBrand());
-        assertEquals("Astra H", result.getModel());
+        assertEquals(1L, result.id());
+        assertEquals("Opel", result.brand());
+        assertEquals("Astra H", result.model());
 
         verify(carRepository).findById(1L);
         verify(carMapper).carToResponseDTO(car);
@@ -127,10 +126,10 @@ public class CarServiceUnitTest {
 
         CarResponseDTO resultCar = carService.replaceCar(1L, saveDTO);
 
-        assertEquals(1L, resultCar.getId());
-        assertEquals("BMW", resultCar.getBrand());
-        assertEquals("X7", resultCar.getModel());
-        assertEquals(2020, resultCar.getYear());
+        assertEquals(1L, resultCar.id());
+        assertEquals("BMW", resultCar.brand());
+        assertEquals("X7", resultCar.model());
+        assertEquals(2020, resultCar.year());
 
         verify(carRepository).findById(1L);
         verify(carMapper).carDtoToCar(saveDTO);
@@ -165,10 +164,10 @@ public class CarServiceUnitTest {
 
         CarResponseDTO result = carService.upgradeCar(1L, patchDTO);
 
-        assertEquals(1L, result.getId());
-        assertEquals("BMW", result.getBrand());
-        assertEquals(1999, result.getYear());
-        assertEquals("X7", result.getModel());
+        assertEquals(1L, result.id());
+        assertEquals("BMW", result.brand());
+        assertEquals(1999, result.year());
+        assertEquals("X7", result.model());
 
         verify(carRepository).findById(1L);
         verify(carRepository).save(existingCar);
