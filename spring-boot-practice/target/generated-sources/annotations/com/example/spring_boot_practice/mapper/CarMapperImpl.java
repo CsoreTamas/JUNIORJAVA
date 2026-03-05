@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-03-03T17:51:42+0100",
+    date = "2026-03-05T19:12:16+0100",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.16 (Eclipse Adoptium)"
 )
 @Component
@@ -55,12 +55,17 @@ public class CarMapperImpl implements CarMapper {
             return null;
         }
 
-        CarResponseDTO carResponseDTO = new CarResponseDTO();
+        Long id = null;
+        String model = null;
+        String brand = null;
+        Integer year = null;
 
-        carResponseDTO.setId( car.getId() );
-        carResponseDTO.setModel( car.getModel() );
-        carResponseDTO.setBrand( car.getBrand() );
-        carResponseDTO.setYear( car.getYear() );
+        id = car.getId();
+        model = car.getModel();
+        brand = car.getBrand();
+        year = car.getYear();
+
+        CarResponseDTO carResponseDTO = new CarResponseDTO( id, model, brand, year );
 
         return carResponseDTO;
     }

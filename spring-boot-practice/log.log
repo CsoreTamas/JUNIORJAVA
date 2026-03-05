@@ -1,5 +1,47 @@
-totalElements: 100015
+PAGEABLE
+2026-03-05 19:47:08,182 INFO Execution time of CarRepository.findAllWithPageable(..): 25 ms
+2026-03-05 19:47:08,183 INFO Execution time of CarService.listAllCarsWithPageable(..): 28 ms
+2026-03-05 19:47:08,184 INFO Execution time of CarController.getAllCarsWithPageable(..): 29 ms
 
-2026-03-03 18:29:50,674 INFO Execution time of CarController.getAllCars(): 420 ms
-2026-03-03 18:30:44,551 INFO Execution time of CarController.getAllCarsInPages(..): 39 ms
-2026-03-03 18:31:22,777 INFO Execution time of CarController.getAllCarsWithPageable(..): 13 ms
+2026-03-05 19:47:47,645 INFO Execution time of CarRepository.findAllWithPageable(..): 19 ms
+2026-03-05 19:47:47,646 INFO Execution time of CarService.listAllCarsWithPageable(..): 20 ms
+2026-03-05 19:47:47,647 INFO Execution time of CarController.getAllCarsWithPageable(..): 21 ms
+
+PAGE
+2026-03-05 19:47:21,882 INFO Execution time of CarRepository.findAllWithPage(..): 9 ms
+2026-03-05 19:47:21,882 INFO Execution time of CarService.listEveryCars(..): 13 ms
+2026-03-05 19:47:21,883 INFO Execution time of CarController.getAllCarsInPages(..): 13 ms
+
+2026-03-05 19:48:26,393 INFO Execution time of CarRepository.findAllWithPage(..): 11 ms
+2026-03-05 19:48:26,393 INFO Execution time of CarService.listEveryCars(..): 12 ms
+2026-03-05 19:48:26,393 INFO Execution time of CarController.getAllCarsInPages(..): 12 ms
+
+LIST
+2026-03-05 19:47:33,762 INFO Execution time of CarRepository.findAll(): 412 ms
+2026-03-05 19:47:33,771 INFO Execution time of CarService.listAll(): 426 ms
+2026-03-05 19:47:33,771 INFO Execution time of CarController.getAllCars(): 426 ms
+
+2026-03-05 19:48:56,246 INFO Execution time of CarRepository.findAll(): 242 ms
+2026-03-05 19:48:56,250 INFO Execution time of CarService.listAll(): 247 ms
+2026-03-05 19:48:56,250 INFO Execution time of CarController.getAllCars(): 247 ms2026-03-05 19:50:46,288 INFO Execution time of CarController.createCar(..): 0 ms
+2026-03-05 19:50:46,321 INFO Execution time of CarController.getCar(..): 7 ms
+2026-03-05 19:50:46,334 INFO Execution time of CarController.upgradeCar(..): 5 ms
+2026-03-05 19:50:46,346 INFO Execution time of CarController.deleteCar(..): 2 ms
+2026-03-05 19:50:46,359 INFO Execution time of CarController.replaceCar(..): 6 ms
+2026-03-05 19:52:28,455 INFO Execution time of CarRepository.findAll(): 2 ms
+2026-03-05 19:52:28,455 INFO Execution time of CarService.listAll(): 6 ms
+2026-03-05 19:52:28,457 INFO Execution time of CarController.getAllCars(): 8 ms
+2026-03-05 19:52:28,541 INFO Execution time of CarController.createCar(..): 0 ms
+2026-03-05 19:52:28,554 INFO Execution time of CarController.getCar(..): 5 ms
+2026-03-05 19:52:28,565 INFO Execution time of CarController.upgradeCar(..): 4 ms
+2026-03-05 19:52:28,573 INFO Execution time of CarController.deleteCar(..): 1 ms
+2026-03-05 19:52:28,580 INFO Execution time of CarController.replaceCar(..): 1 ms
+2026-03-05 19:58:26,858 INFO Execution time of CarRepository.findAllWithPage(..): 6 ms
+2026-03-05 19:58:26,858 INFO Execution time of CarService.listEveryCars(..): 7 ms
+2026-03-05 19:58:26,860 INFO Execution time of CarController.getAllCarsInPages(..): 9 ms
+2026-03-05 19:58:57,224 INFO Execution time of CarRepository.findAll(): 4 ms
+2026-03-05 19:58:57,226 INFO Execution time of CarService.listAll(): 7 ms
+2026-03-05 19:58:57,230 INFO Execution time of CarController.getAllCars(): 11 ms
+2026-03-05 19:59:21,721 INFO Execution time of CarRepository.findAll(): 5 ms
+2026-03-05 19:59:21,721 INFO Execution time of CarService.listAll(): 11 ms
+2026-03-05 19:59:21,723 INFO Execution time of CarController.getAllCars(): 13 ms

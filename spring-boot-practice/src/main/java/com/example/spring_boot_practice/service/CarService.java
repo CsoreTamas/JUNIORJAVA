@@ -1,5 +1,6 @@
 package com.example.spring_boot_practice.service;
 
+import com.example.spring_boot_practice.annotation.TrackTime;
 import com.example.spring_boot_practice.dto.CarPatchDTO;
 import com.example.spring_boot_practice.dto.CarResponseDTO;
 import com.example.spring_boot_practice.dto.CarSaveDTO;
@@ -35,6 +36,7 @@ public class CarService {
         return carMapper.carToResponseDTO(savedCar);
     }
 
+    @TrackTime
     public List<CarResponseDTO> listAll() {
         return carRepository.findAll()
                 .stream()
@@ -47,9 +49,10 @@ public class CarService {
     // You manually control which page to fetch and how many times per page.
     // Ideal for small projects or quick REST endpoints without complex sorting.
     // GET --> /car/page?page=1&size=8
+    @TrackTime
     public Page<CarResponseDTO> listEveryCars(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<Car> cars = carRepository.findAll(pageable);
+        Page<Car> cars = carRepository.findAllWithPage(pageable);
 
         return cars.map(carMapper::carToResponseDTO);
     }
@@ -58,9 +61,10 @@ public class CarService {
     // Pageable automatically handles page number, - size, and sorting based on request params.
     // More flexible than explicit page/size because, you can sort multiple fields.
     // GET --> /car/pageable?page=1&size=10&sort=brand,asc&sort=id,desc
+    @TrackTime
     public Page<CarResponseDTO> listAllCarsWithPageable(Pageable pageable) {
         return carRepository
-                .findAll(pageable)
+                .findAllWithPageable(pageable)
                 .map(carMapper::carToResponseDTO);
     }
 
