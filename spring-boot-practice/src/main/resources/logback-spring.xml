@@ -1,0 +1,27 @@
+<configuration>
+
+    <appender name="TIME-FILE" class="ch.qos.logback.core.FileAppender">
+        <file>log.log</file> <!-- filename -->
+        <append>true</append> <!-- adds new logs to the file instead of overwriting -->
+        <encoder>
+            <pattern>%date %level %msg%n</pattern> <!-- log format -->
+        </encoder>
+    </appender>
+
+    <!-- Only the measurements are written here-->
+    <logger name="TimerLogger" level="INFO" additivity="false">
+        <appender-ref ref="TIME-FILE"/>
+    </logger>
+
+    <!-- all other logs remain on the console-->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern> <!-- console format -->
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
