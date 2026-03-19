@@ -40,3 +40,4 @@ build/
 
 /src/main/resources/application.properties
 /src/main/webapp/WEB-INF/spring-servlet.xml
+/src/test/resources/test-spring-servlet.xml
